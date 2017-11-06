@@ -1,0 +1,2 @@
+D:\UNA\Proyecto Optica\obj\Debug\ProyectoOptica.csprojResolveAssemblyReference.cache
+D:\UNA\Proyecto Optica\bin\Debug\Proyecto Optica.exe.config

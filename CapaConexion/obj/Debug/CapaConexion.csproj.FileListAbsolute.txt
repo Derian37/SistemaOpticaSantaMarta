@@ -1,0 +1,32 @@
+D:\UNA\Proyecto Optica\Bibliotecas\CapaConexion.dll
+D:\UNA\Proyecto Optica\Bibliotecas\CapaConexion.pdb
+D:\UNA\Proyecto Optica\CapaConexion\obj\Debug\CapaConexion.csprojResolveAssemblyReference.cache
+D:\UNA\Proyecto Optica\CapaConexion\obj\Debug\CapaConexion.dll
+D:\UNA\Proyecto Optica\CapaConexion\obj\Debug\CapaConexion.pdb
+D:\UNA\ProyectoOptica\Bibliotecas\CapaConexion.dll
+D:\UNA\ProyectoOptica\Bibliotecas\CapaConexion.pdb
+D:\UNA\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.csprojResolveAssemblyReference.cache
+D:\UNA\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.dll
+D:\UNA\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\Bibliotecas\CapaConexion.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\Bibliotecas\CapaConexion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.pdb
+C:\Users\Jiandro\Desktop\ProyectoOptica\Bibliotecas\CapaConexion.dll
+C:\Users\Jiandro\Desktop\ProyectoOptica\Bibliotecas\CapaConexion.pdb
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.csprojResolveAssemblyReference.cache
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.pdb
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\Bibliotecas\CapaConexion.dll
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\Bibliotecas\CapaConexion.pdb
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.csprojResolveAssemblyReference.cache
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.dll
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\Bibliotecas\CapaConexion.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\Bibliotecas\CapaConexion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.csprojResolveAssemblyReference.cache
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache

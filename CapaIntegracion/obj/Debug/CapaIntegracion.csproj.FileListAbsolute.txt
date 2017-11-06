@@ -1,0 +1,32 @@
+D:\UNA\Proyecto Optica\Bibliotecas\CapaIntegracion.dll
+D:\UNA\Proyecto Optica\Bibliotecas\CapaIntegracion.pdb
+D:\UNA\Proyecto Optica\CapaIntegracion\obj\Debug\CapaIntegracion.dll
+D:\UNA\Proyecto Optica\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
+D:\UNA\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csprojResolveAssemblyReference.cache
+D:\UNA\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.dll
+D:\UNA\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
+D:\UNA\ProyectoOptica\Bibliotecas\CapaIntegracion.dll
+D:\UNA\ProyectoOptica\Bibliotecas\CapaIntegracion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\Bibliotecas\CapaIntegracion.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\Bibliotecas\CapaIntegracion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csprojResolveAssemblyReference.cache
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
+C:\Users\Jiandro\Desktop\ProyectoOptica\Bibliotecas\CapaIntegracion.dll
+C:\Users\Jiandro\Desktop\ProyectoOptica\Bibliotecas\CapaIntegracion.pdb
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csprojResolveAssemblyReference.cache
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.dll
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\Bibliotecas\CapaIntegracion.dll
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\Bibliotecas\CapaIntegracion.pdb
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csprojResolveAssemblyReference.cache
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.dll
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\Bibliotecas\CapaIntegracion.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\Bibliotecas\CapaIntegracion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csprojResolveAssemblyReference.cache
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache

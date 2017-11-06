@@ -1,0 +1,33 @@
+D:\UNA\Proyecto Optica\Bibliotecas\CapaLogica.dll
+D:\UNA\Proyecto Optica\Bibliotecas\CapaLogica.pdb
+D:\UNA\Proyecto Optica\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+D:\UNA\Proyecto Optica\CapaLogica\obj\Debug\CapaLogica.dll
+D:\UNA\Proyecto Optica\CapaLogica\obj\Debug\CapaLogica.pdb
+D:\UNA\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+D:\UNA\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.dll
+D:\UNA\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.pdb
+D:\UNA\ProyectoOptica\Bibliotecas\CapaLogica.dll
+D:\UNA\ProyectoOptica\Bibliotecas\CapaLogica.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\Bibliotecas\CapaLogica.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\Bibliotecas\CapaLogica.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOpticaDoneyNuevo\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.pdb
+C:\Users\Jiandro\Desktop\ProyectoOptica\Bibliotecas\CapaLogica.dll
+C:\Users\Jiandro\Desktop\ProyectoOptica\Bibliotecas\CapaLogica.pdb
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\Jiandro\Desktop\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.pdb
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\Bibliotecas\CapaLogica.dll
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\Bibliotecas\CapaLogica.pdb
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.dll
+D:\UNA\3. Ingeniería en Sistemas II\Proyecto\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\Bibliotecas\CapaLogica.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\Bibliotecas\CapaLogica.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.pdb
+C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
