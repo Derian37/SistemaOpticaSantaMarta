@@ -148,3 +148,10 @@ C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresenta
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmNuevaTargea.resources
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmListaClientes.resources
+C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmVentasDia.resources
+C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmBuscarCliente.resources
+C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmBuscarProducto.resources
+C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Ventas.FrmCobrar.resources
+C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmContenedor.resources
+C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Ventas.FrmImpresoras.resources
+C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVentas.resources

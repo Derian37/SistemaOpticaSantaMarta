@@ -27,7 +27,7 @@ namespace CapaPresentacion.Reportes
         string cargo;
         private DataTable dtReporte = new DataTable();
         private DataSet dsReporte = new DataSet();
-        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("../../Resources/LogoOptica.png");
+       // iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("../../Resources/LogoOptica.png");
         public FrmVentasDia(int id_usuario, string nombre, string cargo)
         {
             InitializeComponent();
