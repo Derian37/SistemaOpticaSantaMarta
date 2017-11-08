@@ -35,31 +35,35 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblDuenno_nombre = new System.Windows.Forms.Label();
             this.grbInformacion = new System.Windows.Forms.GroupBox();
+            this.label_id = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnExpediente = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRecuperarDuenno = new System.Windows.Forms.Button();
             this.grbAparienciaUsuario = new System.Windows.Forms.GroupBox();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.btnInsertarDuenno = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblTUser = new System.Windows.Forms.Label();
             this.lblUNombre = new System.Windows.Forms.Label();
             this.lbl_usuarioCargo = new System.Windows.Forms.Label();
             this.grbPanelUsuario = new System.Windows.Forms.GroupBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label_id = new System.Windows.Forms.Label();
-            this.volverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExpediente = new System.Windows.Forms.Button();
-            this.btnRecuperarDuenno = new System.Windows.Forms.Button();
-            this.btnInsertarDuenno = new System.Windows.Forms.Button();
-            this.btnCargar = new System.Windows.Forms.Button();
             this.pcbAdmi = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.volverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpediente)).BeginInit();
             this.grbInformacion.SuspendLayout();
             this.grbAparienciaUsuario.SuspendLayout();
             this.grbPanelUsuario.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAdmi)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvExpediente
@@ -74,6 +78,7 @@
             this.dgvExpediente.ReadOnly = true;
             this.dgvExpediente.Size = new System.Drawing.Size(842, 180);
             this.dgvExpediente.TabIndex = 73;
+            this.dgvExpediente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpediente_CellDoubleClick);
             // 
             // lblBuscar
             // 
@@ -100,7 +105,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 88);
+            this.label5.Location = new System.Drawing.Point(11, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 19);
             this.label5.TabIndex = 67;
@@ -136,6 +141,16 @@
             this.grbInformacion.Text = "Informacion del cliente";
             this.grbInformacion.Visible = false;
             // 
+            // label_id
+            // 
+            this.label_id.AutoSize = true;
+            this.label_id.Location = new System.Drawing.Point(6, 29);
+            this.label_id.Name = "label_id";
+            this.label_id.Size = new System.Drawing.Size(21, 19);
+            this.label_id.TabIndex = 75;
+            this.label_id.Text = "id";
+            this.label_id.Visible = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -156,6 +171,20 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(169, 26);
             this.textBox2.TabIndex = 72;
+            // 
+            // btnExpediente
+            // 
+            this.btnExpediente.BackColor = System.Drawing.Color.Transparent;
+            this.btnExpediente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExpediente.BackgroundImage")));
+            this.btnExpediente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExpediente.FlatAppearance.BorderSize = 0;
+            this.btnExpediente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExpediente.Location = new System.Drawing.Point(295, 29);
+            this.btnExpediente.Name = "btnExpediente";
+            this.btnExpediente.Size = new System.Drawing.Size(51, 53);
+            this.btnExpediente.TabIndex = 73;
+            this.btnExpediente.UseVisualStyleBackColor = false;
+            this.btnExpediente.Click += new System.EventHandler(this.btnExpediente_Click);
             // 
             // textBox1
             // 
@@ -192,13 +221,24 @@
             this.label2.TabIndex = 69;
             this.label2.Text = "Nombre:";
             // 
+            // btnRecuperarDuenno
+            // 
+            this.btnRecuperarDuenno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRecuperarDuenno.BackgroundImage")));
+            this.btnRecuperarDuenno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRecuperarDuenno.FlatAppearance.BorderSize = 0;
+            this.btnRecuperarDuenno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecuperarDuenno.Location = new System.Drawing.Point(395, 13);
+            this.btnRecuperarDuenno.Name = "btnRecuperarDuenno";
+            this.btnRecuperarDuenno.Size = new System.Drawing.Size(17, 18);
+            this.btnRecuperarDuenno.TabIndex = 68;
+            this.btnRecuperarDuenno.UseVisualStyleBackColor = true;
+            this.btnRecuperarDuenno.Visible = false;
+            // 
             // grbAparienciaUsuario
             // 
             this.grbAparienciaUsuario.BackColor = System.Drawing.Color.Transparent;
             this.grbAparienciaUsuario.Controls.Add(this.grbInformacion);
             this.grbAparienciaUsuario.Controls.Add(this.lblDuenno_nombre);
-            this.grbAparienciaUsuario.Controls.Add(this.btnInsertarDuenno);
-            this.grbAparienciaUsuario.Controls.Add(this.label5);
             this.grbAparienciaUsuario.Controls.Add(this.txt_Cliente_Cedula);
             this.grbAparienciaUsuario.Controls.Add(this.btnCargar);
             this.grbAparienciaUsuario.Controls.Add(this.lblBuscar);
@@ -209,6 +249,34 @@
             this.grbAparienciaUsuario.TabIndex = 72;
             this.grbAparienciaUsuario.TabStop = false;
             this.grbAparienciaUsuario.Text = "Buscar Cliente";
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCargar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCargar.BackgroundImage")));
+            this.btnCargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCargar.FlatAppearance.BorderSize = 0;
+            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCargar.Location = new System.Drawing.Point(376, 41);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(52, 42);
+            this.btnCargar.TabIndex = 52;
+            this.btnCargar.UseVisualStyleBackColor = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // btnInsertarDuenno
+            // 
+            this.btnInsertarDuenno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsertarDuenno.BackgroundImage")));
+            this.btnInsertarDuenno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsertarDuenno.FlatAppearance.BorderSize = 0;
+            this.btnInsertarDuenno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsertarDuenno.Location = new System.Drawing.Point(127, 72);
+            this.btnInsertarDuenno.Name = "btnInsertarDuenno";
+            this.btnInsertarDuenno.Size = new System.Drawing.Size(40, 30);
+            this.btnInsertarDuenno.TabIndex = 68;
+            this.btnInsertarDuenno.Text = " ";
+            this.btnInsertarDuenno.UseVisualStyleBackColor = true;
+            this.btnInsertarDuenno.Click += new System.EventHandler(this.btnInsertarDuenno_Click);
             // 
             // lblUser
             // 
@@ -264,91 +332,6 @@
             this.grbPanelUsuario.TabIndex = 71;
             this.grbPanelUsuario.TabStop = false;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.volverToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(859, 28);
-            this.menuStrip1.TabIndex = 74;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // label_id
-            // 
-            this.label_id.AutoSize = true;
-            this.label_id.Location = new System.Drawing.Point(6, 29);
-            this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(21, 19);
-            this.label_id.TabIndex = 75;
-            this.label_id.Text = "id";
-            this.label_id.Visible = false;
-            // 
-            // volverToolStripMenuItem
-            // 
-            this.volverToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.volverToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("volverToolStripMenuItem.Image")));
-            this.volverToolStripMenuItem.Name = "volverToolStripMenuItem";
-            this.volverToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.volverToolStripMenuItem.Text = "Volver";
-            this.volverToolStripMenuItem.Click += new System.EventHandler(this.volverToolStripMenuItem_Click);
-            // 
-            // btnExpediente
-            // 
-            this.btnExpediente.BackColor = System.Drawing.Color.Transparent;
-            this.btnExpediente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExpediente.BackgroundImage")));
-            this.btnExpediente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExpediente.FlatAppearance.BorderSize = 0;
-            this.btnExpediente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpediente.Location = new System.Drawing.Point(295, 29);
-            this.btnExpediente.Name = "btnExpediente";
-            this.btnExpediente.Size = new System.Drawing.Size(51, 53);
-            this.btnExpediente.TabIndex = 73;
-            this.btnExpediente.UseVisualStyleBackColor = false;
-            this.btnExpediente.Click += new System.EventHandler(this.btnExpediente_Click);
-            // 
-            // btnRecuperarDuenno
-            // 
-            this.btnRecuperarDuenno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRecuperarDuenno.BackgroundImage")));
-            this.btnRecuperarDuenno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRecuperarDuenno.FlatAppearance.BorderSize = 0;
-            this.btnRecuperarDuenno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecuperarDuenno.Location = new System.Drawing.Point(395, 13);
-            this.btnRecuperarDuenno.Name = "btnRecuperarDuenno";
-            this.btnRecuperarDuenno.Size = new System.Drawing.Size(17, 18);
-            this.btnRecuperarDuenno.TabIndex = 68;
-            this.btnRecuperarDuenno.UseVisualStyleBackColor = true;
-            this.btnRecuperarDuenno.Visible = false;
-            // 
-            // btnInsertarDuenno
-            // 
-            this.btnInsertarDuenno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsertarDuenno.BackgroundImage")));
-            this.btnInsertarDuenno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsertarDuenno.FlatAppearance.BorderSize = 0;
-            this.btnInsertarDuenno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsertarDuenno.Location = new System.Drawing.Point(117, 82);
-            this.btnInsertarDuenno.Name = "btnInsertarDuenno";
-            this.btnInsertarDuenno.Size = new System.Drawing.Size(40, 30);
-            this.btnInsertarDuenno.TabIndex = 68;
-            this.btnInsertarDuenno.Text = " ";
-            this.btnInsertarDuenno.UseVisualStyleBackColor = true;
-            this.btnInsertarDuenno.Click += new System.EventHandler(this.btnInsertarDuenno_Click);
-            // 
-            // btnCargar
-            // 
-            this.btnCargar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCargar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCargar.BackgroundImage")));
-            this.btnCargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCargar.FlatAppearance.BorderSize = 0;
-            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCargar.Location = new System.Drawing.Point(376, 41);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(52, 42);
-            this.btnCargar.TabIndex = 52;
-            this.btnCargar.UseVisualStyleBackColor = false;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            // 
             // pcbAdmi
             // 
             this.pcbAdmi.BackColor = System.Drawing.Color.Transparent;
@@ -361,6 +344,63 @@
             this.pcbAdmi.TabIndex = 37;
             this.pcbAdmi.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.volverToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(859, 28);
+            this.menuStrip1.TabIndex = 74;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // volverToolStripMenuItem
+            // 
+            this.volverToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.volverToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("volverToolStripMenuItem.Image")));
+            this.volverToolStripMenuItem.Name = "volverToolStripMenuItem";
+            this.volverToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.volverToolStripMenuItem.Text = "Volver";
+            this.volverToolStripMenuItem.Click += new System.EventHandler(this.volverToolStripMenuItem_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnInsertarDuenno);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(8, 152);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(376, 115);
+            this.groupBox1.TabIndex = 72;
+            this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 19);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Nuevo Targeta:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(116, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 53);
+            this.button1.TabIndex = 81;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,6 +411,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.grbAparienciaUsuario);
             this.Controls.Add(this.grbPanelUsuario);
+            this.Controls.Add(this.groupBox1);
             this.Name = "frmExpediente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExpediente";
@@ -383,9 +424,11 @@
             this.grbAparienciaUsuario.PerformLayout();
             this.grbPanelUsuario.ResumeLayout(false);
             this.grbPanelUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbAdmi)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbAdmi)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,5 +461,8 @@
         private System.Windows.Forms.ToolStripMenuItem volverToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label_id;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

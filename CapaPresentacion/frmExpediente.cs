@@ -95,5 +95,22 @@ namespace CapaPresentacion
             frm_Tarjeta.Show();
             this.SetVisibleCore(false);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmListaClientes frmListaClientes = new frmListaClientes(id_usuario, usuario, cargo);
+            frmListaClientes.Show();
+            this.SetVisibleCore(false);
+        }
+
+        private void dgvExpediente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           txt_Cliente_Cedula.Text = dgvExpediente.CurrentRow.Cells[1].Value.ToString();
+        }
     }
 }

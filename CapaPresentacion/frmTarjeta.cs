@@ -174,12 +174,12 @@ namespace CapaPresentacion
 
                 }
 
-               /* using (GestorGraduacion elGraduacion = new GestorGraduacion())
+                using (GestorGraduacion elGraduacion = new GestorGraduacion())
                 {
                     elGraduacion.ModificarGraduacionOD(int.Parse(id_cliente), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
-                    elGraduacion.ModificarGraduacionOI(int.Parse(id_cliente), float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()));
+                    //elGraduacion.ModificarGraduacionOI(int.Parse(id_cliente), float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()));
 
-                }*/
+                }
                 MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cargarGridgraduacionDatos();
             }
