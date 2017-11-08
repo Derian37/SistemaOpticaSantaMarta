@@ -30,3 +30,8 @@ C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.dll
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.pdb
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaConexion.dll
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaConexion.pdb
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaConexion\obj\Debug\CapaConexion.pdb

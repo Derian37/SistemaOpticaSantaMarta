@@ -31,3 +31,9 @@ C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.dll
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.pdb
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaLogica.dll
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaLogica.pdb
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.pdb
