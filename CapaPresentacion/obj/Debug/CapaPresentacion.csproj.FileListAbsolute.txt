@@ -155,3 +155,27 @@ C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresenta
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmContenedor.resources
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Ventas.FrmImpresoras.resources
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVentas.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmCitas.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmCliente.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmExpediente.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmListaClientes.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmNuevaTargea.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmProductos.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frm_Recibos.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmTarjeta.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuarios.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmVentasDia.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmBuscarCliente.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmBuscarProducto.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Ventas.FrmCobrar.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmContenedor.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Ventas.FrmImpresoras.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVentas.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
