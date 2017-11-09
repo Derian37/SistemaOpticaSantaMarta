@@ -30,9 +30,3 @@ C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.dll
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache
-C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaIntegracion.dll
-C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaIntegracion.pdb
-C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.csprojResolveAssemblyReference.cache
-C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache
-C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.dll
-C:\Users\Jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
