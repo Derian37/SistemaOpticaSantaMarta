@@ -31,12 +31,3 @@ C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.dll
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.pdb
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
-=======
-D:\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaLogica.dll
-D:\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaLogica.pdb
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.dll
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.pdb
->>>>>>> parent of a8ac573... Ultima Modificacion
