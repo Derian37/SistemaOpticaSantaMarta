@@ -63,6 +63,56 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar_min {
+            get {
+                object obj = ResourceManager.GetObject("agregar_min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap atras {
+            get {
+                object obj = ResourceManager.GetObject("atras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buscar_min {
+            get {
+                object obj = ResourceManager.GetObject("buscar_min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cerrar_min {
+            get {
+                object obj = ResourceManager.GetObject("cerrar_min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check_min {
+            get {
+                object obj = ResourceManager.GetObject("check_min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_64 {
             get {
                 object obj = ResourceManager.GetObject("delete_64", resourceCulture);
@@ -83,6 +133,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap impresora {
+            get {
+                object obj = ResourceManager.GetObject("impresora", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imprimir_min {
+            get {
+                object obj = ResourceManager.GetObject("imprimir_min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap llave {
             get {
                 object obj = ResourceManager.GetObject("llave", resourceCulture);
@@ -96,6 +166,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +226,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap settings_4 {
             get {
                 object obj = ResourceManager.GetObject("settings-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap siguiente {
+            get {
+                object obj = ResourceManager.GetObject("siguiente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

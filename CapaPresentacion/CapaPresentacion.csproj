@@ -36,6 +36,15 @@
     <ApplicationIcon>icono.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\UNA\ProyectoOptica\Bibliotecas\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\UNA\ProyectoOptica\Bibliotecas\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\UNA\ProyectoOptica\Bibliotecas\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,9 +69,6 @@
     </Compile>
     <Compile Include="frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmCobrar.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmExpediente.cs">
       <SubType>Form</SubType>
