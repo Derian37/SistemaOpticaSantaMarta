@@ -98,9 +98,8 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Digite un código de producto valido", caption: "Alerta", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                MessageBox.Show("Digite un código de producto valido"+ex, caption: "Alerta", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
             }
-            MessageBox.Show("Digite un código de producto valido"+nombreImpresora, caption: "Alerta", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
         }
 
         private void BuscarProducto()
