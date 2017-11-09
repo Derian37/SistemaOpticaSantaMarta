@@ -2,3 +2,8 @@
 .vs/ProyectoOptica/v15/sqlite3/storage.ide
 .vs/ProyectoOptica/v15/sqlite3/storage.ide
 *.ide
+\bin
+\Bibliotecas
+\CapaConexion
+\obj
+\.vs
