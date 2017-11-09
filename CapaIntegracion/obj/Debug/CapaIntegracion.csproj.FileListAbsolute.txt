@@ -30,12 +30,3 @@ C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.dll
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
 C:\Users\Derian Chavarría\Documents\Visual Studio 2017\Projects\ProyectoOptica\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
-=======
-D:\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaIntegracion.dll
-D:\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaIntegracion.pdb
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.csprojResolveAssemblyReference.cache
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.dll
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
->>>>>>> parent of a8ac573... Ultima Modificacion
