@@ -42,13 +42,17 @@
   <ItemGroup>
     <Compile Include="GestorCita.cs" />
     <Compile Include="GestorCliente.cs" />
+    <Compile Include="GestorDetalleVenta.cs" />
     <Compile Include="GestorExpediente.cs" />
     <Compile Include="GestorGeneral.cs" />
     <Compile Include="GestorGraduacion.cs" />
+    <Compile Include="GestorImpresora.cs" />
     <Compile Include="GestorProducto.cs" />
     <Compile Include="GestorRecibo.cs" />
+    <Compile Include="GestorReportes.cs" />
     <Compile Include="GestorTarjeta.cs" />
     <Compile Include="GestorUsuario.cs" />
+    <Compile Include="GestorVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

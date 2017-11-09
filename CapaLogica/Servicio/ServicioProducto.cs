@@ -135,7 +135,24 @@ namespace ProyectoOptica.CapaLogica.Servicio
 
             return respuesta;
         }
+        //metodo para el SP de Consultar Producto 
+        public DataSet ConsultarProducto(string parametro)
+        {
+            miComando = new MySqlCommand();
+            Console.WriteLine("Gestor ConsultarProducto");
+            miComando.CommandText = "consultar_producto";
 
+            miComando.Parameters.Add("@parametro", MySqlDbType.VarChar, 128).Value = parametro;
+            //miComando.Parameters["@cod"].Value = cod;
+
+            DataSet miDataSet = new DataSet();
+            this.abrirConexion();
+
+            miDataSet = this.seleccionarInformacion(miComando);
+            this.cerrarConexion();
+
+            return miDataSet;
+        }
 
         //metodo para el SP de Consultar Producto por codigo
         public DataSet ConsultarProductoCodigo(string cod)

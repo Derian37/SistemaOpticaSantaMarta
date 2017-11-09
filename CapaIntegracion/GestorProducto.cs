@@ -54,6 +54,12 @@ namespace ProyectoOptica.CapaIntegracion
         //                return elProducto.EliminarProducto(eliminar);
         //        }
 
+        public DataSet ConsultarProducto(string parametro)
+        {
+            string codigo = '%' + parametro + '%';
+            using (ServicioProducto elProducto = new ServicioProducto())
+                return elProducto.ConsultarProducto(codigo);
+        }
         /// <summary>
         /// Metodo Consultar Producto
         /// </summary>

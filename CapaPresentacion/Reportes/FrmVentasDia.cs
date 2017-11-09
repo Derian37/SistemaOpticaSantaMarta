@@ -85,9 +85,9 @@ namespace CapaPresentacion.Reportes
                 doc.Add(element: Chunk.NEWLINE);
                 doc.Add(element: Chunk.NEWLINE);
 
-                img.ScaleToFit(fitWidth: 125f, fitHeight: 60f);
-                img.SetAbsolutePosition(absoluteX: 530, absoluteY: 730);
-                doc.Add(element: img);
+                //img.ScaleToFit(fitWidth: 125f, fitHeight: 60f);
+                //img.SetAbsolutePosition(absoluteX: 530, absoluteY: 730);
+                //doc.Add(element: img);
 
 
                 // Creamos una tabla que contendrá el nombre, apellido y país

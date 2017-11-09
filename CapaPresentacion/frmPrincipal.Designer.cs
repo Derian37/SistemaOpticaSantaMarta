@@ -35,6 +35,7 @@
             this.btnProductos = new System.Windows.Forms.Button();
             this.lbl_salir = new System.Windows.Forms.Label();
             this.btn_Salir = new System.Windows.Forms.Button();
+            this.btnAbonos = new System.Windows.Forms.Button();
             this.btnVales = new System.Windows.Forms.Button();
             this.btnProforma = new System.Windows.Forms.Button();
             this.btnRecibos = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolstrip_usuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAbonos = new System.Windows.Forms.Button();
             this.GrpPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUsuario)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -148,6 +148,22 @@
             this.btn_Salir.UseVisualStyleBackColor = true;
             this.btn_Salir.Click += new System.EventHandler(this.Btn_SalirClick);
             // 
+            // btnAbonos
+            // 
+            this.btnAbonos.AutoSize = true;
+            this.btnAbonos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbonos.FlatAppearance.BorderSize = 2;
+            this.btnAbonos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbonos.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbonos.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnAbonos.Location = new System.Drawing.Point(510, 358);
+            this.btnAbonos.Name = "btnAbonos";
+            this.btnAbonos.Size = new System.Drawing.Size(125, 52);
+            this.btnAbonos.TabIndex = 23;
+            this.btnAbonos.Text = "Factura";
+            this.btnAbonos.UseVisualStyleBackColor = true;
+            this.btnAbonos.Click += new System.EventHandler(this.btnAbonos_Click);
+            // 
             // btnVales
             // 
             this.btnVales.AutoSize = true;
@@ -192,7 +208,7 @@
             this.btnRecibos.Name = "btnRecibos";
             this.btnRecibos.Size = new System.Drawing.Size(125, 52);
             this.btnRecibos.TabIndex = 20;
-            this.btnRecibos.Text = "Recibos";
+            this.btnRecibos.Text = "Ventas";
             this.btnRecibos.UseVisualStyleBackColor = true;
             this.btnRecibos.Click += new System.EventHandler(this.btnRecibos_Click);
             // 
@@ -344,22 +360,6 @@
             this.toolstrip_usuarios.Size = new System.Drawing.Size(119, 22);
             this.toolstrip_usuarios.Text = "Usuarios";
             this.toolstrip_usuarios.Click += new System.EventHandler(this.toolstrip_usuarios_Click);
-            // 
-            // btnAbonos
-            // 
-            this.btnAbonos.AutoSize = true;
-            this.btnAbonos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbonos.FlatAppearance.BorderSize = 2;
-            this.btnAbonos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbonos.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbonos.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnAbonos.Location = new System.Drawing.Point(510, 358);
-            this.btnAbonos.Name = "btnAbonos";
-            this.btnAbonos.Size = new System.Drawing.Size(125, 52);
-            this.btnAbonos.TabIndex = 23;
-            this.btnAbonos.Text = "Factura";
-            this.btnAbonos.UseVisualStyleBackColor = true;
-            this.btnAbonos.Click += new System.EventHandler(this.btnAbonos_Click);
             // 
             // frmPrincipal
             // 
