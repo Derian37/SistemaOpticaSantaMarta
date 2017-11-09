@@ -71,6 +71,7 @@
             this.txt_usuario_Contrasena.PasswordChar = '*';
             this.txt_usuario_Contrasena.Size = new System.Drawing.Size(106, 22);
             this.txt_usuario_Contrasena.TabIndex = 5;
+            this.txt_usuario_Contrasena.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_usuario_Contrasena.TextChanged += new System.EventHandler(this.txt_usuario_Contrasena_TextChanged);
             // 
             // btnIngresar
