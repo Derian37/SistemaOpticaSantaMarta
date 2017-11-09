@@ -194,3 +194,4 @@ D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaInteg
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaLogica.pdb
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\itextsharp.xml
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\MySql.Data.xml
+C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\itextsharp.xml
