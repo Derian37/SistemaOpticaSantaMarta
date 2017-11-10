@@ -440,8 +440,8 @@
             // btn_Agregar
             // 
             this.btn_Agregar.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_Agregar.BackgroundImage = global::CapaPresentacion.Properties.Resources.check_min;
             this.btn_Agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Agregar.Image = global::CapaPresentacion.Properties.Resources.check_min;
             this.btn_Agregar.Location = new System.Drawing.Point(570, 483);
             this.btn_Agregar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Agregar.Name = "btn_Agregar";
@@ -454,8 +454,8 @@
             // btn_AgregarNombre
             // 
             this.btn_AgregarNombre.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_AgregarNombre.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregar_min;
             this.btn_AgregarNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_AgregarNombre.Image = global::CapaPresentacion.Properties.Resources.agregar_min;
             this.btn_AgregarNombre.Location = new System.Drawing.Point(448, 435);
             this.btn_AgregarNombre.Margin = new System.Windows.Forms.Padding(0);
             this.btn_AgregarNombre.Name = "btn_AgregarNombre";
@@ -467,8 +467,8 @@
             // 
             // btn_buscar
             // 
-            this.btn_buscar.BackgroundImage = global::CapaPresentacion.Properties.Resources.search_64;
             this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Image = global::CapaPresentacion.Properties.Resources.buscar_min;
             this.btn_buscar.Location = new System.Drawing.Point(441, 88);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(41, 38);
@@ -478,7 +478,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.LogoOptica;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(662, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 135);

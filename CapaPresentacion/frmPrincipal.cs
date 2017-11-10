@@ -86,8 +86,8 @@ namespace CapaPresentacion
 
         private void btnRecibos_Click(object sender, EventArgs e)
         {
-            frm_Recibos recibos = new frm_Recibos(id_usuario, usuario, cargo);
-            recibos.Show();
+            FrmContenedor cont = new FrmContenedor(id_usuario, usuario, cargo);
+            cont.Show();
             this.Close();
         }
 

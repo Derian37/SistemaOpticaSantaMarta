@@ -43,23 +43,30 @@
   <ItemGroup>
     <Compile Include="LogicaNegocio\Cita.cs" />
     <Compile Include="LogicaNegocio\Cliente.cs" />
+    <Compile Include="LogicaNegocio\DetalleVenta.cs" />
     <Compile Include="LogicaNegocio\Expediente.cs" />
     <Compile Include="LogicaNegocio\General.cs" />
     <Compile Include="LogicaNegocio\Graduacion.cs" />
+    <Compile Include="LogicaNegocio\Impresora.cs" />
     <Compile Include="LogicaNegocio\Producto.cs" />
     <Compile Include="LogicaNegocio\Recibo.cs" />
     <Compile Include="LogicaNegocio\Tarjeta.cs" />
     <Compile Include="LogicaNegocio\Usuario.cs" />
+    <Compile Include="LogicaNegocio\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicio\ServicioCita.cs" />
     <Compile Include="Servicio\ServicioCliente.cs" />
+    <Compile Include="Servicio\ServicioDetalleVenta.cs" />
     <Compile Include="Servicio\ServicioExpediente.cs" />
     <Compile Include="Servicio\ServicioGeneral.cs" />
     <Compile Include="Servicio\ServicioGraduacion.cs" />
+    <Compile Include="Servicio\ServicioImpresora.cs" />
     <Compile Include="Servicio\ServicioProducto.cs" />
     <Compile Include="Servicio\ServicioRecibo.cs" />
+    <Compile Include="Servicio\ServicioReportes.cs" />
     <Compile Include="Servicio\ServicioTarjeta.cs" />
     <Compile Include="Servicio\ServicioUsuario.cs" />
+    <Compile Include="Servicio\ServicioVenta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaConexion\CapaConexion.csproj">
