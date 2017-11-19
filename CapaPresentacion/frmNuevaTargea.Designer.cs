@@ -108,6 +108,7 @@
             this.btn_Crear.TabIndex = 0;
             this.btn_Crear.Text = "Crear";
             this.btn_Crear.UseVisualStyleBackColor = true;
+            this.btn_Crear.Click += new System.EventHandler(this.btn_Crear_Click);
             // 
             // txt_Seg
             // 

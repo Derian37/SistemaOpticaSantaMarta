@@ -112,5 +112,19 @@ namespace CapaPresentacion
             frm_Expediente.Show();
             this.SetVisibleCore(false);
         }
+
+        private void btn_Crear_Click(object sender, EventArgs e)
+        {
+            int Id_cliente = int.Parse(id_cliente);
+            using (GestorTarjeta elTarjeta = new GestorTarjeta())
+            {
+                elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value,double.Parse(txt_DI.Text), txt_recibida.Text, double.Parse(txt_Seg.Text));
+            }
+            MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            cargarCombos();
+           
+        }
+
+ 
     }
 }

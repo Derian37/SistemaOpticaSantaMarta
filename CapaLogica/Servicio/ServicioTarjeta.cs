@@ -30,48 +30,57 @@ namespace ProyectoOptica.CapaLogica.Servicio
 
         }
 
-        //public string InsertarCliente(Cliente elCliente)
-        //{
-        //    miComando = new MySqlCommand();
-        //    Console.WriteLine("Gestor insertar_cliente");
+        public string InsertarTarjeta(Tarjeta elTarjeta)
+        {
+            miComando = new MySqlCommand();
+            Console.WriteLine("Gestor insertar_tarjeta");
 
-        //    miComando.CommandText = "insertar_cliente";
+            miComando.CommandText = "insertar_tarjeta";
 
-        //    miComando.Parameters.Add("@cedula", MySqlDbType.VarChar);
-        //    miComando.Parameters["@cedula"].Value = elCliente.Cedula;
+            miComando.Parameters.Add("@id_cliente", MySqlDbType.Int32);
+            miComando.Parameters["@id_cliente"].Value = elTarjeta.Id_cliente;
 
-        //    miComando.Parameters.Add("@nombre", MySqlDbType.VarChar);
-        //    miComando.Parameters["@nombre"].Value = elCliente.Nombre;
+            miComando.Parameters.Add("@id_producto_armazon", MySqlDbType.Int32);
+            miComando.Parameters["@id_producto_armazon"].Value = elTarjeta.Id_producto;
 
-        //    miComando.Parameters.Add("@apellido1", MySqlDbType.VarChar);
-        //    miComando.Parameters["@apellido1"].Value = elCliente.Apellido1;
+            miComando.Parameters.Add("@detalle_armazon", MySqlDbType.VarChar);
+            miComando.Parameters["@detalle_armazon"].Value = elTarjeta.Detalle_armazon;
 
-        //    miComando.Parameters.Add("@apellido2", MySqlDbType.VarChar);
-        //    miComando.Parameters["@apellido2"].Value = elCliente.Apellido2;
+            miComando.Parameters.Add("@id_producto_lente", MySqlDbType.Int32);
+            miComando.Parameters["@id_producto_lente"].Value = elTarjeta.Id_anteojos;
 
-        //    miComando.Parameters.Add("@direccion", MySqlDbType.VarChar);
-        //    miComando.Parameters["@direccion"].Value = elCliente.Direccion;
+            miComando.Parameters.Add("@detalle_lente", MySqlDbType.VarChar);
+            miComando.Parameters["@detalle_lente"].Value = elTarjeta.Detalle_lente;
 
-        //    miComando.Parameters.Add("@telefono", MySqlDbType.VarChar);
-        //    miComando.Parameters["@telefono"].Value = elCliente.Telefono;
+            miComando.Parameters.Add("@fecha_entrega", MySqlDbType.DateTime);
+            miComando.Parameters["@fecha_entrega"].Value = elTarjeta.Fecha_entrega;
 
-        //    miComando.Parameters.Add("@deuda", MySqlDbType.Int16);
-        //    miComando.Parameters["@deuda"].Value = elCliente.Deuda;
+            miComando.Parameters.Add("@fecha", MySqlDbType.DateTime);
+            miComando.Parameters["@fecha"].Value = elTarjeta.Fecha;
 
-        //    miComando.Parameters.Add("@id_Ojo", MySqlDbType.Int16);
-        //    miComando.Parameters["@id_Ojo"].Value = elCliente.Id_ojo;
+            miComando.Parameters.Add("@id_graduacion", MySqlDbType.Int16);
+            miComando.Parameters["@id_graduacion"].Value = 4;
 
-        //    respuesta = this.ejecutaSentencia(miComando);
+            miComando.Parameters.Add("@distancia", MySqlDbType.Double);
+            miComando.Parameters["@distancia"].Value = elTarjeta.Distancia;
 
-        //    if (respuesta == "")
-        //        respuesta += "Se ha realizado correctamente la transaccion";
+            miComando.Parameters.Add("@recibida", MySqlDbType.VarChar);
+            miComando.Parameters["@recibida"].Value = elTarjeta.Recibida;
 
-        //    Console.WriteLine(respuesta);
-        //    Console.WriteLine("FIN Gestor Insertar Cliente");
+            miComando.Parameters.Add("@segineatos", MySqlDbType.Double);
+            miComando.Parameters["@segineatos"].Value = elTarjeta.Segineatos;
 
-        //    return respuesta;
+            respuesta = this.ejecutaSentencia(miComando);
 
-        //}
+            if (respuesta == "")
+                respuesta += "Se ha realizado correctamente la transaccion";
+
+            Console.WriteLine(respuesta);
+            Console.WriteLine("FIN Gestor Insertar Tarjeta");
+
+            return respuesta;
+
+        }
 
         public string ModificarTarjeta(Tarjeta elTarjeta)
         {
