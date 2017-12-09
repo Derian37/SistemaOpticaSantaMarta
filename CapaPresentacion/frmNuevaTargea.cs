@@ -136,6 +136,9 @@ namespace CapaPresentacion
            
         }
 
- 
+        private void frmNuevaTargea_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

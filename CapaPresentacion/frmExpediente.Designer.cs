@@ -416,6 +416,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExpediente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmExpediente_FormClosing);
             this.Load += new System.EventHandler(this.frmExpediente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpediente)).EndInit();
             this.grbInformacion.ResumeLayout(false);

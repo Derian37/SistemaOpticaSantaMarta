@@ -58,6 +58,10 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txt_recibida = new System.Windows.Forms.TextBox();
             this.dgvtargeta = new System.Windows.Forms.DataGridView();
+            this.ESP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EJE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adiciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbPanelUsuario = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.lbl_numeroRecibo = new System.Windows.Forms.Label();
@@ -85,10 +89,6 @@
             this.txt_doctor = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.ESP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EJE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Adiciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -393,6 +393,26 @@
             this.dgvtargeta.Size = new System.Drawing.Size(600, 248);
             this.dgvtargeta.TabIndex = 74;
             // 
+            // ESP
+            // 
+            this.ESP.HeaderText = "ESP";
+            this.ESP.Name = "ESP";
+            // 
+            // CIL
+            // 
+            this.CIL.HeaderText = "CIL";
+            this.CIL.Name = "CIL";
+            // 
+            // EJE
+            // 
+            this.EJE.HeaderText = "EJE";
+            this.EJE.Name = "EJE";
+            // 
+            // Adiciones
+            // 
+            this.Adiciones.HeaderText = "Adiciones";
+            this.Adiciones.Name = "Adiciones";
+            // 
             // grbPanelUsuario
             // 
             this.grbPanelUsuario.BackColor = System.Drawing.Color.Transparent;
@@ -680,26 +700,6 @@
             this.label10.TabIndex = 95;
             this.label10.Text = "Optometrista";
             // 
-            // ESP
-            // 
-            this.ESP.HeaderText = "ESP";
-            this.ESP.Name = "ESP";
-            // 
-            // CIL
-            // 
-            this.CIL.HeaderText = "CIL";
-            this.CIL.Name = "CIL";
-            // 
-            // EJE
-            // 
-            this.EJE.HeaderText = "EJE";
-            this.EJE.Name = "EJE";
-            // 
-            // Adiciones
-            // 
-            this.Adiciones.HeaderText = "Adiciones";
-            this.Adiciones.Name = "Adiciones";
-            // 
             // frmNuevaTargea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -725,6 +725,7 @@
             this.Name = "frmNuevaTargea";
             this.Text = "frmNuevaTargea";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNuevaTargea_FormClosing);
             this.Load += new System.EventHandler(this.frmNuevaTargea_Load_1);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();

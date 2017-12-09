@@ -214,5 +214,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void frmTarjeta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -71,5 +71,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void frmListaClientes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

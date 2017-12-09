@@ -116,5 +116,10 @@ namespace CapaPresentacion
             frmUsuarios usuarios = new frmUsuarios();
             usuarios.Show();
         }
+
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

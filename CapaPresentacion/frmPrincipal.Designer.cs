@@ -383,6 +383,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Optica Santa Marta Beta V 1.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrincipalLoad);
             this.GrpPrincipal.ResumeLayout(false);
             this.GrpPrincipal.PerformLayout();

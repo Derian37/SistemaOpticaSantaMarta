@@ -112,5 +112,10 @@ namespace CapaPresentacion
         {
            txt_Cliente_Cedula.Text = dgvExpediente.CurrentRow.Cells[1].Value.ToString();
         }
+
+        private void frmExpediente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

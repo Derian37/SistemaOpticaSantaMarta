@@ -342,5 +342,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void frmCitas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -471,6 +471,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCitas_FormClosing);
             this.Load += new System.EventHandler(this.frmCitas_Load);
             this.grb_menuCita.ResumeLayout(false);
             this.grb_menuCita.PerformLayout();

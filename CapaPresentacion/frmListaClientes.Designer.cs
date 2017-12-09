@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaClientes));
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.grbInformacion = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label_id = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.btnRecuperarDuenno = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.volverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.grbInformacion.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -81,6 +81,28 @@
             this.grbInformacion.TabStop = false;
             this.grbInformacion.Text = "Seleccine cliente al que desea crear targeta";
             this.grbInformacion.Enter += new System.EventHandler(this.grbInformacion_Enter);
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBox3.Location = new System.Drawing.Point(328, 60);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(169, 20);
+            this.textBox3.TabIndex = 77;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(254, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 19);
+            this.label1.TabIndex = 76;
+            this.label1.Text = "Apellido:";
             // 
             // label_id
             // 
@@ -194,28 +216,6 @@
             this.volverToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.volverToolStripMenuItem.Text = "Volver";
             // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox3.Location = new System.Drawing.Point(328, 60);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(169, 20);
-            this.textBox3.TabIndex = 77;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(254, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 19);
-            this.label1.TabIndex = 76;
-            this.label1.Text = "Apellido:";
-            // 
             // frmListaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +226,7 @@
             this.Controls.Add(this.dgvCliente);
             this.Name = "frmListaClientes";
             this.Text = "frmListaClientes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmListaClientes_FormClosing);
             this.Load += new System.EventHandler(this.frmListaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.grbInformacion.ResumeLayout(false);

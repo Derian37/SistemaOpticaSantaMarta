@@ -325,6 +325,7 @@
             this.Name = "frmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUsuarios_FormClosing);
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             this.gbx_datosUsuario.ResumeLayout(false);
             this.gbx_datosUsuario.PerformLayout();
