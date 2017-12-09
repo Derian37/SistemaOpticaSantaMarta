@@ -17,9 +17,9 @@ namespace ProyectoOptica.CapaIntegracion
 
         public void Dispose() { }
 
-        public string InsertarTarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha,Double distancia, string recibida, Double segineatos)
+        public string InsertarTarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha,int id_graduacion, Double distancia, string recibida, Double segineatos)
         {
-            CapaLogica.LogicaNegocio.Tarjeta nuevoTargeta = new Tarjeta(id_cliente, id_anteojos, detalle_armazon, id_producto, detalle_lente, fecha_entrega, fecha, distancia, recibida, segineatos);
+            CapaLogica.LogicaNegocio.Tarjeta nuevoTargeta = new Tarjeta(id_cliente, id_anteojos, detalle_armazon, id_producto, detalle_lente, fecha_entrega, fecha, id_graduacion, distancia, recibida, segineatos);
             using (ServicioTarjeta elTarjeta = new ServicioTarjeta())
                 return elTarjeta.InsertarTarjeta(nuevoTargeta);
         }

@@ -25,9 +25,9 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
         #endregion ATRIBUTOS
 
      
-        public Tarjeta(int id_tarjeta,int id_cliente, int id_anteojos,string detalle_armazon, int id_producto,string detalle_lente, DateTime fecha_entrega, DateTime fecha, double distancia, string recibida, double segineatos)
+        public Tarjeta(int id_cliente, int id_anteojos,string detalle_armazon, int id_producto,string detalle_lente, DateTime fecha_entrega, DateTime fecha,int id_graduacion ,double distancia, string recibida, double segineatos)
         {
-            this.Id_tarjeta = id_tarjeta;
+           
             this.Id_cliente = id_cliente;
             this.Id_anteojos = id_anteojos;
             this.Detalle_armazon = detalle_armazon;
@@ -35,6 +35,7 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
             this.Detalle_lente = detalle_lente;
             this.Fecha_entrega = fecha_entrega;
             this.Fecha = fecha;
+            this.Id_graduacion = id_graduacion;
             this.Distancia = distancia;
             this.Recibida = recibida;
             this.Segineatos = segineatos;

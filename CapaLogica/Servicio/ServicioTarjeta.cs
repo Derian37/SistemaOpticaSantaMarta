@@ -33,9 +33,9 @@ namespace ProyectoOptica.CapaLogica.Servicio
         public string InsertarTarjeta(Tarjeta elTarjeta)
         {
             miComando = new MySqlCommand();
-            Console.WriteLine("Gestor insertar_tarjeta");
+            Console.WriteLine("Gestor insertar_tarjeta_nueva");
 
-            miComando.CommandText = "insertar_tarjeta";
+            miComando.CommandText = "insertar_tarjeta_nueva";
 
             miComando.Parameters.Add("@id_cliente", MySqlDbType.Int32);
             miComando.Parameters["@id_cliente"].Value = elTarjeta.Id_cliente;
@@ -49,8 +49,8 @@ namespace ProyectoOptica.CapaLogica.Servicio
             miComando.Parameters.Add("@id_producto_lente", MySqlDbType.Int32);
             miComando.Parameters["@id_producto_lente"].Value = elTarjeta.Id_anteojos;
 
-            miComando.Parameters.Add("@detalle_lente", MySqlDbType.VarChar);
-            miComando.Parameters["@detalle_lente"].Value = elTarjeta.Detalle_lente;
+            miComando.Parameters.Add("@detalle_lenten", MySqlDbType.VarChar);
+            miComando.Parameters["@detalle_lenten"].Value = elTarjeta.Detalle_lente;
 
             miComando.Parameters.Add("@fecha_entrega", MySqlDbType.DateTime);
             miComando.Parameters["@fecha_entrega"].Value = elTarjeta.Fecha_entrega;
@@ -59,7 +59,7 @@ namespace ProyectoOptica.CapaLogica.Servicio
             miComando.Parameters["@fecha"].Value = elTarjeta.Fecha;
 
             miComando.Parameters.Add("@id_graduacion", MySqlDbType.Int16);
-            miComando.Parameters["@id_graduacion"].Value = 4;
+            miComando.Parameters["@id_graduacion"].Value = elTarjeta.Id_graduacion;
 
             miComando.Parameters.Add("@distancia", MySqlDbType.Double);
             miComando.Parameters["@distancia"].Value = elTarjeta.Distancia;
@@ -76,7 +76,7 @@ namespace ProyectoOptica.CapaLogica.Servicio
                 respuesta += "Se ha realizado correctamente la transaccion";
 
             Console.WriteLine(respuesta);
-            Console.WriteLine("FIN Gestor Insertar Tarjeta");
+            Console.WriteLine("FIN Gestor Insertar Tarjeta Nueva");
 
             return respuesta;
 

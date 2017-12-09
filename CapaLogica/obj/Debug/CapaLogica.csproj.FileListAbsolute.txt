@@ -43,3 +43,9 @@ C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\o
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.dll
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.pdb
+C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaLogica.dll
+C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaLogica.pdb
+C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaLogica\obj\Debug\CapaLogica.pdb

@@ -85,6 +85,10 @@
             this.txt_doctor = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.ESP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EJE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adiciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -376,6 +380,11 @@
             this.dgvtargeta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvtargeta.BackgroundColor = System.Drawing.Color.White;
             this.dgvtargeta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvtargeta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ESP,
+            this.CIL,
+            this.EJE,
+            this.Adiciones});
             this.dgvtargeta.Location = new System.Drawing.Point(140, 140);
             this.dgvtargeta.Name = "dgvtargeta";
             this.dgvtargeta.RowHeadersWidth = 40;
@@ -671,6 +680,26 @@
             this.label10.TabIndex = 95;
             this.label10.Text = "Optometrista";
             // 
+            // ESP
+            // 
+            this.ESP.HeaderText = "ESP";
+            this.ESP.Name = "ESP";
+            // 
+            // CIL
+            // 
+            this.CIL.HeaderText = "CIL";
+            this.CIL.Name = "CIL";
+            // 
+            // EJE
+            // 
+            this.EJE.HeaderText = "EJE";
+            this.EJE.Name = "EJE";
+            // 
+            // Adiciones
+            // 
+            this.Adiciones.HeaderText = "Adiciones";
+            this.Adiciones.Name = "Adiciones";
+            // 
             // frmNuevaTargea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -782,5 +811,9 @@
         private System.Windows.Forms.TextBox txt_doctor;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EJE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Adiciones;
     }
 }

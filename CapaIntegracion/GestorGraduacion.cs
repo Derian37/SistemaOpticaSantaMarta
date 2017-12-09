@@ -11,41 +11,48 @@ using System.Threading.Tasks;
 
 namespace ProyectoOptica.CapaIntegracion
 {
-    
-            public class GestorGraduacion : servicio, IDisposable
+
+    public class GestorGraduacion : servicio, IDisposable
+    {
+        public GestorGraduacion() { }
+
+        public void Dispose() { }
+
+ 
+        public string InsertarGraduacion(float esferaiz, float cilindroiz, int ejeiz, float adicionesiz, float esferader, float cilindroder, int ejeder, float adicionesder)
         {
-            public GestorGraduacion() { }
-
-            public void Dispose() { }
-
-        //Metodo intermedio que consulta una cita por cedula por medio de la capa logica
-        //public DataSet ConsultarGraduacion(string cliente_id)
-        //{
-        //    using (ServicioGraduacion laGraduacion = new ServicioGraduacion())
-        //        return laGraduacion.ConsultarGraduacion(cliente_id);
-        //}
-
-        public string ModificarGraduacionOD(int id_cliente, float esfera, float cilindro, int eje, float adiciones)
-        {
-            Graduacion nuevoGraduacion = new Graduacion(id_cliente, esfera, cilindro, eje, adiciones);
+            Graduacion nuevoGraduacion = new Graduacion(esferaiz, cilindroiz, ejeiz, adicionesiz, esferader, cilindroder, ejeder, adicionesder);
             using (ServicioGraduacion elGraduacion = new ServicioGraduacion())
-                return elGraduacion.ModificarGraduacionOD(nuevoGraduacion);
+                return elGraduacion.InsertarGraduacion(nuevoGraduacion);
         }
 
-        public string ModificarGraduacionOI(int id_cliente, float esfera, float cilindro, int eje, float adiciones)
+        public string ModificarGraduacion(int id_cliente, float esferaiz, float cilindroiz, int ejeiz, float adicionesiz, float esferader, float cilindroder, int ejeder, float adicionesder)
         {
-            Graduacion nuevoGraduacion = new Graduacion(id_cliente, esfera, cilindro, eje, adiciones);
+            Graduacion nuevoGraduacion = new Graduacion(id_cliente, esferaiz, cilindroiz, ejeiz, adicionesiz, esferader, cilindroder, ejeder, adicionesder);
             using (ServicioGraduacion elGraduacion = new ServicioGraduacion())
-                return elGraduacion.ModificarGraduacionOI(nuevoGraduacion);
+                return elGraduacion.ModificarGraduacion(nuevoGraduacion);
         }
+
+
 
         public DataTable ConsultarGraduacion(string cliente_id)
+        {
+            using (ServicioGraduacion laGraduacion = new ServicioGraduacion())
             {
-                using (ServicioGraduacion laGraduacion = new ServicioGraduacion())
-                    return laGraduacion.ConsultarGraduacion(cliente_id);
+                return laGraduacion.ConsultarGraduacion(cliente_id);
             }
-          
+
         }
 
-    
+        public DataSet UltimaGraduacion()
+        {
+
+            using (ServicioGraduacion laGraduacion = new ServicioGraduacion())
+            {
+                return laGraduacion.UltimaGraduacion();
+            }
+        }
+
+
+    }
 }

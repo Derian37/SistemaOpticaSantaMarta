@@ -31,27 +31,36 @@ namespace ProyectoOptica.CapaLogica.Servicio
 
         }
 
-        public string ModificarGraduacionOD(Graduacion elGraduacion)
+        public string InsertarGraduacion(Graduacion elGraduacion)
         {
             miComando = new MySqlCommand();
-            Console.WriteLine("Gestor modificar_graduacion_ojoDerecho");
+            Console.WriteLine("Gestor insertar_graduacion");
 
-            miComando.CommandText = "modificar_graduacion_ojoDerecho";
+            miComando.CommandText = "insertar_graduacion";
+            
+            miComando.Parameters.Add("@esiz", MySqlDbType.Float);
+            miComando.Parameters["@esiz"].Value = elGraduacion.Esfera;
 
-            miComando.Parameters.Add("@id_cliente", MySqlDbType.Int64);
-            miComando.Parameters["@id_cliente"].Value = elGraduacion.Id_cliente;
+            miComando.Parameters.Add("@ciliz", MySqlDbType.Float);
+            miComando.Parameters["@ciliz"].Value = elGraduacion.Cilindro;
 
-            miComando.Parameters.Add("@esp", MySqlDbType.Float);
-            miComando.Parameters["@esp"].Value = elGraduacion.Esfera;
+            miComando.Parameters.Add("@ejeiz", MySqlDbType.Int64);
+            miComando.Parameters["@ejeiz"].Value = elGraduacion.Eje;
 
-            miComando.Parameters.Add("@cil", MySqlDbType.Float);
-            miComando.Parameters["@cil"].Value = elGraduacion.Cilindro;
+            miComando.Parameters.Add("@adiz", MySqlDbType.Float);
+            miComando.Parameters["@adiz"].Value = elGraduacion.Adiciones;
 
-            miComando.Parameters.Add("@eje", MySqlDbType.Int64);
-            miComando.Parameters["@eje"].Value = elGraduacion.Eje;
+            miComando.Parameters.Add("@esder", MySqlDbType.Float);
+            miComando.Parameters["@esder"].Value = elGraduacion.Esferader;
 
-            miComando.Parameters.Add("@adi", MySqlDbType.Float);
-            miComando.Parameters["@adi"].Value = elGraduacion.Adiciones;
+            miComando.Parameters.Add("@cilder", MySqlDbType.Float);
+            miComando.Parameters["@cilder"].Value = elGraduacion.Cilindroder;
+
+            miComando.Parameters.Add("@ejeder", MySqlDbType.Int64);
+            miComando.Parameters["@ejeder"].Value = elGraduacion.Ejeder;
+
+            miComando.Parameters.Add("@ader", MySqlDbType.Float);
+            miComando.Parameters["@ader"].Value = elGraduacion.Adicionesder;
 
             respuesta = this.ejecutaSentencia(miComando);
 
@@ -59,32 +68,44 @@ namespace ProyectoOptica.CapaLogica.Servicio
                 respuesta += "Se ha realizado correctamente la transacción";
 
             Console.WriteLine(respuesta);
-            Console.WriteLine("Fin Gestor modificar_graduacion_ojoDerecho");
+            Console.WriteLine("Fin Gestor insertar_graduacion");
 
             return respuesta;
         }
 
-        public string ModificarGraduacionOI(Graduacion elGraduacion)
+        public string ModificarGraduacion(Graduacion elGraduacion)
         {
             miComando = new MySqlCommand();
-            Console.WriteLine("Gestor modificar_graduacion_ojoIzquierdo");
+            Console.WriteLine("Gestor modificar_graduacion");
 
-            miComando.CommandText = "modificar_graduacion_ojoIzquierdo";
+            miComando.CommandText = "modificar_graduacion";
 
-            miComando.Parameters.Add("@id_cliente", MySqlDbType.Int64);
-            miComando.Parameters["@id_cliente"].Value = elGraduacion.Id_cliente;
+            miComando.Parameters.Add("@id_client", MySqlDbType.Int64);
+            miComando.Parameters["@id_client"].Value = elGraduacion.Id_cliente;
 
-            miComando.Parameters.Add("@esfe", MySqlDbType.Float);
-            miComando.Parameters["@esfe"].Value = elGraduacion.Esfera;
+            miComando.Parameters.Add("@esiz", MySqlDbType.Float);
+            miComando.Parameters["@esiz"].Value = elGraduacion.Esfera;
 
-            miComando.Parameters.Add("@cili", MySqlDbType.Float);
-            miComando.Parameters["@cili"].Value = elGraduacion.Cilindro;
+            miComando.Parameters.Add("@ciliz", MySqlDbType.Float);
+            miComando.Parameters["@ciliz"].Value = elGraduacion.Cilindro;
 
-            miComando.Parameters.Add("@ejee", MySqlDbType.Int64);
-            miComando.Parameters["@ejee"].Value = elGraduacion.Eje;
+            miComando.Parameters.Add("@ejeiz", MySqlDbType.Int64);
+            miComando.Parameters["@ejeiz"].Value = elGraduacion.Eje;
 
-            miComando.Parameters.Add("@adis", MySqlDbType.Float);
-            miComando.Parameters["@adis"].Value = elGraduacion.Adiciones;
+            miComando.Parameters.Add("@adiz", MySqlDbType.Float);
+            miComando.Parameters["@adiz"].Value = elGraduacion.Adiciones;
+
+            miComando.Parameters.Add("@esder", MySqlDbType.Float);
+            miComando.Parameters["@esder"].Value = elGraduacion.Esferader;
+
+            miComando.Parameters.Add("@cilder", MySqlDbType.Float);
+            miComando.Parameters["@cilder"].Value = elGraduacion.Cilindroder;
+
+            miComando.Parameters.Add("@ejeder", MySqlDbType.Int64);
+            miComando.Parameters["@ejeder"].Value = elGraduacion.Ejeder;
+
+            miComando.Parameters.Add("@adder", MySqlDbType.Float);
+            miComando.Parameters["@adder"].Value = elGraduacion.Adicionesder;
 
             respuesta = this.ejecutaSentencia(miComando);
 
@@ -92,13 +113,12 @@ namespace ProyectoOptica.CapaLogica.Servicio
                 respuesta += "Se ha realizado correctamente la transacción";
 
             Console.WriteLine(respuesta);
-            Console.WriteLine("Fin Gestor modificar_graduacion_ojoIzquierdo");
+            Console.WriteLine("Fin Gestor modificar_graduacion");
 
             return respuesta;
         }
 
-
-        public DataTable ConsultarGraduacion(string cliente_id)
+       public DataTable ConsultarGraduacion(string cliente_id)
         {
             miComando = new MySqlCommand();
             Console.WriteLine("Gestor ListarGraduacion");
@@ -113,6 +133,20 @@ namespace ProyectoOptica.CapaLogica.Servicio
             DataTable miTablaDatos = laGraduacion.Tables[0];
 
             return miTablaDatos;
+        }
+     
+        public DataSet UltimaGraduacion()
+        {
+            miComando.CommandText = "mostrar_ultima_graduacion";
+                
+
+            DataSet miDataSet = new DataSet();
+            this.abrirConexion();
+
+            miDataSet = this.seleccionarInformacion(miComando);
+            this.cerrarConexion();
+
+            return miDataSet;
         }
     }
 }
