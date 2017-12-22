@@ -16,6 +16,7 @@ namespace CapaPresentacion
     {
         int id_usuario;
         string nombre, cargo, nombreImpresora;
+        int id_cliente;
         int id_producto = 0;
         string cod_producto = "";
         string tipo = "";
@@ -27,6 +28,8 @@ namespace CapaPresentacion
         public static double iva;
         double abono;
         double saldo;
+        double efectivo;
+        double tarjeta;
         private DataTable dtVentas = new DataTable();
         private DataSet dsVentas = new DataSet();
         public FrmVentas(int id_usuario, string nombre, string cargo, string nombreImpresora)
@@ -132,8 +135,9 @@ namespace CapaPresentacion
                 {
                     abono = cobrar.Abono;
                     saldo = cobrar.Saldo;
+                    efectivo = cobrar.Efectivo;
+                    tarjeta = cobrar.Tarjeta;
                     Cobrar();
-                    //btn_AgregarNombre.Focus();
                 }
                 cobrar.Dispose();
             }
@@ -142,7 +146,43 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message, "btn_realizarVenta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 saldo = 0;
             }
+            GuardarVenta();
+            //GuardarDetalleVenta();
         }
+
+        private void GuardarVenta()
+        {
+            int id_pago = 0;
+            string fecha = DateTime.Now.ToString();
+            if (efectivo > 0)
+            {
+                id_pago = 1;
+            }
+            else if (tarjeta > 0)
+            {
+                id_pago = 2;
+            }
+            //try
+            //{
+                using (GestorVenta venta = new GestorVenta())
+                {
+                    MessageBox.Show("Prueba id cliente" + id_cliente + "fecha: " + fecha + "id_usuario " + id_usuario + "id_pago " + id_pago + " A");
+                    venta.InsertarVenta(id_cliente, fecha, id_usuario, 1, 'A');
+                }
+            //}
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show("Error "+e);
+            //}
+            
+        }
+
+        private void GuardarDetalleVenta()
+        {
+            throw new NotImplementedException();
+        }
+
+        
 
         private void Cobrar()
         {
@@ -198,7 +238,8 @@ namespace CapaPresentacion
             ticket.AgregarTotales("IVA..........", lbl_iva.Text);
             ticket.AgregarTotales("Total........", lbl_total.Text);
             ticket.TextoIzquierda("");
-            ticket.AgregarTotales("Abono.....", abono.ToString());
+            ticket.AgregarTotales("Efectivo.....", efectivo.ToString());
+            ticket.AgregarTotales("Tarjeta.....", tarjeta.ToString());
             ticket.AgregarTotales("Saldo.......", saldo.ToString());
 
             //texto final 
@@ -233,7 +274,7 @@ namespace CapaPresentacion
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             int cant = int.Parse(txt_cantidad.Text);
-            if (cod_producto != "" && cant > 0 && cant < cantidad)
+            if (cod_producto != "" && cant > 0 && cant <= cantidad)
             {
                 bool existe = false;
                 int num_fila = 0;
@@ -267,23 +308,9 @@ namespace CapaPresentacion
                         cont_fila++;
                     }
                 }
-                total = 0;
-                subtotal = 0;
-                iva = 0;
-
-                foreach (DataGridViewRow fila in dgv_ventas.Rows)
-                {
-                    string tipo = Convert.ToString(fila.Cells[3].Value);
-                    if (tipo == "GRAVADO")
-                    {
-                        iva += Convert.ToDouble(fila.Cells[5].Value) * 0.13;
-                    }
-                    subtotal += Convert.ToDouble(fila.Cells[5].Value);
-                }
-                lbl_subtotal.Text = "₡" + subtotal;
-                lbl_iva.Text = "₡" + iva;
-                lbl_total.Text = "₡" + (iva + subtotal).ToString();
-                total = iva + subtotal;
+               
+                CalcularTotales();
+                
             }
             else if (cod_producto == "")
             {
@@ -309,6 +336,31 @@ namespace CapaPresentacion
             txt_codigoProducto.Focus();
         }
 
+        private void CalcularTotales()
+        {
+            total = 0;
+            subtotal = 0;
+            iva = 0;
+            foreach (DataGridViewRow fila in dgv_ventas.Rows)
+            {
+                string tipo = Convert.ToString(fila.Cells[3].Value);
+                if (tipo == "GRAVADO")
+                {
+                    iva += Convert.ToDouble(fila.Cells[5].Value) * 0.13;
+                }
+                subtotal += Convert.ToDouble(fila.Cells[5].Value);
+            }
+            lbl_subtotal.Text = subtotal.ToString();
+            lbl_iva.Text = iva.ToString();
+            lbl_total.Text = (iva + subtotal).ToString();
+            total = iva + subtotal;
+        }
+
+        private void dgv_ventas_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            CalcularTotales();
+        }
+
         private void btn_AgregarNombre_Click(object sender, EventArgs e)
         {
             AgregarNombreProducto();
@@ -323,6 +375,7 @@ namespace CapaPresentacion
                 if (!(cliente.NombreCompleto == ""))
                 {
                     txt_nombreCliente.Text = cliente.NombreCompleto;
+                    id_cliente = int.Parse(cliente.Cedula_cliente);
                     txt_codigoProducto.Focus();
                 }
                 cliente.Dispose();

@@ -44,6 +44,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_cerrar = new System.Windows.Forms.Button();
+            this.btn_buscarProducto = new System.Windows.Forms.Button();
+            this.btn_realizarVenta = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_numeroConsecutivo = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -68,9 +71,6 @@
             this.btn_AgregarNombre = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_cerrar = new System.Windows.Forms.Button();
-            this.btn_buscarProducto = new System.Windows.Forms.Button();
-            this.btn_realizarVenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventas)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -113,6 +113,7 @@
             this.dgv_ventas.ShowRowErrors = false;
             this.dgv_ventas.Size = new System.Drawing.Size(783, 262);
             this.dgv_ventas.TabIndex = 1;
+            this.dgv_ventas.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgv_ventas_RowsRemoved);
             // 
             // ColCodigo
             // 
@@ -185,7 +186,7 @@
             // 
             this.txt_cantidad.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txt_cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cantidad.Location = new System.Drawing.Point(495, 483);
+            this.txt_cantidad.Location = new System.Drawing.Point(495, 486);
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(45, 29);
             this.txt_cantidad.TabIndex = 6;
@@ -221,6 +222,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(783, 88);
             this.panel1.TabIndex = 10;
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_cerrar.Image = global::CapaPresentacion.Properties.Resources.cerrar_min;
+            this.btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_cerrar.Location = new System.Drawing.Point(545, 26);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(206, 32);
+            this.btn_cerrar.TabIndex = 10;
+            this.btn_cerrar.Text = "Cerrar (Esc)";
+            this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
+            // btn_buscarProducto
+            // 
+            this.btn_buscarProducto.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_buscarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_buscarProducto.Image = global::CapaPresentacion.Properties.Resources.buscar_min;
+            this.btn_buscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_buscarProducto.Location = new System.Drawing.Point(29, 26);
+            this.btn_buscarProducto.Name = "btn_buscarProducto";
+            this.btn_buscarProducto.Size = new System.Drawing.Size(206, 32);
+            this.btn_buscarProducto.TabIndex = 5;
+            this.btn_buscarProducto.Text = "Buscar Producto (F1)";
+            this.btn_buscarProducto.UseVisualStyleBackColor = false;
+            this.btn_buscarProducto.Click += new System.EventHandler(this.btn_buscarProducto_Click);
+            // 
+            // btn_realizarVenta
+            // 
+            this.btn_realizarVenta.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_realizarVenta.Image = global::CapaPresentacion.Properties.Resources.imprimir_min;
+            this.btn_realizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_realizarVenta.Location = new System.Drawing.Point(288, 26);
+            this.btn_realizarVenta.Name = "btn_realizarVenta";
+            this.btn_realizarVenta.Size = new System.Drawing.Size(206, 32);
+            this.btn_realizarVenta.TabIndex = 7;
+            this.btn_realizarVenta.Text = "Realizar Venta (F5)";
+            this.btn_realizarVenta.UseVisualStyleBackColor = false;
+            this.btn_realizarVenta.Click += new System.EventHandler(this.btn_realizarVenta_Click);
             // 
             // label5
             // 
@@ -440,12 +481,13 @@
             // btn_Agregar
             // 
             this.btn_Agregar.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_Agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Agregar.Image = global::CapaPresentacion.Properties.Resources.check_min;
-            this.btn_Agregar.Location = new System.Drawing.Point(570, 483);
+            this.btn_Agregar.Location = new System.Drawing.Point(543, 482);
             this.btn_Agregar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(41, 31);
+            this.btn_Agregar.Size = new System.Drawing.Size(41, 36);
             this.btn_Agregar.TabIndex = 34;
             this.btn_Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Agregar.UseVisualStyleBackColor = false;
@@ -455,11 +497,12 @@
             // 
             this.btn_AgregarNombre.BackColor = System.Drawing.SystemColors.Window;
             this.btn_AgregarNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_AgregarNombre.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarNombre.Image = global::CapaPresentacion.Properties.Resources.agregar_min;
-            this.btn_AgregarNombre.Location = new System.Drawing.Point(448, 435);
+            this.btn_AgregarNombre.Location = new System.Drawing.Point(448, 430);
             this.btn_AgregarNombre.Margin = new System.Windows.Forms.Padding(0);
             this.btn_AgregarNombre.Name = "btn_AgregarNombre";
-            this.btn_AgregarNombre.Size = new System.Drawing.Size(41, 31);
+            this.btn_AgregarNombre.Size = new System.Drawing.Size(41, 36);
             this.btn_AgregarNombre.TabIndex = 44;
             this.btn_AgregarNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_AgregarNombre.UseVisualStyleBackColor = false;
@@ -467,13 +510,14 @@
             // 
             // btn_buscar
             // 
+            this.btn_buscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_buscar.Image = global::CapaPresentacion.Properties.Resources.buscar_min;
             this.btn_buscar.Location = new System.Drawing.Point(441, 88);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(41, 38);
             this.btn_buscar.TabIndex = 28;
-            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.UseVisualStyleBackColor = false;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // pictureBox1
@@ -486,49 +530,8 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_cerrar
-            // 
-            this.btn_cerrar.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_cerrar.Image = global::CapaPresentacion.Properties.Resources.cerrar_min;
-            this.btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_cerrar.Location = new System.Drawing.Point(545, 26);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(206, 32);
-            this.btn_cerrar.TabIndex = 10;
-            this.btn_cerrar.Text = "Cerrar (Esc)";
-            this.btn_cerrar.UseVisualStyleBackColor = false;
-            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
-            // 
-            // btn_buscarProducto
-            // 
-            this.btn_buscarProducto.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_buscarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_buscarProducto.Image = global::CapaPresentacion.Properties.Resources.buscar_min;
-            this.btn_buscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_buscarProducto.Location = new System.Drawing.Point(29, 26);
-            this.btn_buscarProducto.Name = "btn_buscarProducto";
-            this.btn_buscarProducto.Size = new System.Drawing.Size(206, 32);
-            this.btn_buscarProducto.TabIndex = 5;
-            this.btn_buscarProducto.Text = "Buscar Producto (F1)";
-            this.btn_buscarProducto.UseVisualStyleBackColor = false;
-            this.btn_buscarProducto.Click += new System.EventHandler(this.btn_buscarProducto_Click);
-            // 
-            // btn_realizarVenta
-            // 
-            this.btn_realizarVenta.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_realizarVenta.Image = global::CapaPresentacion.Properties.Resources.imprimir_min;
-            this.btn_realizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_realizarVenta.Location = new System.Drawing.Point(288, 26);
-            this.btn_realizarVenta.Name = "btn_realizarVenta";
-            this.btn_realizarVenta.Size = new System.Drawing.Size(206, 32);
-            this.btn_realizarVenta.TabIndex = 7;
-            this.btn_realizarVenta.Text = "Realizar Venta (F5)";
-            this.btn_realizarVenta.UseVisualStyleBackColor = false;
-            this.btn_realizarVenta.Click += new System.EventHandler(this.btn_realizarVenta_Click);
-            // 
             // FrmVentas
             // 
-            this.AcceptButton = this.btn_Agregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;

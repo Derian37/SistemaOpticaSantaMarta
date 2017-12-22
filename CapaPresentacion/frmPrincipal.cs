@@ -88,7 +88,7 @@ namespace CapaPresentacion
         {
             FrmContenedor cont = new FrmContenedor(id_usuario, usuario, cargo);
             cont.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnProforma_Click(object sender, EventArgs e)
@@ -120,6 +120,11 @@ namespace CapaPresentacion
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_Reportes_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmVentasDia rpt = new Reportes.FrmVentasDia(id_usuario, usuario, cargo);
         }
     }
 }

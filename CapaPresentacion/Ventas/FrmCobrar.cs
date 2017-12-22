@@ -13,16 +13,21 @@ namespace CapaPresentacion.Ventas
     public partial class FrmCobrar : Form
     {
         int id_usuario;
-        string nombre, cargo, plata;
+        string nombre, cargo, dinero, tarj;
+        double subtotal;
         double total;
-        double abono;
+        double efectivo;
+        double tarjeta;
         double saldo;
+        double abono;
         bool imprimir;
 
         #region set y get
         public double Total { get => total; set => total = value; }
-        public double Abono { get => abono; set => abono = value; }
+        public double Efectivo { get => efectivo; set => efectivo = value; }
+        public double Tarjeta { get => tarjeta; set => tarjeta = value; }
         public double Saldo { get => saldo; set => saldo = value; }
+        public double Abono { get => abono; set => abono = value; }
         public bool Imprimir { get => imprimir; set => imprimir = value; }
         #endregion
 
@@ -39,6 +44,7 @@ namespace CapaPresentacion.Ventas
         private void FrmCobrar_Load(object sender, EventArgs e)
         {
             lbl_cantPagar.Text = total.ToString();
+            subtotal = 0;
             txt_Abono.Focus();
         }
 
@@ -52,16 +58,43 @@ namespace CapaPresentacion.Ventas
             else
             {
                 string digito = e.KeyChar.ToString();
-                plata = string.Concat(plata, digito);
-                abono = double.Parse(plata);
-                saldo = (abono - total)*-1;
+                dinero = string.Concat(dinero, digito);
+                efectivo = double.Parse(dinero);
+                abono = efectivo;
+                subtotal = total - efectivo;
+                saldo = subtotal;
                 lbl_Saldo.Text = saldo.ToString();
-                imprimir = true;
+            }
+        }
+
+        private void txt_Tarjeta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Solo permite numeros
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                string digito = e.KeyChar.ToString();
+                tarj = string.Concat(tarj, digito);
+                tarjeta = double.Parse(tarj);
+                if (subtotal > 0)
+                {
+                    subtotal -= tarjeta;
+                }
+                else
+                {
+                    subtotal = total - tarjeta;
+                }
+                saldo = subtotal;
+                lbl_Saldo.Text = saldo.ToString();
             }
         }
 
         private void btn_cobrar_Click(object sender, EventArgs e)
         {
+            imprimir = true;
             this.Close();
         }
     }

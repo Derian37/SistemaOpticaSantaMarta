@@ -35,12 +35,12 @@ namespace ProyectoOptica.CapaLogica.Servicio
             miComando = new MySqlCommand();
             Console.WriteLine("Gestor insertar_Venta");
 
-            miComando.CommandText = "insertar_Venta";
+            miComando.CommandText = "insertar_venta";
 
             miComando.Parameters.Add("@id_cliente", MySqlDbType.Int16);
             miComando.Parameters["@id_cliente"].Value = elVenta.Id_cliente;
 
-            miComando.Parameters.Add("@fecha", MySqlDbType.DateTime);
+            miComando.Parameters.Add("@fecha", MySqlDbType.VarChar);
             miComando.Parameters["@fecha"].Value = elVenta.Fecha;
 
             miComando.Parameters.Add("@id_usuario", MySqlDbType.Int16);
@@ -78,7 +78,7 @@ namespace ProyectoOptica.CapaLogica.Servicio
             miComando.Parameters.Add("@id_cliente", MySqlDbType.Int16);
             miComando.Parameters["@id_cliente"].Value = elVenta.Id_cliente;
 
-            miComando.Parameters.Add("@fecha", MySqlDbType.DateTime);
+            miComando.Parameters.Add("@fecha", MySqlDbType.VarChar);
             miComando.Parameters["@fecha"].Value = elVenta.Fecha;
 
             miComando.Parameters.Add("@id_usuario", MySqlDbType.Int16);

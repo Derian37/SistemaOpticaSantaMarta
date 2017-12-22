@@ -31,14 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grb_menuProducto = new System.Windows.Forms.GroupBox();
-            this.rbtn_nombreProducto = new System.Windows.Forms.RadioButton();
-            this.rbtn_codigoProducto = new System.Windows.Forms.RadioButton();
             this.lbl_editarProducto = new System.Windows.Forms.Label();
             this.lbl_agregarProducto = new System.Windows.Forms.Label();
-            this.btn_buscarProducto = new System.Windows.Forms.Button();
             this.lblDuenno_nombre = new System.Windows.Forms.Label();
             this.txt_codigo_Producto = new System.Windows.Forms.TextBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
             this.btnInsertarProducto = new System.Windows.Forms.Button();
             this.btn_EditarProducto = new System.Windows.Forms.Button();
             this.lbl_eliminarProducto = new System.Windows.Forms.Label();
@@ -68,14 +64,10 @@
             // grb_menuProducto
             // 
             this.grb_menuProducto.BackColor = System.Drawing.Color.Transparent;
-            this.grb_menuProducto.Controls.Add(this.rbtn_nombreProducto);
-            this.grb_menuProducto.Controls.Add(this.rbtn_codigoProducto);
             this.grb_menuProducto.Controls.Add(this.lbl_editarProducto);
             this.grb_menuProducto.Controls.Add(this.lbl_agregarProducto);
-            this.grb_menuProducto.Controls.Add(this.btn_buscarProducto);
             this.grb_menuProducto.Controls.Add(this.lblDuenno_nombre);
             this.grb_menuProducto.Controls.Add(this.txt_codigo_Producto);
-            this.grb_menuProducto.Controls.Add(this.lblBuscar);
             this.grb_menuProducto.Controls.Add(this.btnInsertarProducto);
             this.grb_menuProducto.Controls.Add(this.btn_EditarProducto);
             this.grb_menuProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -89,31 +81,9 @@
             this.grb_menuProducto.TabStop = false;
             this.grb_menuProducto.Text = "Menú";
             // 
-            // rbtn_nombreProducto
-            // 
-            this.rbtn_nombreProducto.AutoSize = true;
-            this.rbtn_nombreProducto.Location = new System.Drawing.Point(190, 31);
-            this.rbtn_nombreProducto.Name = "rbtn_nombreProducto";
-            this.rbtn_nombreProducto.Size = new System.Drawing.Size(81, 23);
-            this.rbtn_nombreProducto.TabIndex = 73;
-            this.rbtn_nombreProducto.Text = "Nombre";
-            this.rbtn_nombreProducto.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_codigoProducto
-            // 
-            this.rbtn_codigoProducto.AutoSize = true;
-            this.rbtn_codigoProducto.Checked = true;
-            this.rbtn_codigoProducto.Location = new System.Drawing.Point(100, 31);
-            this.rbtn_codigoProducto.Name = "rbtn_codigoProducto";
-            this.rbtn_codigoProducto.Size = new System.Drawing.Size(74, 23);
-            this.rbtn_codigoProducto.TabIndex = 72;
-            this.rbtn_codigoProducto.TabStop = true;
-            this.rbtn_codigoProducto.Text = "Código";
-            this.rbtn_codigoProducto.UseVisualStyleBackColor = true;
-            // 
             // lbl_editarProducto
             // 
-            this.lbl_editarProducto.Location = new System.Drawing.Point(291, 167);
+            this.lbl_editarProducto.Location = new System.Drawing.Point(223, 167);
             this.lbl_editarProducto.Name = "lbl_editarProducto";
             this.lbl_editarProducto.Size = new System.Drawing.Size(58, 23);
             this.lbl_editarProducto.TabIndex = 71;
@@ -121,23 +91,11 @@
             // 
             // lbl_agregarProducto
             // 
-            this.lbl_agregarProducto.Location = new System.Drawing.Point(186, 167);
+            this.lbl_agregarProducto.Location = new System.Drawing.Point(118, 167);
             this.lbl_agregarProducto.Name = "lbl_agregarProducto";
             this.lbl_agregarProducto.Size = new System.Drawing.Size(72, 23);
             this.lbl_agregarProducto.TabIndex = 69;
             this.lbl_agregarProducto.Text = "Agregar";
-            // 
-            // btn_buscarProducto
-            // 
-            this.btn_buscarProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscarProducto.BackgroundImage")));
-            this.btn_buscarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_buscarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscarProducto.Location = new System.Drawing.Point(89, 107);
-            this.btn_buscarProducto.Name = "btn_buscarProducto";
-            this.btn_buscarProducto.Size = new System.Drawing.Size(62, 56);
-            this.btn_buscarProducto.TabIndex = 62;
-            this.btn_buscarProducto.UseVisualStyleBackColor = true;
-            this.btn_buscarProducto.Click += new System.EventHandler(this.Btn_buscarProductoClick);
             // 
             // lblDuenno_nombre
             // 
@@ -161,20 +119,7 @@
             this.txt_codigo_Producto.Name = "txt_codigo_Producto";
             this.txt_codigo_Producto.Size = new System.Drawing.Size(190, 26);
             this.txt_codigo_Producto.TabIndex = 58;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.lblBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBuscar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(89, 167);
-            this.lblBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(56, 19);
-            this.lblBuscar.TabIndex = 55;
-            this.lblBuscar.Text = "Buscar";
-            this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
+            this.txt_codigo_Producto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_codigo_Producto_KeyUp);
             // 
             // btnInsertarProducto
             // 
@@ -182,7 +127,7 @@
             this.btnInsertarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsertarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsertarProducto.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnInsertarProducto.Location = new System.Drawing.Point(190, 107);
+            this.btnInsertarProducto.Location = new System.Drawing.Point(122, 107);
             this.btnInsertarProducto.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertarProducto.Name = "btnInsertarProducto";
             this.btnInsertarProducto.Size = new System.Drawing.Size(62, 57);
@@ -197,7 +142,7 @@
             this.btn_EditarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_EditarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EditarProducto.FlatAppearance.BorderSize = 0;
-            this.btn_EditarProducto.Location = new System.Drawing.Point(287, 108);
+            this.btn_EditarProducto.Location = new System.Drawing.Point(219, 108);
             this.btn_EditarProducto.Margin = new System.Windows.Forms.Padding(0);
             this.btn_EditarProducto.Name = "btn_EditarProducto";
             this.btn_EditarProducto.Size = new System.Drawing.Size(62, 56);
@@ -433,7 +378,6 @@
             this.PerformLayout();
 
         }
-        private System.Windows.Forms.Button btn_buscarProducto;
         private System.Windows.Forms.Label lbl_agregarProducto;
         private System.Windows.Forms.Label lbl_eliminarProducto;
         private System.Windows.Forms.Label lbl_editarProducto;
@@ -444,7 +388,6 @@
         public System.Windows.Forms.Button btnInsertarProducto;
         private System.Windows.Forms.Label lblDuenno_nombre;
         private System.Windows.Forms.TextBox txt_codigo_Producto;
-        private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btn_volver;
@@ -461,8 +404,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_EliminarProducto;
         private System.Windows.Forms.Button btn_EditarProducto;
-        private System.Windows.Forms.RadioButton rbtn_nombreProducto;
-        private System.Windows.Forms.RadioButton rbtn_codigoProducto;
         private System.Windows.Forms.Button btn_guardarProducto;
         private System.Windows.Forms.Label lbl_guardarProducto;
     }

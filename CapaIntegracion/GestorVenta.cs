@@ -17,14 +17,14 @@ namespace ProyectoOptica.CapaIntegracion
         public void Dispose() { }
 
 
-        public string InsertarVenta(int id_cliente, DateTime fecha, int id_usuario, int id_pago, char estado)
+        public string InsertarVenta(int id_cliente, string fecha, int id_usuario, int id_pago, char estado)
         {
             Venta nuevaVenta = new Venta(id_cliente, fecha, id_usuario, id_pago, estado);
             using (ServicioVenta elVenta = new ServicioVenta())
                 return elVenta.InsertarVenta(nuevaVenta);
         }
 
-        public string ModificarVenta(int id_Venta, int id_cliente, DateTime fecha, int id_usuario, int id_pago, char estado)
+        public string ModificarVenta(int id_Venta, int id_cliente, string fecha, int id_usuario, int id_pago, char estado)
         {
             Venta modificarVenta = new Venta(id_Venta, id_cliente, fecha, id_usuario, id_pago, estado);
             using (ServicioVenta elVenta = new ServicioVenta())

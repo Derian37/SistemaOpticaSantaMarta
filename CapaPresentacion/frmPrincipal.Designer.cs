@@ -52,9 +52,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolstrip_usuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Reportes = new System.Windows.Forms.Button();
             this.GrpPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUsuario)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +88,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrpPrincipal.AutoSize = true;
             this.GrpPrincipal.BackColor = System.Drawing.Color.AliceBlue;
+            this.GrpPrincipal.Controls.Add(this.btn_Reportes);
             this.GrpPrincipal.Controls.Add(this.btnProductos);
             this.GrpPrincipal.Controls.Add(this.lbl_salir);
             this.GrpPrincipal.Controls.Add(this.btn_Salir);
@@ -97,9 +103,9 @@
             this.GrpPrincipal.Controls.Add(this.label5);
             this.GrpPrincipal.Controls.Add(this.btnExpediente);
             this.GrpPrincipal.Controls.Add(this.lblExpediente);
-            this.GrpPrincipal.Location = new System.Drawing.Point(55, 83);
+            this.GrpPrincipal.Location = new System.Drawing.Point(55, 116);
             this.GrpPrincipal.Name = "GrpPrincipal";
-            this.GrpPrincipal.Size = new System.Drawing.Size(1091, 578);
+            this.GrpPrincipal.Size = new System.Drawing.Size(1091, 574);
             this.GrpPrincipal.TabIndex = 11;
             this.GrpPrincipal.TabStop = false;
             this.GrpPrincipal.Enter += new System.EventHandler(this.GrpPrincipal_Enter);
@@ -156,7 +162,7 @@
             this.btnAbonos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbonos.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbonos.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnAbonos.Location = new System.Drawing.Point(510, 358);
+            this.btnAbonos.Location = new System.Drawing.Point(510, 274);
             this.btnAbonos.Name = "btnAbonos";
             this.btnAbonos.Size = new System.Drawing.Size(125, 52);
             this.btnAbonos.TabIndex = 23;
@@ -172,7 +178,7 @@
             this.btnVales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVales.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVales.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVales.Location = new System.Drawing.Point(510, 265);
+            this.btnVales.Location = new System.Drawing.Point(510, 202);
             this.btnVales.Name = "btnVales";
             this.btnVales.Size = new System.Drawing.Size(125, 52);
             this.btnVales.TabIndex = 22;
@@ -188,7 +194,7 @@
             this.btnProforma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProforma.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProforma.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnProforma.Location = new System.Drawing.Point(510, 174);
+            this.btnProforma.Location = new System.Drawing.Point(510, 130);
             this.btnProforma.Name = "btnProforma";
             this.btnProforma.Size = new System.Drawing.Size(125, 52);
             this.btnProforma.TabIndex = 21;
@@ -204,7 +210,7 @@
             this.btnRecibos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecibos.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecibos.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnRecibos.Location = new System.Drawing.Point(510, 87);
+            this.btnRecibos.Location = new System.Drawing.Point(510, 58);
             this.btnRecibos.Name = "btnRecibos";
             this.btnRecibos.Size = new System.Drawing.Size(125, 52);
             this.btnRecibos.TabIndex = 20;
@@ -361,6 +367,52 @@
             this.toolstrip_usuarios.Text = "Usuarios";
             this.toolstrip_usuarios.Click += new System.EventHandler(this.toolstrip_usuarios_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(473, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(265, 31);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Óptica Santa Marta";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(452, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(306, 24);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Comprometidos por tu Salud Visual";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(857, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(132, 91);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_Reportes
+            // 
+            this.btn_Reportes.AutoSize = true;
+            this.btn_Reportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Reportes.FlatAppearance.BorderSize = 2;
+            this.btn_Reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Reportes.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reportes.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btn_Reportes.Location = new System.Drawing.Point(510, 346);
+            this.btn_Reportes.Name = "btn_Reportes";
+            this.btn_Reportes.Size = new System.Drawing.Size(125, 52);
+            this.btn_Reportes.TabIndex = 27;
+            this.btn_Reportes.Text = "Reportes";
+            this.btn_Reportes.UseVisualStyleBackColor = true;
+            this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -368,6 +420,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1211, 696);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_usuarioNombre);
             this.Controls.Add(this.lbl_usuarioCargo);
             this.Controls.Add(this.GrpPrincipal);
@@ -390,6 +445,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctUsuario)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,5 +476,9 @@
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolstrip_usuarios;
         private System.Windows.Forms.Button btnAbonos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_Reportes;
     }
 }

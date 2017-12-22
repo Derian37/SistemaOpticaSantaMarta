@@ -12,7 +12,7 @@ namespace CapaLogica.LogicaNegocio
     {
         #region ATRIBUTOS
         private int id_venta;
-        private DateTime fecha;
+        private string fecha;
         private int id_cliente;
         private int id_usuario;
         private int id_pago;
@@ -26,7 +26,7 @@ namespace CapaLogica.LogicaNegocio
         {
         }
         
-        public Venta(int Pid_cliente, DateTime Pfecha, int Pid_usuario, int Pid_pago, char Pestado)
+        public Venta(int Pid_cliente, string Pfecha, int Pid_usuario, int Pid_pago, char Pestado)
         {
             Id_cliente = Pid_cliente;
             fecha = Pfecha;
@@ -35,7 +35,7 @@ namespace CapaLogica.LogicaNegocio
             Estado = Pestado;
         }
 
-        public Venta(int Pid_venta, int Pid_cliente, DateTime Pfecha, int Pid_usuario, int Pid_pago, char Pestado)
+        public Venta(int Pid_venta, int Pid_cliente, string Pfecha, int Pid_usuario, int Pid_pago, char Pestado)
         {
             Id_venta = Pid_venta;
             Id_cliente = Pid_cliente;
@@ -53,7 +53,7 @@ namespace CapaLogica.LogicaNegocio
         #region set and get
         public int Id_venta { get => id_venta; set => id_venta = value; }
         public int Id_cliente { get => id_cliente; set => id_cliente = value; }
-        public DateTime Fecha { get => fecha; set => fecha = value; }
+        public string Fecha { get => fecha; set => fecha = value; }
         public int Id_usuario { get => id_usuario; set => id_usuario = value; }
         public int Id_pago { get => id_pago; set => id_pago = value; }
         public char Estado { get => estado;  set => estado = value; }

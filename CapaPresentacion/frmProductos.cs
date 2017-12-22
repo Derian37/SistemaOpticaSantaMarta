@@ -41,62 +41,23 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-
-        void Btn_buscarProductoClick(object sender, EventArgs e)
-        {
-            bloquearCamposProducto();
-        	string buscar = txt_codigo_Producto.Text;
-			gbx_datosProducto.Visible = true;
-        	gbx_datosProducto.Enabled = true;
-            btn_guardarProducto.Visible = false;
-            lbl_guardarProducto.Visible = false;
-
-            using (GestorProducto producto = new GestorProducto())
-            {
-                if (rbtn_codigoProducto.Checked == true)
-                {
-                    codig = txt_codigo_Producto.Text;
-                    this.dsProductos = producto.ConsultarProductoCodigo(buscar);
-                    this.dtProductos = this.dsProductos.Tables[0];
-                    dgvProductos.DataSource = this.dtProductos;
-
-                        dgvProductos.Columns["id_productos"].Visible = false;
-                        dgvProductos.Columns["codigo"].HeaderText = "CODIGO";
-                        dgvProductos.Columns["nombre"].HeaderText = "NOMBRE";
-                        dgvProductos.Columns["detalle"].HeaderText = "DETALLE";
-                        dgvProductos.Columns["monto"].HeaderText = "MONTO";
-                        dgvProductos.Columns["cantidad"].HeaderText = "CANTIDAD";
-                        dgvProductos.Columns["estado"].Visible = false;
-                    
-                }
-                else
-                {
-                    this.dsProductos = producto.ConsultarProductoNombre(buscar);
-                    this.dtProductos = this.dsProductos.Tables[0];
-                    dgvProductos.DataSource = this.dtProductos;
-
-                    dgvProductos.Columns["id_productos"].Visible = false;
-                    dgvProductos.Columns["codigo"].HeaderText = "CODIGO";
-                    dgvProductos.Columns["nombre"].HeaderText = "NOMBRE";
-                    dgvProductos.Columns["detalle"].HeaderText = "DETALLE";
-                    dgvProductos.Columns["monto"].HeaderText = "MONTO";
-                    dgvProductos.Columns["cantidad"].HeaderText = "CANTIDAD";
-                    dgvProductos.Columns["estado"].Visible = false;
-                }
-
-
-            }
-            CargarDatosProducto();
-        }
-
+        
         private void CargarDatosProducto()
         {
-            txt_codigoProducto.Text = this.dtProductos.Rows[0]["codigo"].ToString();
-            txt_nombreProducto.Text = this.dtProductos.Rows[0]["nombre"].ToString();
-            txt_detalleProducto.Text = this.dtProductos.Rows[0]["detalle"].ToString();
-            txt_montoProducto.Text = this.dtProductos.Rows[0]["monto"].ToString();
-            txt_cantidadProducto.Text = this.dtProductos.Rows[0]["cantidad"].ToString();
-
+            try
+            {
+                txt_codigoProducto.Text = this.dtProductos.Rows[0]["codigo"].ToString();
+                txt_nombreProducto.Text = this.dtProductos.Rows[0]["nombre"].ToString();
+                txt_detalleProducto.Text = this.dtProductos.Rows[0]["detalle"].ToString();
+                txt_montoProducto.Text = this.dtProductos.Rows[0]["monto"].ToString();
+                txt_cantidadProducto.Text = this.dtProductos.Rows[0]["cantidad"].ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Producto no encontrado", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_codigo_Producto.Text = "";
+                txt_codigo_Producto.Focus();
+            }           
         }
 
         // Se carga el grid con los datos de la tabla de sql citas
@@ -274,6 +235,32 @@ namespace CapaPresentacion
         private void lblBuscar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_codigo_Producto_KeyUp(object sender, KeyEventArgs e)
+        {
+            bloquearCamposProducto();
+            string buscar = txt_codigo_Producto.Text;
+            gbx_datosProducto.Visible = true;
+            gbx_datosProducto.Enabled = true;
+            btn_guardarProducto.Visible = false;
+            lbl_guardarProducto.Visible = false;
+
+            using (GestorProducto producto = new GestorProducto())
+            {
+                this.dsProductos = producto.ConsultarProducto(buscar);
+                this.dtProductos = this.dsProductos.Tables[0];
+                dgvProductos.DataSource = this.dtProductos;
+
+                dgvProductos.Columns["id_productos"].Visible = false;
+                dgvProductos.Columns["codigo"].HeaderText = "CODIGO";
+                dgvProductos.Columns["nombre"].HeaderText = "NOMBRE";
+                dgvProductos.Columns["detalle"].HeaderText = "DETALLE";
+                dgvProductos.Columns["monto"].HeaderText = "MONTO";
+                dgvProductos.Columns["cantidad"].HeaderText = "CANTIDAD";
+                dgvProductos.Columns["estado"].Visible = false;
+            }
+            CargarDatosProducto();
         }
     }
 }
