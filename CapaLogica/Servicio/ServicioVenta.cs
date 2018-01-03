@@ -1,7 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 //Librerias MySql
+using MySql.Data;
 using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 //Bibliotecas del sistema
 using ProyectoOptica.CapaConexion;
 using CapaLogica.LogicaNegocio;
@@ -33,23 +39,27 @@ namespace ProyectoOptica.CapaLogica.Servicio
         public string InsertarVenta(Venta elVenta)
         {
             miComando = new MySqlCommand();
-            Console.WriteLine("Gestor insertar_Venta");
+
+            Console.WriteLine("Gestor insertar_venta");
 
             miComando.CommandText = "insertar_venta";
 
             miComando.Parameters.Add("@id_cliente", MySqlDbType.Int16);
             miComando.Parameters["@id_cliente"].Value = elVenta.Id_cliente;
 
-            miComando.Parameters.Add("@fecha", MySqlDbType.VarChar);
-            miComando.Parameters["@fecha"].Value = elVenta.Fecha;
-
             miComando.Parameters.Add("@id_usuario", MySqlDbType.Int16);
             miComando.Parameters["@id_usuario"].Value = elVenta.Id_usuario;
 
-            miComando.Parameters.Add("@id_pago", MySqlDbType.Int16);
-            miComando.Parameters["@id_pago"].Value = elVenta.Id_pago;
+            miComando.Parameters.Add("@fecha", MySqlDbType.VarChar);
+            miComando.Parameters["@fecha"].Value = elVenta.Fecha;
 
-            miComando.Parameters.Add("@estado", MySqlDbType.Int16);
+            miComando.Parameters.Add("@modo_pago", MySqlDbType.Int16);
+            miComando.Parameters["@modo_pago"].Value = elVenta.Modo_pago;
+
+            miComando.Parameters.Add("@saldo", MySqlDbType.Double);
+            miComando.Parameters["@saldo"].Value = elVenta.Saldo;
+
+            miComando.Parameters.Add("@estado", MySqlDbType.VarChar);
             miComando.Parameters["@estado"].Value = elVenta.Estado;
 
             respuesta = this.ejecutaSentencia(miComando);
@@ -65,29 +75,29 @@ namespace ProyectoOptica.CapaLogica.Servicio
         }
 
         //metodo para la SP de Modificar Venta
-        public string ModificarVenta(Venta elVenta)
+        public string InsertarDetalleVenta(Venta elVenta)
         {
             miComando = new MySqlCommand();
             Console.WriteLine("Gestor modificar_Venta");
 
-            miComando.CommandText = "modificar_Venta";
+            miComando.CommandText = "insertar_DetalleVenta";
 
             miComando.Parameters.Add("@id_venta", MySqlDbType.Int16);
             miComando.Parameters["@id_venta"].Value = elVenta.Id_venta;
 
-            miComando.Parameters.Add("@id_cliente", MySqlDbType.Int16);
-            miComando.Parameters["@id_cliente"].Value = elVenta.Id_cliente;
+            miComando.Parameters.Add("@id_producto", MySqlDbType.Int16);
+            miComando.Parameters["@id_producto"].Value = elVenta.Id_producto;
 
-            miComando.Parameters.Add("@fecha", MySqlDbType.VarChar);
-            miComando.Parameters["@fecha"].Value = elVenta.Fecha;
+            miComando.Parameters.Add("@cantidad", MySqlDbType.Int16);
+            miComando.Parameters["@cantidad"].Value = elVenta.Cantidad;
 
-            miComando.Parameters.Add("@id_usuario", MySqlDbType.Int16);
-            miComando.Parameters["@id_usuario"].Value = elVenta.Id_usuario;
+            miComando.Parameters.Add("@precio", MySqlDbType.Double);
+            miComando.Parameters["@precio"].Value = elVenta.Precio;
 
-            miComando.Parameters.Add("@id_pago", MySqlDbType.Int16);
-            miComando.Parameters["@id_pago"].Value = elVenta.Id_pago;
+            miComando.Parameters.Add("@subtotal", MySqlDbType.Double);
+            miComando.Parameters["@subtotal"].Value = elVenta.Subtotal;
 
-            miComando.Parameters.Add("@estado", MySqlDbType.Int16);
+            miComando.Parameters.Add("@estado", MySqlDbType.VarChar);
             miComando.Parameters["@estado"].Value = elVenta.Estado;
 
             respuesta = this.ejecutaSentencia(miComando);

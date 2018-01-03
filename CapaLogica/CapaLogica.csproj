@@ -63,7 +63,7 @@
     <Compile Include="Servicio\ServicioImpresora.cs" />
     <Compile Include="Servicio\ServicioProducto.cs" />
     <Compile Include="Servicio\ServicioRecibo.cs" />
-    <Compile Include="Servicio\ServicioReportes.cs" />
+    <Compile Include="Servicio\ServicioReporte.cs" />
     <Compile Include="Servicio\ServicioTarjeta.cs" />
     <Compile Include="Servicio\ServicioUsuario.cs" />
     <Compile Include="Servicio\ServicioVenta.cs" />

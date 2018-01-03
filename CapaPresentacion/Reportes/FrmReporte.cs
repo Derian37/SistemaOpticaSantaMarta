@@ -20,7 +20,7 @@ using ProyectoOptica.CapaIntegracion;
 
 namespace CapaPresentacion.Reportes
 {
-    public partial class FrmVentasDia : Form
+    public partial class FrmReporte : Form
     {
         int id_usuario;
         string nombre;
@@ -28,7 +28,7 @@ namespace CapaPresentacion.Reportes
         private DataTable dtReporte = new DataTable();
         private DataSet dsReporte = new DataSet();
        // iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("../../Resources/LogoOptica.png");
-        public FrmVentasDia(int id_usuario, string nombre, string cargo)
+        public FrmReporte(int id_usuario, string nombre, string cargo)
         {
             InitializeComponent();
             this.id_usuario = id_usuario;
@@ -36,9 +36,9 @@ namespace CapaPresentacion.Reportes
             this.cargo = cargo;
         }
 
-        private void FrmVentasDia_Load(object sender, EventArgs e)
+        private void FrmReporte_Load(object sender, EventArgs e)
         {
-            //CargarReporte();
+            CargarReporte();
         }
 
         private void CargarReporte()
@@ -162,51 +162,16 @@ namespace CapaPresentacion.Reportes
             this.Close();
         }
 
-        private void btn_seleccionar_Click(object sender, EventArgs e)
-        {
-            if(cmb_tipo_reporte.SelectedItem.ToString() == "Semanal")
-            {
-                lbl_mes.Visible = false;
-                cmb_mes.Visible = false;
-                lbl_fecha_inicial.Visible = true;
-                lbl_fecha_final.Visible = true;
-                dtp_fecha1.Visible = true;
-                dtp_fecha2.Visible = true;
-                btn_generar_reporte.Visible = true;
-            }
-            else if (cmb_tipo_reporte.SelectedItem.ToString() == "Mensual")
-            {
-                lbl_fecha_inicial.Visible = false;
-                lbl_fecha_final.Visible = false;
-                dtp_fecha1.Visible = false;
-                dtp_fecha2.Visible = false;
-                lbl_mes.Visible = true;
-                cmb_mes.Visible = true;
-                btn_generar_reporte.Visible = true;
-            }
-            else if (cmb_tipo_reporte.SelectedItem.ToString() == "Diario")
-            {
-                lbl_dia.Visible = true;
-                dtp_fecha1.Visible = true;
-                lbl_fecha_inicial.Visible = false;
-                lbl_fecha_final.Visible = false;
-                dtp_fecha2.Visible = false;
-                lbl_mes.Visible = false;
-                cmb_mes.Visible = false;
-                btn_generar_reporte.Visible = true;
-            }
-        }
-
+        
         private void btn_generar_reporte_Click(object sender, EventArgs e)
         {
-            string fecha1 = dtp_fecha1.Text;
-            string fecha2 = dtp_fecha2.Text;
+            string fecha = DateTime.Now.ToLongDateString();
             
             try
             {
                 using(GestorReportes reporte = new GestorReportes())
                 {
-                    this.dsReporte = reporte.ReporteSemanal(fecha1, fecha2);
+                    this.dsReporte = reporte.ReporteDia(fecha);
                     this.dtReporte = this.dsReporte.Tables[0];
 
                     Dgv_reporte_ventas.DataSource = this.dtReporte;
@@ -225,6 +190,13 @@ namespace CapaPresentacion.Reportes
                 MessageBox.Show("Error de SQL: " + ex.Message);
             }
         }
+
+        private void tbReporte_dia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }       
 }
 

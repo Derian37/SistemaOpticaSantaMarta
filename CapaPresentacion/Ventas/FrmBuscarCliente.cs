@@ -15,11 +15,13 @@ namespace CapaPresentacion
     {
         int id_usuario;
         string nombre, cargo;
+        private int id_cliente;
         private string cedula_cliente;
         string nombreCompleto;
         private DataTable dtVentas = new DataTable();
         private DataSet dsVentas = new DataSet();
 
+        public int Id_cliente { get => id_cliente; set => id_cliente = value; }
         public string Cedula_cliente { get => cedula_cliente; set => cedula_cliente = value; }
         public string NombreCompleto { get => nombreCompleto; set => nombreCompleto = value; }
 
@@ -62,7 +64,8 @@ namespace CapaPresentacion
                     {
                         dsVentas = cliente.ConsultarClienteCedula(cedulaCliente);
                         dtVentas = this.dsVentas.Tables[0];
-                        Cedula_cliente = dtVentas.Rows[0]["id_cliente"].ToString();
+                        Id_cliente = int.Parse(dtVentas.Rows[0]["id_cliente"].ToString());
+                        Cedula_cliente = dtVentas.Rows[0]["cedula"].ToString();
                         string nombre = dtVentas.Rows[0]["nombre"].ToString();
                         string apellido1 = dtVentas.Rows[0]["apellido1"].ToString();
                         string apellido2 = dtVentas.Rows[0]["apellido2"].ToString();
@@ -101,6 +104,8 @@ namespace CapaPresentacion
 
         private void dgv_Clientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Id_cliente = int.Parse(dgv_Clientes.CurrentRow.Cells[0].Value.ToString());
+            Cedula_cliente = dgv_Clientes.CurrentRow.Cells[1].Value.ToString();
             string nombre = dgv_Clientes.CurrentRow.Cells[2].Value.ToString();
             string apellido1 = dgv_Clientes.CurrentRow.Cells[3].Value.ToString();
             string apellido2 = dgv_Clientes.CurrentRow.Cells[4].Value.ToString();

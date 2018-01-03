@@ -24,5 +24,11 @@ namespace ProyectoOptica.CapaIntegracion
                 return reporte.ReporteSemanal(fecha1, fecha2);
         }
 
+        public DataSet ReporteDia(string fecha)
+        {
+            using (ServicioReporte reporte = new ServicioReporte())
+                return reporte.ReporteDia(fecha);
+        }
+
     }
 }

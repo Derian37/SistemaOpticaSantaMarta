@@ -18,6 +18,7 @@ namespace CapaPresentacion
         string nombre, cargo, nombreImpresora;
         int id_cliente;
         int id_producto = 0;
+        int numRecibo;
         string cod_producto = "";
         string tipo = "";
         float monto;
@@ -147,13 +148,13 @@ namespace CapaPresentacion
                 saldo = 0;
             }
             GuardarVenta();
-            //GuardarDetalleVenta();
+            GuardarDetalleVenta();
         }
 
         private void GuardarVenta()
         {
             int id_pago = 0;
-            string fecha = DateTime.Now.ToString();
+            string fecha = DateTime.Now.ToShortDateString();
             if (efectivo > 0)
             {
                 id_pago = 1;
@@ -162,24 +163,52 @@ namespace CapaPresentacion
             {
                 id_pago = 2;
             }
-            //try
-            //{
+            try
+            {
                 using (GestorVenta venta = new GestorVenta())
                 {
-                    MessageBox.Show("Prueba id cliente" + id_cliente + "fecha: " + fecha + "id_usuario " + id_usuario + "id_pago " + id_pago + " A");
-                    venta.InsertarVenta(id_cliente, fecha, id_usuario, 1, 'A');
+                    venta.InsertarVenta(id_cliente, id_usuario, fecha, id_pago, saldo, "A");
                 }
-            //}
-            //catch (Exception e)
-            //{
-            //    MessageBox.Show("Error "+e);
-            //}
-            
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error " + e);
+            }
+
         }
 
         private void GuardarDetalleVenta()
         {
-            throw new NotImplementedException();
+            string fecha = DateTime.Now.ToShortDateString();
+            try
+            {
+                using (GestorVenta venta = new GestorVenta())
+                {
+                    dsVentas = venta.ConsultarUltimoVenta();
+                    dtVentas = this.dsVentas.Tables[0];
+
+                    foreach (DataGridViewRow fila in dgv_ventas.Rows)
+                    {
+                        //agregamos la cantidad, el precio y subtotal
+                        int id_prod = Convert.ToInt32(fila.Cells[0].Value);
+                        int canti = Convert.ToInt32(fila.Cells[2].Value);
+                        double prec = Convert.ToDouble(fila.Cells[4].Value);
+                        double subtotal = Convert.ToDouble(fila.Cells[5].Value);
+                        //int canti = int.Parse(fila.Cells[2].Value.ToString());
+                        //float prec = float.Parse(fila.Cells[4].Value.ToString());
+                        //float subtotal = float.Parse(fila.Cells[5].Value.ToString());
+                        MessageBox.Show("recibo " + numRecibo + " prod " + id_producto + " cant " + canti + " prec " + prec + " subt " + subtotal);
+                        venta.InsertarDetalleVenta(numRecibo, id_producto, canti, prec, subtotal, "A");
+
+                    }
+
+                   
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error " + e);
+            }
         }
 
         
@@ -203,7 +232,6 @@ namespace CapaPresentacion
             ticket.LineasGuion();
             //agregamos numero de recibo y fecha
             ticket.TextoIzquierda("");
-            string numRecibo = lbl_numeroConsecutivo.Text;
             string fecha = DateTime.Now.ToShortDateString();
             string hora = DateTime.Now.ToShortTimeString();
             ticket.TextoIzquierda("RECIBO N° " + numRecibo);
@@ -250,14 +278,12 @@ namespace CapaPresentacion
         }
         private void CargarNumFactura()
         {
-            string ultimoRecibo;
             using (GestorVenta recibo = new GestorVenta())
             {
                 dsVentas = recibo.ConsultarUltimoVenta();
                 dtVentas = this.dsVentas.Tables[0];
 
-                ultimoRecibo = this.dtVentas.Rows[0]["siguiente"].ToString();
-                lbl_numeroConsecutivo.Text = ultimoRecibo;
+                numRecibo = int.Parse(this.dtVentas.Rows[0]["siguiente"].ToString());
             }             
         }
 
@@ -375,7 +401,7 @@ namespace CapaPresentacion
                 if (!(cliente.NombreCompleto == ""))
                 {
                     txt_nombreCliente.Text = cliente.NombreCompleto;
-                    id_cliente = int.Parse(cliente.Cedula_cliente);
+                    id_cliente = cliente.Id_cliente;
                     txt_codigoProducto.Focus();
                 }
                 cliente.Dispose();

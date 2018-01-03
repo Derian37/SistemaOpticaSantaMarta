@@ -34,7 +34,8 @@ namespace CapaLogica.Servicio
         {
 
         }
-        //metodo para el SP de Consultar Reporte por codigo
+        //metodo para el SP de Consultar Reporte por semana
+
         public DataSet ReporteSemanal(string fecha1, string fecha2)
         {
             miComando = new MySqlCommand();
@@ -43,7 +44,6 @@ namespace CapaLogica.Servicio
             miComando.CommandText = "reporte_ventas_semanal";
 
             miComando.Parameters.Add("@fecha1", MySqlDbType.VarChar,48).Value = fecha1;
-            //miComando.Parameters["@cod"].Value = cod;
             miComando.Parameters.Add("@fecha2", MySqlDbType.VarChar, 48).Value = fecha2;
 
             DataSet miDataSet = new DataSet();
@@ -54,6 +54,26 @@ namespace CapaLogica.Servicio
 
             return miDataSet;
         }
-        
+
+        //metodo para el SP de Consultar Reporte por día
+
+        public DataSet ReporteDia(string fecha)
+        {
+            miComando = new MySqlCommand();
+            Console.WriteLine("Gestor Reporte Día");
+
+            miComando.CommandText = "reporte_ventas_dia";
+
+            miComando.Parameters.Add("@fecha", MySqlDbType.VarChar, 48).Value = fecha;
+
+            DataSet miDataSet = new DataSet();
+            this.abrirConexion();
+
+            miDataSet = this.seleccionarInformacion(miComando);
+            this.cerrarConexion();
+
+            return miDataSet;
+        }
+
     }
 }

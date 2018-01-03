@@ -124,7 +124,9 @@ namespace CapaPresentacion
 
         private void btn_Reportes_Click(object sender, EventArgs e)
         {
-            Reportes.FrmVentasDia rpt = new Reportes.FrmVentasDia(id_usuario, usuario, cargo);
+            Reportes.FrmReporte rpt = new Reportes.FrmReporte(id_usuario, usuario, cargo);
+            rpt.Show();
+            this.Hide();
         }
     }
 }

@@ -48,10 +48,7 @@
             this.btn_buscarProducto = new System.Windows.Forms.Button();
             this.btn_realizarVenta = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbl_numeroConsecutivo = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -73,12 +70,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventas)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_ventas
             // 
+            this.dgv_ventas.AllowUserToAddRows = false;
             this.dgv_ventas.AllowUserToResizeColumns = false;
             this.dgv_ventas.AllowUserToResizeRows = false;
             this.dgv_ventas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -272,27 +269,6 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Subtotal:";
             // 
-            // lbl_numeroConsecutivo
-            // 
-            this.lbl_numeroConsecutivo.AutoSize = true;
-            this.lbl_numeroConsecutivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_numeroConsecutivo.ForeColor = System.Drawing.Color.Red;
-            this.lbl_numeroConsecutivo.Location = new System.Drawing.Point(55, 15);
-            this.lbl_numeroConsecutivo.Name = "lbl_numeroConsecutivo";
-            this.lbl_numeroConsecutivo.Size = new System.Drawing.Size(41, 20);
-            this.lbl_numeroConsecutivo.TabIndex = 1;
-            this.lbl_numeroConsecutivo.Text = "xxxx";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(21, 15);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(28, 20);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Nº";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -302,16 +278,6 @@
             this.label6.Size = new System.Drawing.Size(334, 31);
             this.label6.TabIndex = 2;
             this.label6.Text = "ÓPTICA SANTA MARTA";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2.Controls.Add(this.lbl_numeroConsecutivo);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Location = new System.Drawing.Point(535, 66);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(107, 51);
-            this.panel2.TabIndex = 16;
             // 
             // label10
             // 
@@ -555,7 +521,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
@@ -580,8 +545,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmFacturacion_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventas)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -601,10 +564,7 @@
         private System.Windows.Forms.Button btn_buscarProducto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_numeroConsecutivo;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label label10;

@@ -17,19 +17,26 @@ namespace ProyectoOptica.CapaIntegracion
         public void Dispose() { }
 
 
-        public string InsertarVenta(int id_cliente, string fecha, int id_usuario, int id_pago, char estado)
+        public string InsertarVenta(int id_cliente, int id_usuario, string fecha, int modo_pago, double saldo, string estado)
         {
-            Venta nuevaVenta = new Venta(id_cliente, fecha, id_usuario, id_pago, estado);
+            Venta nuevaVenta = new Venta(id_cliente, id_usuario, fecha, modo_pago, saldo, estado);
             using (ServicioVenta elVenta = new ServicioVenta())
                 return elVenta.InsertarVenta(nuevaVenta);
         }
 
-        public string ModificarVenta(int id_Venta, int id_cliente, string fecha, int id_usuario, int id_pago, char estado)
+        public string InsertarDetalleVenta(int id_venta, int id_producto, int cantidad, double precio, double subtotal, string estado)
         {
-            Venta modificarVenta = new Venta(id_Venta, id_cliente, fecha, id_usuario, id_pago, estado);
+            Venta nuevaVenta = new Venta(id_venta, id_producto, cantidad, precio, subtotal, estado);
             using (ServicioVenta elVenta = new ServicioVenta())
-                return elVenta.ModificarVenta(modificarVenta);
+                return elVenta.InsertarDetalleVenta(nuevaVenta);
         }
+
+        //public string ModificarVenta(int id_Venta, int id_cliente, string fecha, int id_usuario, int modo_pago, string estado)
+        //{
+        //    Venta modificarVenta = new Venta(id_Venta, id_cliente, id_usuario, fecha, modo_pago, estado);
+        //    using (ServicioVenta elVenta = new ServicioVenta())
+        //        return elVenta.ModificarVenta(modificarVenta);
+        //}
 
         /// <summary>
         /// Metodo Consultar Venta
