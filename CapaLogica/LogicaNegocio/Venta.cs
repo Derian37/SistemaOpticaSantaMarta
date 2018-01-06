@@ -18,6 +18,7 @@ namespace CapaLogica.LogicaNegocio
         private int modo_pago;
         private double saldo;
         private int id_producto;
+        private string codigo;
         private int cantidad;
         private double precio;
         private double subtotal;
@@ -41,10 +42,10 @@ namespace CapaLogica.LogicaNegocio
             Estado = Pestado;
         }
 
-        public Venta(int Pid_venta, int Pid_producto, int Pcantidad, double Pprecio, double Psubtotal, string Pestado)
+        public Venta(int Pid_venta, string Pcodigo, int Pcantidad, double Pprecio, double Psubtotal, string Pestado)
         {
             Id_venta = Pid_venta;
-            Id_producto = Pid_producto;
+            Codigo = Pcodigo;
             Cantidad = Pcantidad;
             Precio = Pprecio;
             Subtotal = Psubtotal;
@@ -75,6 +76,7 @@ namespace CapaLogica.LogicaNegocio
         public int Modo_pago { get => modo_pago; set => modo_pago = value; }
         public double Saldo { get => saldo; set => saldo = value; }
         public int Id_producto { get => id_producto; set => id_producto = value; }
+        public string Codigo { get => codigo; set => codigo = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public double Precio { get => precio; set => precio = value; }
         public double Subtotal { get => subtotal; set => subtotal = value; }

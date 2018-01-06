@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReporte));
             this.Dgv_reporte_ventas = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -57,22 +59,50 @@
             // 
             this.Dgv_reporte_ventas.AllowUserToAddRows = false;
             this.Dgv_reporte_ventas.AllowUserToDeleteRows = false;
+            this.Dgv_reporte_ventas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv_reporte_ventas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Dgv_reporte_ventas.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.Dgv_reporte_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Dgv_reporte_ventas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Dgv_reporte_ventas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dgv_reporte_ventas.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_reporte_ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_reporte_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_reporte_ventas.DefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_reporte_ventas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.Dgv_reporte_ventas.Location = new System.Drawing.Point(23, 102);
+            this.Dgv_reporte_ventas.MultiSelect = false;
             this.Dgv_reporte_ventas.Name = "Dgv_reporte_ventas";
             this.Dgv_reporte_ventas.ReadOnly = true;
-            this.Dgv_reporte_ventas.Size = new System.Drawing.Size(769, 402);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_reporte_ventas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.Dgv_reporte_ventas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_reporte_ventas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv_reporte_ventas.ShowCellErrors = false;
+            this.Dgv_reporte_ventas.ShowCellToolTips = false;
+            this.Dgv_reporte_ventas.ShowEditingIcon = false;
+            this.Dgv_reporte_ventas.ShowRowErrors = false;
+            this.Dgv_reporte_ventas.Size = new System.Drawing.Size(769, 348);
             this.Dgv_reporte_ventas.TabIndex = 0;
+            this.Dgv_reporte_ventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_reporte_ventas_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -105,7 +135,6 @@
             this.btn_generar_reporte.TabIndex = 6;
             this.btn_generar_reporte.Text = "Ver";
             this.btn_generar_reporte.UseVisualStyleBackColor = true;
-            this.btn_generar_reporte.Visible = false;
             this.btn_generar_reporte.Click += new System.EventHandler(this.btn_generar_reporte_Click);
             // 
             // btn_guardar
@@ -119,6 +148,7 @@
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = true;
             this.btn_guardar.Visible = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // tbReportes
             // 

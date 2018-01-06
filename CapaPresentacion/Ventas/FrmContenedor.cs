@@ -29,6 +29,9 @@ namespace CapaPresentacion
 
         private void FrmContenedor_Load(object sender, EventArgs e)
         {
+            FrmVentas venta = new FrmVentas(id_usuario, nombre, cargo, nombreImpresora);
+            venta.MdiParent = this;
+            venta.Show();
             cargarNombreImpresora();
         }
 
@@ -58,7 +61,21 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-        
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProductos productos = new frmProductos(id_usuario, nombre, cargo);
+            productos.MdiParent = this;
+            productos.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCliente cliente = new frmCliente(id_usuario, nombre, cargo);
+            cliente.MdiParent = this;
+            cliente.Show();
+        }
+
         private void ajustesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmImpresoras impresora = new FrmImpresoras();

@@ -14,12 +14,13 @@ namespace CapaPresentacion
 {
     public partial class FrmVentas : Form
     {
-        int id_usuario;
-        string nombre, cargo, nombreImpresora;
-        int id_cliente;
-        int id_producto = 0;
+        int id_usuario;                     //variable local para registrar el usuario
+        string nombre, cargo;               //variables para el nombre y cargo del usuario
+        string fecha, hora;                 //variables locales para la fecha y hora, usadas para la fecha y hora del ticket y de la base de datos
+        string nombreImpresora;             //
+        int id_cliente, id_producto;
+        string codigoProd;
         int numRecibo;
-        string cod_producto = "";
         string tipo = "";
         float monto;
         int cantidad;
@@ -47,10 +48,18 @@ namespace CapaPresentacion
             CargarNumFactura();
             lbl_usuario.Text = nombre;
         }
-        
-        private void btn_cerrar_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        private void CargarNumFactura()
         {
-            this.Close();
+            using (GestorVenta recibo = new GestorVenta())
+            {
+                dsVentas = recibo.ConsultarUltimoVenta();
+                dtVentas = this.dsVentas.Tables[0];
+
+                numRecibo = int.Parse(this.dtVentas.Rows[0]["siguiente"].ToString());
+            }
         }
         
         private void FrmFacturacion_KeyDown(object sender, KeyEventArgs e)
@@ -71,7 +80,11 @@ namespace CapaPresentacion
             {
                 AgregarNombreProducto();
             }
+        }
 
+        private void btn_AgregarNombre_Click(object sender, EventArgs e)
+        {
+            AgregarNombreProducto();
         }
 
         private void AgregarNombreProducto()
@@ -84,7 +97,7 @@ namespace CapaPresentacion
                     dtVentas = dsVentas.Tables[0];
 
                     id_producto = int.Parse(dtVentas.Rows[0]["id_productos"].ToString());
-                    cod_producto = dtVentas.Rows[0]["codigo"].ToString();
+                    codigoProd = dtVentas.Rows[0]["codigo"].ToString();
                     monto = float.Parse(dtVentas.Rows[0]["monto"].ToString());
                     cantidad = int.Parse(dtVentas.Rows[0]["cantidad"].ToString());
                     tipo = dtVentas.Rows[0]["iva"].ToString();
@@ -106,6 +119,11 @@ namespace CapaPresentacion
             }
         }
 
+        private void btn_buscarProducto_Click(object sender, EventArgs e)
+        {
+            BuscarProducto();
+        }
+
         private void BuscarProducto()
         {
             try
@@ -124,6 +142,11 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message, "btn_buscarProducto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_codigoProducto.Text = "";
             }
+        }
+
+        private void btn_realizarVenta_Click(object sender, EventArgs e)
+        {
+            RealizarVenta();
         }
 
         private void RealizarVenta()
@@ -149,69 +172,8 @@ namespace CapaPresentacion
             }
             GuardarVenta();
             GuardarDetalleVenta();
+            LimpiarCampos();
         }
-
-        private void GuardarVenta()
-        {
-            int id_pago = 0;
-            string fecha = DateTime.Now.ToShortDateString();
-            if (efectivo > 0)
-            {
-                id_pago = 1;
-            }
-            else if (tarjeta > 0)
-            {
-                id_pago = 2;
-            }
-            try
-            {
-                using (GestorVenta venta = new GestorVenta())
-                {
-                    venta.InsertarVenta(id_cliente, id_usuario, fecha, id_pago, saldo, "A");
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error " + e);
-            }
-
-        }
-
-        private void GuardarDetalleVenta()
-        {
-            string fecha = DateTime.Now.ToShortDateString();
-            try
-            {
-                using (GestorVenta venta = new GestorVenta())
-                {
-                    dsVentas = venta.ConsultarUltimoVenta();
-                    dtVentas = this.dsVentas.Tables[0];
-
-                    foreach (DataGridViewRow fila in dgv_ventas.Rows)
-                    {
-                        //agregamos la cantidad, el precio y subtotal
-                        int id_prod = Convert.ToInt32(fila.Cells[0].Value);
-                        int canti = Convert.ToInt32(fila.Cells[2].Value);
-                        double prec = Convert.ToDouble(fila.Cells[4].Value);
-                        double subtotal = Convert.ToDouble(fila.Cells[5].Value);
-                        //int canti = int.Parse(fila.Cells[2].Value.ToString());
-                        //float prec = float.Parse(fila.Cells[4].Value.ToString());
-                        //float subtotal = float.Parse(fila.Cells[5].Value.ToString());
-                        MessageBox.Show("recibo " + numRecibo + " prod " + id_producto + " cant " + canti + " prec " + prec + " subt " + subtotal);
-                        venta.InsertarDetalleVenta(numRecibo, id_producto, canti, prec, subtotal, "A");
-
-                    }
-
-                   
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error " + e);
-            }
-        }
-
-        
 
         private void Cobrar()
         {
@@ -232,8 +194,8 @@ namespace CapaPresentacion
             ticket.LineasGuion();
             //agregamos numero de recibo y fecha
             ticket.TextoIzquierda("");
-            string fecha = DateTime.Now.ToShortDateString();
-            string hora = DateTime.Now.ToShortTimeString();
+            fecha = DateTime.Now.ToShortDateString();
+            hora = DateTime.Now.ToShortTimeString();
             ticket.TextoIzquierda("RECIBO N° " + numRecibo);
             ticket.TextoExtremos("Fecha: " + fecha, "Hora: " + hora);
             //agregamos nombre del usuario
@@ -276,31 +238,89 @@ namespace CapaPresentacion
             //ticket.CortaTicket(); //corta el ticket
             ticket.ImprimirTicket("Microsoft XPS Document Writer"); //nombre de la impresora
         }
-        private void CargarNumFactura()
+
+        /// <summary>
+        /// Guardamos la venta en la base de datos
+        /// </summary>
+        private void GuardarVenta()
         {
-            using (GestorVenta recibo = new GestorVenta())
+            int id_pago = 0;    //variable que almacena la forma de pago 1 = efectivo, 2 = tarjeta y 3 = ambos
+            if (efectivo > 0)
             {
-                dsVentas = recibo.ConsultarUltimoVenta();
-                dtVentas = this.dsVentas.Tables[0];
-
-                numRecibo = int.Parse(this.dtVentas.Rows[0]["siguiente"].ToString());
-            }             
+                id_pago = 1;
+            }
+            else if (tarjeta > 0)
+            {
+                id_pago = 2;
+            }
+            else if (tarjeta > 0 && efectivo > 0 )
+            {
+                id_pago = 3;
+            }
+            try
+            {
+                using (GestorVenta venta = new GestorVenta())
+                {
+                    venta.InsertarVenta(id_cliente, id_usuario, fecha, id_pago, saldo, "A");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error " + e);
+            }
         }
 
-        private void btn_buscarProducto_Click(object sender, EventArgs e)
+        private void GuardarDetalleVenta()
         {
-            BuscarProducto();
+            string fecha = DateTime.Now.ToShortDateString();
+            try
+            {
+                using (GestorVenta venta = new GestorVenta())
+                {
+                    dsVentas = venta.ConsultarUltimoVenta();
+                    dtVentas = this.dsVentas.Tables[0];
+
+                    foreach (DataGridViewRow fila in dgv_ventas.Rows)
+                    {
+                        //agregamos la cantidad, el precio y subtotal
+                        string codProd = Convert.ToString(fila.Cells[0].Value);
+                        int canti = Convert.ToInt32(fila.Cells[2].Value);
+                        string tipo = Convert.ToString(fila.Cells[3].Value);
+                        double prec = Convert.ToDouble(fila.Cells[4].Value);
+                        double subt = Convert.ToDouble(fila.Cells[5].Value);
+                        if (tipo.Equals("GRAVADO"))
+                        {
+                            subtotal = subt * 0.13 + subt;
+                        }
+                        else
+                        {
+                            subtotal = subt;
+                        }
+                        venta.InsertarDetalleVenta(numRecibo, codProd, canti, prec, subtotal, "A");
+                        subtotal = 0;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error " + e);
+            }
         }
 
-        private void btn_realizarVenta_Click(object sender, EventArgs e)
+        private void LimpiarCampos()
         {
-            RealizarVenta();
+            numRecibo = 0;
+            txt_nombreCliente.Text = "";
+            lbl_subtotal.Text = "";
+            lbl_iva.Text = "";
+            lbl_total.Text = "";
+            dgv_ventas.Rows.Clear();
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             int cant = int.Parse(txt_cantidad.Text);
-            if (cod_producto != "" && cant > 0 && cant <= cantidad)
+            if (codigoProd != "" && cant > 0 && cant <= cantidad)
             {
                 bool existe = false;
                 int num_fila = 0;
@@ -308,14 +328,14 @@ namespace CapaPresentacion
                 if (cont_fila == 0)
                 {
                     float total = cant * monto;
-                    dgv_ventas.Rows.Add(cod_producto, lbl_nombreProducto.Text, cant, tipo, monto, total);
+                    dgv_ventas.Rows.Add(codigoProd, lbl_nombreProducto.Text, cant, tipo, monto, total);
                     cont_fila++;
                 }
                 else
                 {
                     foreach (DataGridViewRow fila in dgv_ventas.Rows)
                     {
-                        if (Convert.ToString(fila.Cells[0].Value) == cod_producto)
+                        if (Convert.ToString(fila.Cells[0].Value) == codigoProd)
                         {
                             existe = true;
                             num_fila = fila.Index;
@@ -330,15 +350,13 @@ namespace CapaPresentacion
                     else
                     {
                         float total = cant * monto;
-                        dgv_ventas.Rows.Add(cod_producto, lbl_nombreProducto.Text, cant, tipo, monto, total);
+                        dgv_ventas.Rows.Add(codigoProd, lbl_nombreProducto.Text, cant, tipo, monto, total);
                         cont_fila++;
                     }
                 }
-               
                 CalcularTotales();
-                
             }
-            else if (cod_producto == "")
+            else if (codigoProd == "")
             {
                 MessageBox.Show("Debe agregar un producto primero", caption: "Alerta", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
                 txt_codigoProducto.Focus();
@@ -356,21 +374,24 @@ namespace CapaPresentacion
             txt_codigoProducto.Text = "";
             lbl_nombreProducto.Text = "";
             txt_cantidad.Text = "0";
-            cod_producto = "";
+            codigoProd = "";
             monto = 0;
             cantidad = 0;
             txt_codigoProducto.Focus();
         }
-
+        /// <summary>
+        /// Calcula el total sumando todos los subtotales y el impuesto
+        /// </summary>
         private void CalcularTotales()
         {
-            total = 0;
-            subtotal = 0;
-            iva = 0;
+            total = 0;      //variable para el total de toda la venta más el impuesto
+            subtotal = 0;   //variable que acumula la suma de toda la venta
+            iva = 0;        //variable que acumula el impuesto de ventas
+            //se recorre cada fila del data grid
             foreach (DataGridViewRow fila in dgv_ventas.Rows)
             {
                 string tipo = Convert.ToString(fila.Cells[3].Value);
-                if (tipo == "GRAVADO")
+                if (tipo == "GRAVADO") 
                 {
                     iva += Convert.ToDouble(fila.Cells[5].Value) * 0.13;
                 }
@@ -381,17 +402,22 @@ namespace CapaPresentacion
             lbl_total.Text = (iva + subtotal).ToString();
             total = iva + subtotal;
         }
-
+        /// <summary>
+        /// Cuando se borra una foto fila se vuelven a calcular los totales
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgv_ventas_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             CalcularTotales();
         }
 
-        private void btn_AgregarNombre_Click(object sender, EventArgs e)
-        {
-            AgregarNombreProducto();
-        }
-
+        /// <summary>
+        /// Al hacer click en el botón buscar se abre una ventana para buscar el cliente por número de cédula
+        /// o buscandolo en el grid 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             try
@@ -412,6 +438,15 @@ namespace CapaPresentacion
                 txt_nombreCliente.Text = "";
             }
             
+        }
+        /// <summary>
+        /// Cierra la ventana al dar click en el botón
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

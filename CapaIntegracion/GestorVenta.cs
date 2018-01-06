@@ -24,9 +24,9 @@ namespace ProyectoOptica.CapaIntegracion
                 return elVenta.InsertarVenta(nuevaVenta);
         }
 
-        public string InsertarDetalleVenta(int id_venta, int id_producto, int cantidad, double precio, double subtotal, string estado)
+        public string InsertarDetalleVenta(int id_venta, string codigo, int cantidad, double precio, double subtotal, string estado)
         {
-            Venta nuevaVenta = new Venta(id_venta, id_producto, cantidad, precio, subtotal, estado);
+            Venta nuevaVenta = new Venta(id_venta, codigo, cantidad, precio, subtotal, estado);
             using (ServicioVenta elVenta = new ServicioVenta())
                 return elVenta.InsertarDetalleVenta(nuevaVenta);
         }

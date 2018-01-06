@@ -27,7 +27,7 @@ namespace CapaPresentacion.Reportes
         string cargo;
         private DataTable dtReporte = new DataTable();
         private DataSet dsReporte = new DataSet();
-       // iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("../../Resources/LogoOptica.png");
+        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("../../Resources/LogoOptica.png");
         public FrmReporte(int id_usuario, string nombre, string cargo)
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace CapaPresentacion.Reportes
 
         private void FrmReporte_Load(object sender, EventArgs e)
         {
-            CargarReporte();
+            //CargarReporte();
         }
 
         private void CargarReporte()
@@ -165,7 +165,7 @@ namespace CapaPresentacion.Reportes
         
         private void btn_generar_reporte_Click(object sender, EventArgs e)
         {
-            string fecha = DateTime.Now.ToLongDateString();
+            string fecha = DateTime.Now.ToShortDateString();
             
             try
             {
@@ -176,27 +176,118 @@ namespace CapaPresentacion.Reportes
 
                     Dgv_reporte_ventas.DataSource = this.dtReporte;
 
-                    Dgv_reporte_ventas.Columns["id_factura"].HeaderText = "#_FACTURA";
-                    Dgv_reporte_ventas.Columns["fecha"].HeaderText = "CODIGO";
-                    Dgv_reporte_ventas.Columns["id_producto"].HeaderText = "COD_PRODUCTO";
-                    Dgv_reporte_ventas.Columns["nombre"].HeaderText = "NOMBRE PRODUCTO";
-                    Dgv_reporte_ventas.Columns["ventas"].HeaderText = "VENTAS";
-                    Dgv_reporte_ventas.Columns["subtotal"].HeaderText = "SUBTOTAL";
-                    Dgv_reporte_ventas.Columns["total"].HeaderText = "TOTAL";
+                    Dgv_reporte_ventas.Columns["Cod_Prod"].HeaderText = "CODIGO";
+                    Dgv_reporte_ventas.Columns["Modo_Pago"].HeaderText = "MODO PAGO";
+                    Dgv_reporte_ventas.Columns["Nombre"].HeaderText = "NOMBRE PRODUCTO";
+                    Dgv_reporte_ventas.Columns["Cantidad"].HeaderText = "VENTAS";
+                    Dgv_reporte_ventas.Columns["Total"].HeaderText = "TOTAL";
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error de SQL: " + ex.Message);
             }
+            btn_guardar.Visible = true;
         }
 
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            // Creamos el documento con el tamaño de página tradicional
+            Document doc = new Document(PageSize.LETTER, 10f, 10f, 10f, 10f);
+
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.InitialDirectory = @"C:";
+            guardar.Title = "Guardar Reporte";
+            guardar.DefaultExt = "pdf";
+            guardar.Filter = "pdf Files(*.pdf)|*.pdf| All Files(*.*)|*.*";
+            guardar.FilterIndex = 2;
+            guardar.RestoreDirectory = true;
+            string nombreArchivo = "";
+            string fechacreacion = DateTime.Now.ToString();
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                //guardar.FileName = fechacreacion;
+                nombreArchivo = guardar.FileName;
+            }
+            if (nombreArchivo.Trim() != "")
+            {
+                // Indicamos donde vamos a guardar el documento
+                FileStream archivo = new FileStream(nombreArchivo, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+                PdfWriter.GetInstance(doc, archivo);
+
+                // Le colocamos el título y el autor
+                // **Nota: Esto no será visible en el documento
+                doc.AddTitle(title: $"Reporte ventas {fechacreacion}");
+
+                // Abrimos el archivo
+                doc.Open();
+
+                // Creamos el tipo de Font que vamos utilizar
+                iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+
+                // Escribimos el encabezamiento en el documento
+                Paragraph title = new Paragraph(str: " OPTICA SANTA MARTA");
+                title.Alignment = Element.ALIGN_CENTER;
+                doc.Add(title);
+                Paragraph subtitle = new Paragraph(str: $"Reporte ventas {fechacreacion}");
+                subtitle.Alignment = Element.ALIGN_CENTER;
+                doc.Add(subtitle);
+                doc.Add(element: Chunk.NEWLINE);
+                doc.Add(element: Chunk.NEWLINE);
+
+                img.ScaleToFit(fitWidth: 125f, fitHeight: 60f);
+                img.SetAbsolutePosition(absoluteX: 530, absoluteY: 730);
+                doc.Add(element: img);
+
+                int i, j;
+
+                PdfPTable datatable = new PdfPTable(Dgv_reporte_ventas.ColumnCount);
+                datatable.DefaultCell.Padding = 3;
+                float[] headerwidths = GetTamañoColumnas(Dgv_reporte_ventas);
+                datatable.SetWidths(headerwidths);
+                datatable.WidthPercentage = 100;
+                datatable.DefaultCell.BorderWidth = 2;
+                datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                for (i = 0; i < Dgv_reporte_ventas.ColumnCount; i++)
+                {
+                    datatable.AddCell(Dgv_reporte_ventas.Columns[i].HeaderText);
+                }
+                datatable.HeaderRows = 1;
+                datatable.DefaultCell.BorderWidth = 1;
+                for (i = 0; i < Dgv_reporte_ventas.Rows.Count; i++)
+                {
+                    for (j = 0; j < Dgv_reporte_ventas.Columns.Count; j++)
+                    {
+                        if (Dgv_reporte_ventas[j, i].Value != null)
+                        {
+                            datatable.AddCell(new Phrase(Dgv_reporte_ventas[j, i].Value.ToString()));//En esta parte, se esta agregando un renglon por cada registro en el datagrid
+                        }
+                    }
+                    datatable.CompleteRow();
+                }
+                doc.Add(datatable);
+                doc.Close();
+                Process.Start(nombreArchivo);
+            }
+            }
+            public float[] GetTamañoColumnas(DataGridView dg)
+            {
+                float[] values = new float[dg.ColumnCount];
+                for (int i = 0; i < dg.ColumnCount; i++)
+                {
+                    values[i] = (float)dg.Columns[i].Width;
+                }
+                return values;
+            }
         private void tbReporte_dia_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void Dgv_reporte_ventas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }       
 }
 
