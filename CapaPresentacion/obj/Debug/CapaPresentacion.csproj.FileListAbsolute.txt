@@ -230,3 +230,4 @@ C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\De
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmReporte.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmControlTrabajo.resources

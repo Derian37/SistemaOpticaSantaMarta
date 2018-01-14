@@ -70,6 +70,7 @@ namespace CapaPresentacion
             btn_EliminarProducto.Visible = false;
             lbl_eliminarProducto.Visible = false;
             btn_EditarProducto.Visible = false;
+            btn_guardarProducto.Visible = true;
             lbl_editarProducto.Visible = false;
             accion = "insertar";
         }

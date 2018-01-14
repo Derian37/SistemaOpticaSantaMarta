@@ -80,8 +80,9 @@ namespace CapaPresentacion
 
         private void btnControlTrabajo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("¡ En Contrucción ¡", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+            FrmControlTrabajo control = new FrmControlTrabajo();
+            control.Show();
+            this.Hide();
         }
 
         private void btnRecibos_Click(object sender, EventArgs e)
