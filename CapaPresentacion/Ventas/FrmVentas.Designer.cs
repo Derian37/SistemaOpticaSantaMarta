@@ -540,7 +540,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Módulo Facturación";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmFacturacion_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmFacturacion_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventas)).EndInit();

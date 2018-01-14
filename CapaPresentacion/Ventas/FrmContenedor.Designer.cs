@@ -61,6 +61,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(989, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // inicioToolStripMenuItem
             // 
@@ -74,14 +75,14 @@
             // volverToolStripMenuItem
             // 
             this.volverToolStripMenuItem.Name = "volverToolStripMenuItem";
-            this.volverToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.volverToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.volverToolStripMenuItem.Text = "Volver";
             this.volverToolStripMenuItem.Click += new System.EventHandler(this.volverToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -121,7 +122,7 @@
             // ajustesToolStripMenuItem
             // 
             this.ajustesToolStripMenuItem.Name = "ajustesToolStripMenuItem";
-            this.ajustesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ajustesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.ajustesToolStripMenuItem.Text = "Ajustes";
             this.ajustesToolStripMenuItem.Click += new System.EventHandler(this.ajustesToolStripMenuItem_Click);
             // 

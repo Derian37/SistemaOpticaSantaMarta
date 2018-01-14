@@ -39,10 +39,10 @@ namespace CapaPresentacion
         {
             using (GestorImpresora impresora = new GestorImpresora())
             {
-                dsImpresora = impresora.Consultar_impresoraPredeterminada();
-                dtImpresora = dsImpresora.Tables[0];
+                //dsImpresora = impresora.Consultar_impresoraPredeterminada();
+                //dtImpresora = dsImpresora.Tables[0];
 
-                //nombreImpresora = dtImpresora.Rows[0]["nombre"].ToString();
+                nombreImpresora = "Microsoft XPS Document Writer";
             }
         }
 
@@ -74,6 +74,11 @@ namespace CapaPresentacion
             frmCliente cliente = new frmCliente(id_usuario, nombre, cargo);
             cliente.MdiParent = this;
             cliente.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
         private void ajustesToolStripMenuItem_Click(object sender, EventArgs e)

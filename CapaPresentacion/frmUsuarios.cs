@@ -207,7 +207,7 @@ namespace CapaPresentacion
 
         private void frmUsuarios_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            
         }
     }
 }
