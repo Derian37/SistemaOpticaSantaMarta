@@ -64,5 +64,11 @@ namespace ProyectoOptica.CapaIntegracion
             using (ServicioCliente elCliente = new ServicioCliente())
                 return elCliente.ListarCliente();
         }
+
+        public DataTable ListarClienteSinTarjeta()
+        {
+            using (ServicioCliente elCliente = new ServicioCliente())
+                return elCliente.ListarClienteSinTarjeta();
+        }
     }
 }

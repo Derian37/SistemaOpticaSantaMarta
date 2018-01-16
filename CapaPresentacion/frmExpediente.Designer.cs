@@ -57,6 +57,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpediente)).BeginInit();
             this.grbInformacion.SuspendLayout();
             this.grbAparienciaUsuario.SuspendLayout();
@@ -64,6 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbAdmi)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvExpediente
@@ -73,11 +81,12 @@
             this.dgvExpediente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExpediente.BackgroundColor = System.Drawing.Color.White;
             this.dgvExpediente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExpediente.Location = new System.Drawing.Point(8, 296);
+            this.dgvExpediente.Location = new System.Drawing.Point(123, 435);
             this.dgvExpediente.Name = "dgvExpediente";
             this.dgvExpediente.ReadOnly = true;
-            this.dgvExpediente.Size = new System.Drawing.Size(842, 180);
+            this.dgvExpediente.Size = new System.Drawing.Size(1063, 214);
             this.dgvExpediente.TabIndex = 73;
+            this.dgvExpediente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpediente_CellClick);
             this.dgvExpediente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpediente_CellDoubleClick);
             // 
             // lblBuscar
@@ -133,9 +142,9 @@
             this.grbInformacion.Controls.Add(this.label3);
             this.grbInformacion.Controls.Add(this.label2);
             this.grbInformacion.Controls.Add(this.btnRecuperarDuenno);
-            this.grbInformacion.Location = new System.Drawing.Point(6, 121);
+            this.grbInformacion.Location = new System.Drawing.Point(6, 132);
             this.grbInformacion.Name = "grbInformacion";
-            this.grbInformacion.Size = new System.Drawing.Size(431, 116);
+            this.grbInformacion.Size = new System.Drawing.Size(451, 116);
             this.grbInformacion.TabIndex = 71;
             this.grbInformacion.TabStop = false;
             this.grbInformacion.Text = "Informacion del cliente";
@@ -243,9 +252,9 @@
             this.grbAparienciaUsuario.Controls.Add(this.btnCargar);
             this.grbAparienciaUsuario.Controls.Add(this.lblBuscar);
             this.grbAparienciaUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbAparienciaUsuario.Location = new System.Drawing.Point(407, 31);
+            this.grbAparienciaUsuario.Location = new System.Drawing.Point(723, 171);
             this.grbAparienciaUsuario.Name = "grbAparienciaUsuario";
-            this.grbAparienciaUsuario.Size = new System.Drawing.Size(443, 243);
+            this.grbAparienciaUsuario.Size = new System.Drawing.Size(463, 254);
             this.grbAparienciaUsuario.TabIndex = 72;
             this.grbAparienciaUsuario.TabStop = false;
             this.grbAparienciaUsuario.Text = "Buscar Cliente";
@@ -326,9 +335,9 @@
             this.grbPanelUsuario.Controls.Add(this.lblTUser);
             this.grbPanelUsuario.Controls.Add(this.lblUser);
             this.grbPanelUsuario.Controls.Add(this.pcbAdmi);
-            this.grbPanelUsuario.Location = new System.Drawing.Point(8, 31);
+            this.grbPanelUsuario.Location = new System.Drawing.Point(123, 171);
             this.grbPanelUsuario.Name = "grbPanelUsuario";
-            this.grbPanelUsuario.Size = new System.Drawing.Size(376, 115);
+            this.grbPanelUsuario.Size = new System.Drawing.Size(430, 115);
             this.grbPanelUsuario.TabIndex = 71;
             this.grbPanelUsuario.TabStop = false;
             // 
@@ -351,7 +360,7 @@
             this.volverToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(859, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1277, 28);
             this.menuStrip1.TabIndex = 74;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -371,9 +380,9 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnInsertarDuenno);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(8, 152);
+            this.groupBox1.Location = new System.Drawing.Point(123, 310);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 115);
+            this.groupBox1.Size = new System.Drawing.Size(430, 115);
             this.groupBox1.TabIndex = 72;
             this.groupBox1.TabStop = false;
             // 
@@ -401,20 +410,74 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.grbPanelUsuario);
+            this.panel1.Controls.Add(this.dgvExpediente);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.grbAparienciaUsuario);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1277, 661);
+            this.panel1.TabIndex = 75;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(443, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(132, 91);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(38, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(306, 24);
+            this.label6.TabIndex = 75;
+            this.label6.Text = "Comprometidos por tu Salud Visual";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(54, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(265, 31);
+            this.label7.TabIndex = 74;
+            this.label7.Text = "Óptica Santa Marta";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Location = new System.Drawing.Point(389, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(612, 144);
+            this.groupBox2.TabIndex = 81;
+            this.groupBox2.TabStop = false;
+            // 
             // frmExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(859, 481);
-            this.Controls.Add(this.dgvExpediente);
+            this.ClientSize = new System.Drawing.Size(1277, 689);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.grbAparienciaUsuario);
-            this.Controls.Add(this.grbPanelUsuario);
-            this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmExpediente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmExpediente";
+            this.Text = "Optica Santa Marta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmExpediente_FormClosing);
             this.Load += new System.EventHandler(this.frmExpediente_Load);
@@ -430,6 +493,10 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,5 +532,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

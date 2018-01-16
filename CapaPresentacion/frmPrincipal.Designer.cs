@@ -32,11 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.GrpPrincipal = new System.Windows.Forms.GroupBox();
+            this.btn_Reportes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.lbl_salir = new System.Windows.Forms.Label();
-            this.btn_Salir = new System.Windows.Forms.Button();
             this.btnAbonos = new System.Windows.Forms.Button();
-            this.btnVales = new System.Windows.Forms.Button();
             this.btnProforma = new System.Windows.Forms.Button();
             this.btnRecibos = new System.Windows.Forms.Button();
             this.btnControlTrabajo = new System.Windows.Forms.Button();
@@ -55,7 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_Reportes = new System.Windows.Forms.Button();
             this.GrpPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUsuario)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -90,10 +87,7 @@
             this.GrpPrincipal.BackColor = System.Drawing.Color.AliceBlue;
             this.GrpPrincipal.Controls.Add(this.btn_Reportes);
             this.GrpPrincipal.Controls.Add(this.btnProductos);
-            this.GrpPrincipal.Controls.Add(this.lbl_salir);
-            this.GrpPrincipal.Controls.Add(this.btn_Salir);
             this.GrpPrincipal.Controls.Add(this.btnAbonos);
-            this.GrpPrincipal.Controls.Add(this.btnVales);
             this.GrpPrincipal.Controls.Add(this.btnProforma);
             this.GrpPrincipal.Controls.Add(this.btnRecibos);
             this.GrpPrincipal.Controls.Add(this.btnControlTrabajo);
@@ -110,6 +104,22 @@
             this.GrpPrincipal.TabStop = false;
             this.GrpPrincipal.Enter += new System.EventHandler(this.GrpPrincipal_Enter);
             // 
+            // btn_Reportes
+            // 
+            this.btn_Reportes.AutoSize = true;
+            this.btn_Reportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Reportes.FlatAppearance.BorderSize = 2;
+            this.btn_Reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Reportes.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reportes.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btn_Reportes.Location = new System.Drawing.Point(510, 346);
+            this.btn_Reportes.Name = "btn_Reportes";
+            this.btn_Reportes.Size = new System.Drawing.Size(125, 52);
+            this.btn_Reportes.TabIndex = 27;
+            this.btn_Reportes.Text = "Reportes";
+            this.btn_Reportes.UseVisualStyleBackColor = true;
+            this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
+            // 
             // btnProductos
             // 
             this.btnProductos.BackColor = System.Drawing.Color.Transparent;
@@ -125,35 +135,6 @@
             this.btnProductos.UseVisualStyleBackColor = false;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
-            // lbl_salir
-            // 
-            this.lbl_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_salir.Location = new System.Drawing.Point(549, 535);
-            this.lbl_salir.Name = "lbl_salir";
-            this.lbl_salir.Size = new System.Drawing.Size(49, 23);
-            this.lbl_salir.TabIndex = 25;
-            this.lbl_salir.Text = "Salir";
-            // 
-            // btn_Salir
-            // 
-            this.btn_Salir.AutoSize = true;
-            this.btn_Salir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Salir.BackgroundImage")));
-            this.btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Salir.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_Salir.FlatAppearance.BorderSize = 0;
-            this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Salir.Location = new System.Drawing.Point(535, 472);
-            this.btn_Salir.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_Salir.Size = new System.Drawing.Size(74, 63);
-            this.btn_Salir.TabIndex = 12;
-            this.btn_Salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_Salir.UseVisualStyleBackColor = true;
-            this.btn_Salir.Click += new System.EventHandler(this.Btn_SalirClick);
-            // 
             // btnAbonos
             // 
             this.btnAbonos.AutoSize = true;
@@ -162,29 +143,13 @@
             this.btnAbonos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbonos.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbonos.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnAbonos.Location = new System.Drawing.Point(510, 274);
+            this.btnAbonos.Location = new System.Drawing.Point(510, 259);
             this.btnAbonos.Name = "btnAbonos";
             this.btnAbonos.Size = new System.Drawing.Size(125, 52);
             this.btnAbonos.TabIndex = 23;
             this.btnAbonos.Text = "Factura";
             this.btnAbonos.UseVisualStyleBackColor = true;
             this.btnAbonos.Click += new System.EventHandler(this.btnAbonos_Click);
-            // 
-            // btnVales
-            // 
-            this.btnVales.AutoSize = true;
-            this.btnVales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVales.FlatAppearance.BorderSize = 2;
-            this.btnVales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVales.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVales.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVales.Location = new System.Drawing.Point(510, 202);
-            this.btnVales.Name = "btnVales";
-            this.btnVales.Size = new System.Drawing.Size(125, 52);
-            this.btnVales.TabIndex = 22;
-            this.btnVales.Text = "Vales";
-            this.btnVales.UseVisualStyleBackColor = true;
-            this.btnVales.Click += new System.EventHandler(this.btnVales_Click);
             // 
             // btnProforma
             // 
@@ -194,7 +159,7 @@
             this.btnProforma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProforma.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProforma.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnProforma.Location = new System.Drawing.Point(510, 130);
+            this.btnProforma.Location = new System.Drawing.Point(510, 174);
             this.btnProforma.Name = "btnProforma";
             this.btnProforma.Size = new System.Drawing.Size(125, 52);
             this.btnProforma.TabIndex = 21;
@@ -397,22 +362,6 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_Reportes
-            // 
-            this.btn_Reportes.AutoSize = true;
-            this.btn_Reportes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Reportes.FlatAppearance.BorderSize = 2;
-            this.btn_Reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Reportes.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Reportes.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btn_Reportes.Location = new System.Drawing.Point(510, 346);
-            this.btn_Reportes.Name = "btn_Reportes";
-            this.btn_Reportes.Size = new System.Drawing.Size(125, 52);
-            this.btn_Reportes.TabIndex = 27;
-            this.btn_Reportes.Text = "Reportes";
-            this.btn_Reportes.UseVisualStyleBackColor = true;
-            this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -436,7 +385,7 @@
             this.MinimizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Optica Santa Marta Beta V 1.0";
+            this.Text = "Optica Santa Marta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrincipalLoad);
@@ -450,8 +399,6 @@
             this.PerformLayout();
 
         }
-        private System.Windows.Forms.Label lbl_salir;
-        private System.Windows.Forms.Button btn_Salir;
 
         #endregion
 
@@ -466,7 +413,6 @@
         private System.Windows.Forms.Label lblVeterinario;
         private System.Windows.Forms.Button btnCita;
         private System.Windows.Forms.Label lblCita;
-        private System.Windows.Forms.Button btnVales;
         private System.Windows.Forms.Button btnProforma;
         private System.Windows.Forms.Button btnRecibos;
         private System.Windows.Forms.Button btnProductos;

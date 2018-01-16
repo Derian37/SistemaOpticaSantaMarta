@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmNuevaTargea
+    partial class frmNuevaTarjeta
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevaTargea));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevaTarjeta));
             this.btn_Crear = new System.Windows.Forms.Button();
             this.txt_Seg = new System.Windows.Forms.TextBox();
             this.txt_DI = new System.Windows.Forms.TextBox();
@@ -700,7 +700,7 @@
             this.label10.TabIndex = 95;
             this.label10.Text = "Optometrista";
             // 
-            // frmNuevaTargea
+            // frmNuevaTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -722,8 +722,8 @@
             this.Controls.Add(this.txt_doctor);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Name = "frmNuevaTargea";
-            this.Text = "frmNuevaTargea";
+            this.Name = "frmNuevaTarjeta";
+            this.Text = "frmNuevaTarjeta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNuevaTargea_FormClosing);
             this.Load += new System.EventHandler(this.frmNuevaTargea_Load_1);

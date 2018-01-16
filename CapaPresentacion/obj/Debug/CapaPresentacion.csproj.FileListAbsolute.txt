@@ -211,7 +211,6 @@ C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\De
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmExpediente.resources
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmListaClientes.resources
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
-C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmNuevaTargea.resources
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmProductos.resources
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frm_Recibos.resources
@@ -233,3 +232,4 @@ D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPrese
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\itextsharp.xml
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.FrmControlTrabajo.resources
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmReporte.resources
+C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmNuevaTarjeta.resources

@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmNuevaTargea : Form
+    public partial class frmNuevaTarjeta : Form
     {
         int id_usuario;
         string id_cliente;
         string usuario;
         string cargo;
 
-        public frmNuevaTargea(int id_usuario, string id_cliente,  string usuario, string cargo)
+        public frmNuevaTarjeta(int id_usuario, string id_cliente,  string usuario, string cargo)
         {
             this.id_usuario = id_usuario;
             this.id_cliente = id_cliente;
@@ -117,22 +117,35 @@ namespace CapaPresentacion
 
         private void btn_Crear_Click(object sender, EventArgs e)
         {
-            int graduacion;
-            int Id_cliente = int.Parse(id_cliente);
-            using (GestorGraduacion elGraduacion = new GestorGraduacion())
+            try
             {
-                elGraduacion.InsertarGraduacion(float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
+                int graduacion;
+                int Id_cliente = int.Parse(id_cliente);
+                if (dgvtargeta.Rows[0].Cells[0].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[1].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[2].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[3].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[0].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[1].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[2].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[3].Value.ToString()!="") {
+                    using (GestorGraduacion elGraduacion = new GestorGraduacion())
+                    {
+                        elGraduacion.InsertarGraduacion(float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
+                    }
+                    using (GestorGraduacion elGraduacion = new GestorGraduacion())
+                    {
+                        graduacion = int.Parse(elGraduacion.UltimaGraduacion().Tables[0].Rows[0][0].ToString());
+                    }
+                    using (GestorTarjeta elTarjeta = new GestorTarjeta())
+                    {
+                        elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, graduacion, double.Parse(txt_DI.Text), txt_recibida.Text, double.Parse(txt_Seg.Text));
+                    }
+                    MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                }
+                else {
+                    MessageBox.Show("Dejo algun campo vacío", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                cargarCombos();
             }
-            using (GestorGraduacion elGraduacion = new GestorGraduacion())
-            {
-                graduacion = int.Parse(elGraduacion.UltimaGraduacion().Tables[0].Rows[0][0].ToString());
+            catch (Exception i) {
+                Console.WriteLine(i);
             }
-            using (GestorTarjeta elTarjeta = new GestorTarjeta())
-            {
-                elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, graduacion, double.Parse(txt_DI.Text), txt_recibida.Text, double.Parse(txt_Seg.Text));
-            }
-            MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            cargarCombos();
            
         }
 

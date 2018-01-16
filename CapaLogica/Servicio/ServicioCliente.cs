@@ -228,5 +228,20 @@ namespace CapaLogica.Servicio
             return miTablaDatos;
         }
 
+        public DataTable ListarClienteSinTarjeta()
+        {
+            miComando = new MySqlCommand();
+            Console.WriteLine("Gestor listarClienteSinTarjeta");
+
+            miComando.CommandText = "listarClienteSinTarjeta";
+
+            DataSet elCliente = new DataSet();
+            this.abrirConexion();
+            elCliente = this.seleccionarInformacion(miComando);
+            DataTable miTablaDatos = elCliente.Tables[0];
+
+            return miTablaDatos;
+        }
+
     }
 }

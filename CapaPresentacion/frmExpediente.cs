@@ -66,9 +66,11 @@ namespace CapaPresentacion
                 if (txt_Cliente_Cedula.Text == "")
                 {
                     MessageBox.Show("Inserte un dato valido", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    grbInformacion.Visible = false;
                 }
                 else
                 {
+                    grbInformacion.Visible = true;
                     dgvExpediente.DataSource = expediente.ConsultarExpediente(cedulaCliente);
                     label_id.Text = expediente.ConsultarExpediente(cedulaCliente).Tables[0].Rows[0][0].ToString();
                     textBox1.Text = (string)expediente.ConsultarExpediente(cedulaCliente).Tables[0].Rows[0][1];
@@ -77,7 +79,6 @@ namespace CapaPresentacion
                   
                 }
             }
-            grbInformacion.Visible = true;
             cargarGridExpediente();
             cargarNombreUsuario();
         }
@@ -91,9 +92,20 @@ namespace CapaPresentacion
 
         private void btnExpediente_Click(object sender, EventArgs e)
         {
-            frmTarjeta frm_Tarjeta = new frmTarjeta(id_usuario,id_cliente,usuario,cargo);
-            frm_Tarjeta.Show();
-            this.SetVisibleCore(false);
+            try
+            {
+                frmTarjeta frm_Tarjeta = new frmTarjeta(id_usuario, id_cliente, usuario, cargo);
+                frm_Tarjeta.Show();
+                this.SetVisibleCore(false);
+            }
+            catch (Exception o)
+            {
+                Console.Write(o);
+
+
+                MessageBox.Show("No posee tarjeta", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -110,12 +122,22 @@ namespace CapaPresentacion
 
         private void dgvExpediente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           txt_Cliente_Cedula.Text = dgvExpediente.CurrentRow.Cells[1].Value.ToString();
+         
         }
 
         private void frmExpediente_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dgvExpediente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_Cliente_Cedula.Text = dgvExpediente.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
