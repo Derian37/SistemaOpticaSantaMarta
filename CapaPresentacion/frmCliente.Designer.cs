@@ -33,8 +33,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnInactivar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cbxOjo = new System.Windows.Forms.ComboBox();
-            this.lblOjo = new System.Windows.Forms.Label();
             this.lblDeuda = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -98,23 +96,6 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // cbxOjo
-            // 
-            this.cbxOjo.FormattingEnabled = true;
-            this.cbxOjo.Location = new System.Drawing.Point(102, 255);
-            this.cbxOjo.Name = "cbxOjo";
-            this.cbxOjo.Size = new System.Drawing.Size(121, 21);
-            this.cbxOjo.TabIndex = 37;
-            // 
-            // lblOjo
-            // 
-            this.lblOjo.AutoSize = true;
-            this.lblOjo.Location = new System.Drawing.Point(12, 253);
-            this.lblOjo.Name = "lblOjo";
-            this.lblOjo.Size = new System.Drawing.Size(23, 13);
-            this.lblOjo.TabIndex = 36;
-            this.lblOjo.Text = "Ojo";
             // 
             // lblDeuda
             // 
@@ -313,8 +294,6 @@
             this.Controls.Add(this.btnInactivar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbxOjo);
-            this.Controls.Add(this.lblOjo);
             this.Controls.Add(this.lblDeuda);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblDireccion);
@@ -351,8 +330,6 @@
         private System.Windows.Forms.Button btnInactivar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cbxOjo;
-        private System.Windows.Forms.Label lblOjo;
         private System.Windows.Forms.Label lblDeuda;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblDireccion;

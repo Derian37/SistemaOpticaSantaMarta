@@ -39,7 +39,7 @@ namespace ProyectoOptica.CapaIntegracion
                  return elCliente.InactivarCliente(nuevoCliente);
          }*/
 
-        public string ListarCliente(int Estudiante_id)
+        public string ListarCliente(int id_cliente)
 
         {
             Cliente nuevoCliente = new Cliente();

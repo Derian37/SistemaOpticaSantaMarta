@@ -43,3 +43,8 @@ C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaConexion\obj\Debug\
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaConexion\obj\Debug\CapaConexion.csprojResolveAssemblyReference.cache
 D:\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaConexion.dll.CodeAnalysisLog.xml
 D:\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaConexion.dll.lastcodeanalysissucceeded
+C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaConexion.dll
+C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaConexion.pdb
+C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
+C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaConexion\obj\Debug\CapaConexion.pdb

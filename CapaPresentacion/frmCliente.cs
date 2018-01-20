@@ -41,13 +41,13 @@ namespace CapaPresentacion
         {
             CargarGridCliente();
             CargarComboCliente();
-            CargarComboOjo();
-            defecto();
+            //CargarComboOjo();
+           // defecto();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "" && cbxOjo.SelectedItem != null)
+            if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "")
             {
                 using (GestorCliente elCliente = new GestorCliente())
                 {
@@ -60,13 +60,13 @@ namespace CapaPresentacion
             }
             CargarGridCliente();
             CargarComboCliente();
-            CargarComboOjo();
-            defecto();
+            //CargarComboOjo();
+            //defecto();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (cbxCliente.SelectedItem != null  && txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "" && cbxOjo.SelectedItem != null)
+            if (cbxCliente.SelectedItem != null  && txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "" )
             {
                 using (GestorCliente elCliente = new GestorCliente())
                 {
@@ -79,8 +79,8 @@ namespace CapaPresentacion
             }
             CargarGridCliente();
             CargarComboCliente();
-            CargarComboOjo();
-            defecto();
+            //CargarComboOjo();
+            //defecto();
         }
 
        /* private void btnInactivar_Click(object sender, EventArgs e)
@@ -98,13 +98,13 @@ namespace CapaPresentacion
             }
         }*/
 
-        private void defecto()
+       /* private void defecto()
         {
-            //cbxCliente.SelectedItem = null;
+            cbxCliente.SelectedItem = null;
             cbxOjo.SelectedItem = null;
-        }
+        }*/
 
-        private void CargarComboOjo()
+        /*private void CargarComboOjo()
 
         {
             try
@@ -124,7 +124,7 @@ namespace CapaPresentacion
                 MessageBox.Show("Error de SQL: " + e.Message);
             }
 
-        }
+        }*/
 
         private void CargarGridCliente()
         {
@@ -177,8 +177,8 @@ namespace CapaPresentacion
                 }
                 CargarGridCliente();
                 CargarComboCliente();
-                CargarComboOjo();
-                defecto();
+                //CargarComboOjo();
+               // defecto();
             }
             else
             {
@@ -214,5 +214,10 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+       /* private void cbxOjo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }

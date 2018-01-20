@@ -97,14 +97,11 @@ namespace CapaLogica.Servicio
             miComando.Parameters.Add("@direc", MySqlDbType.VarChar);
             miComando.Parameters["@direc"].Value = elCliente.Direccion;
 
-            miComando.Parameters.Add("@tel", MySqlDbType.VarChar);
-            miComando.Parameters["@tel"].Value = elCliente.Telefono;
+            miComando.Parameters.Add("@tele", MySqlDbType.VarChar);
+            miComando.Parameters["@tele"].Value = elCliente.Telefono;
 
             miComando.Parameters.Add("@deu", MySqlDbType.Int16);
             miComando.Parameters["@deu"].Value = elCliente.Deuda;
-
-        
-
 
             respuesta = this.ejecutaSentencia(miComando);
 
