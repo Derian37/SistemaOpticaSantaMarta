@@ -215,9 +215,34 @@ namespace CapaPresentacion
             Application.Exit();
         }
 
-       /* private void cbxOjo_SelectedIndexChanged(object sender, EventArgs e)
+        private void lblNombre_Click(object sender, EventArgs e)
         {
 
-        }*/
+        }
+
+        private void lblDeuda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbxDatos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /* private void cbxOjo_SelectedIndexChanged(object sender, EventArgs e)
+         {
+
+         }*/
     }
 }

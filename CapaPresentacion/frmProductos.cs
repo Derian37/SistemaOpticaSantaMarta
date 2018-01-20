@@ -263,5 +263,10 @@ namespace CapaPresentacion
             }
             CargarDatosProducto();
         }
+
+        private void txt_codigo_Producto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

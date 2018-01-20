@@ -283,6 +283,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
+    <None Include="Resources\modificar.jpg" />
+    <None Include="Resources\search_64.png" />
     <None Include="Resources\impresora.PNG" />
     <None Include="Resources\LogoOptica.png" />
     <None Include="Resources\siguiente.png" />

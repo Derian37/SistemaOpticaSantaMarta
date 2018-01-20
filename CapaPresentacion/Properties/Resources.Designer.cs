@@ -193,6 +193,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap modificar {
+            get {
+                object obj = ResourceManager.GetObject("modificar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap print_64 {
             get {
                 object obj = ResourceManager.GetObject("print_64", resourceCulture);
@@ -226,6 +236,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap reading_glasses {
             get {
                 object obj = ResourceManager.GetObject("reading-glasses", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_64 {
+            get {
+                object obj = ResourceManager.GetObject("search_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

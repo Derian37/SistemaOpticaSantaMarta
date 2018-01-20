@@ -119,6 +119,7 @@
             this.txt_codigo_Producto.Name = "txt_codigo_Producto";
             this.txt_codigo_Producto.Size = new System.Drawing.Size(190, 26);
             this.txt_codigo_Producto.TabIndex = 58;
+            this.txt_codigo_Producto.TextChanged += new System.EventHandler(this.txt_codigo_Producto_TextChanged);
             this.txt_codigo_Producto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_codigo_Producto_KeyUp);
             // 
             // btnInsertarProducto
