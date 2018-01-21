@@ -48,7 +48,7 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "")
+            if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != ""  && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "")
             {
                 using (GestorCliente elCliente = new GestorCliente())
                 {
