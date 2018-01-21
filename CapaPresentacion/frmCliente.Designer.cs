@@ -46,17 +46,17 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.volverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.cbxCliente = new System.Windows.Forms.ComboBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
-            this.gbxBuscar = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.volverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.gbxBuscar = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.gbxDatos.SuspendLayout();
@@ -215,6 +215,15 @@
             this.menuStrip1.TabIndex = 75;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // volverToolStripMenuItem
+            // 
+            this.volverToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.volverToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("volverToolStripMenuItem.Image")));
+            this.volverToolStripMenuItem.Name = "volverToolStripMenuItem";
+            this.volverToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.volverToolStripMenuItem.Text = "Volver";
+            this.volverToolStripMenuItem.Click += new System.EventHandler(this.volverToolStripMenuItem_Click);
+            // 
             // dgvCliente
             // 
             this.dgvCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -223,18 +232,11 @@
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Location = new System.Drawing.Point(238, 363);
             this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.ReadOnly = true;
             this.dgvCliente.Size = new System.Drawing.Size(816, 310);
             this.dgvCliente.TabIndex = 76;
+            this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
-            // 
-            // cbxCliente
-            // 
-            this.cbxCliente.FormattingEnabled = true;
-            this.cbxCliente.Location = new System.Drawing.Point(32, 53);
-            this.cbxCliente.Name = "cbxCliente";
-            this.cbxCliente.Size = new System.Drawing.Size(304, 25);
-            this.cbxCliente.TabIndex = 77;
-            this.cbxCliente.SelectedIndexChanged += new System.EventHandler(this.cbxCliente_SelectedIndexChanged);
             // 
             // lblCliente
             // 
@@ -275,34 +277,26 @@
             this.gbxDatos.Text = "Datos";
             this.gbxDatos.Enter += new System.EventHandler(this.gbxDatos_Enter);
             // 
-            // gbxBuscar
+            // label2
             // 
-            this.gbxBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gbxBuscar.Controls.Add(this.cbxCliente);
-            this.gbxBuscar.Controls.Add(this.lblCliente);
-            this.gbxBuscar.Controls.Add(this.btnBuscar);
-            this.gbxBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbxBuscar.Font = new System.Drawing.Font("Ravie", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxBuscar.Location = new System.Drawing.Point(708, 57);
-            this.gbxBuscar.Name = "gbxBuscar";
-            this.gbxBuscar.Size = new System.Drawing.Size(436, 270);
-            this.gbxBuscar.TabIndex = 81;
-            this.gbxBuscar.TabStop = false;
-            this.gbxBuscar.Text = "Busqueda";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Ravie", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(385, 190);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 17);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Modificar";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // btnBuscar
+            // label1
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BackgroundImage = global::CapaPresentacion.Properties.Resources.search_64;
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(32, 89);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(60, 58);
-            this.btnBuscar.TabIndex = 79;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Ravie", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(390, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Guardar";
             // 
             // btnModificar
             // 
@@ -326,35 +320,41 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // volverToolStripMenuItem
+            // gbxBuscar
             // 
-            this.volverToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.volverToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("volverToolStripMenuItem.Image")));
-            this.volverToolStripMenuItem.Name = "volverToolStripMenuItem";
-            this.volverToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.volverToolStripMenuItem.Text = "Volver";
-            this.volverToolStripMenuItem.Click += new System.EventHandler(this.volverToolStripMenuItem_Click);
+            this.gbxBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gbxBuscar.Controls.Add(this.txtBuscar);
+            this.gbxBuscar.Controls.Add(this.lblCliente);
+            this.gbxBuscar.Controls.Add(this.btnBuscar);
+            this.gbxBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbxBuscar.Font = new System.Drawing.Font("Ravie", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxBuscar.Location = new System.Drawing.Point(708, 57);
+            this.gbxBuscar.Name = "gbxBuscar";
+            this.gbxBuscar.Size = new System.Drawing.Size(436, 270);
+            this.gbxBuscar.TabIndex = 81;
+            this.gbxBuscar.TabStop = false;
+            this.gbxBuscar.Text = "Busqueda";
             // 
-            // label1
+            // btnBuscar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ravie", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(390, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Guardar";
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BackgroundImage = global::CapaPresentacion.Properties.Resources.search_64;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(32, 83);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(60, 58);
+            this.btnBuscar.TabIndex = 79;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label2
+            // txtBuscar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Ravie", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(385, 190);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Modificar";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.txtBuscar.Location = new System.Drawing.Point(32, 53);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(304, 23);
+            this.txtBuscar.TabIndex = 80;
             // 
             // frmCliente
             // 
@@ -368,9 +368,10 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnInactivar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCliente";
+            this.Text = "Optica Santa Marta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCliente_FormClosing);
             this.Load += new System.EventHandler(this.frmCliente_Load);
@@ -409,12 +410,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem volverToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvCliente;
-        private System.Windows.Forms.ComboBox cbxCliente;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox gbxDatos;
         private System.Windows.Forms.GroupBox gbxBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }
