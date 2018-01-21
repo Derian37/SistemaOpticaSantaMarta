@@ -52,7 +52,7 @@ namespace CapaPresentacion
             {
                 using (GestorCliente elCliente = new GestorCliente())
                 {
-                    elCliente.InsertarCliente(txtCedula.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text, txtDireccion.Text, int.Parse(txtDeuda.Text));
+                    elCliente.InsertarCliente(txtCedula.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtDireccion.Text, txtTelefono.Text, int.Parse(txtDeuda.Text));
                 }
             }
             else
@@ -254,8 +254,8 @@ namespace CapaPresentacion
             txtNombre.Text = dgvCliente.CurrentRow.Cells[2].Value.ToString();
             txtApellido1.Text = dgvCliente.CurrentRow.Cells[3].Value.ToString();
             txtApellido2.Text = dgvCliente.CurrentRow.Cells[4].Value.ToString();
-            txtTelefono.Text = dgvCliente.CurrentRow.Cells[5].Value.ToString();
-            txtDireccion.Text = dgvCliente.CurrentRow.Cells[6].Value.ToString();
+            txtDireccion.Text = dgvCliente.CurrentRow.Cells[5].Value.ToString();
+            txtTelefono.Text = dgvCliente.CurrentRow.Cells[6].Value.ToString();
             txtDeuda.Text = dgvCliente.CurrentRow.Cells[7].Value.ToString();
         }
 
