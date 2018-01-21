@@ -167,30 +167,38 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
-
-            if (txtBuscar.Text != null)
+            if (txtBuscar.Text != "")
             {
 
-                using (GestorCliente Cliente = new GestorCliente())
+
+
+                if (txtBuscar.Text != null)
                 {
-                    this.dsCliente = Cliente.ConsultarClienteCedula(txtBuscar.Text);
-                    this.dtCliente = this.dsCliente.Tables[0];
+
+                    using (GestorCliente Cliente = new GestorCliente())
+                    {
+                        this.dsCliente = Cliente.ConsultarClienteCedula(txtBuscar.Text);
+                        this.dtCliente = this.dsCliente.Tables[0];
+
+                    }
+                    CargarGridCliente();
+                    // CargarComboCliente();
+                    //CargarComboOjo();
+                    // defecto();
+                }
+                else
+                {
+                    MessageBox.Show("¡ Debe insertar una cedula ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
-                CargarGridCliente();
-               // CargarComboCliente();
-                //CargarComboOjo();
-                // defecto();
+
+                CargarDatosCliente();
             }
             else
             {
                 MessageBox.Show("¡ Debe insertar una cedula ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
-
-            CargarDatosCliente();
-
         }
 
         
