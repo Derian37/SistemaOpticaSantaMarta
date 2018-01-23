@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿/// <summary>
+/// SistemaOpticaSantaMarta.CapaLogica.LogicaNegocio
+/// </summary>
 namespace ProyectoOptica.CapaLogica.LogicaNegocio
 {
     /// <summary>
-    /// Description of Producto.
+    /// Clase encargadad de suministrar atributos a los servicios de Expediente.
     /// </summary>
-
     public class Expediente
     {
+        /// <summary>
+        /// Region de Atributos.
+        /// </summary>
         #region ATRIBUTOS
         private int id_cliente;
         private string cedula;
@@ -22,21 +21,32 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
         private string telefono;
         private int deuda;
         private int id_ojo;
-
-
-
-
-
         #endregion ATRIBUTOS
 
+        /// <summary>
+        /// Region de Constructores.
+        /// </summary>
         #region CONSTRUCTOR
+
+        /// <summary>
+        /// Cosntructor Vacío.
+        /// </summary>
         public Expediente()
         {
         }
-        //constructor para el procedimiento almacenado de insertar y modificar
 
-
-
+        /// <summary>
+        /// Constructor de la clase Expediente para insertar datos y modifica datos.
+        /// </summary>
+        /// <param name="id_cliente">Parametro de tipo entero</param>
+        /// <param name="cedula">Parametro de tipo cadena o string</param>
+        /// <param name="nombre">Parametro de tipo cadena o string</param>
+        /// <param name="apellido1">Parametro de tipo cadena o string</param>
+        /// <param name="apellido2">Parametro de tipo cadena o string</param>
+        /// <param name="direccion">Parametro de tipo cadena o string</param>
+        /// <param name="telefono">Parametro de tipo cadena o string</param>
+        /// <param name="deuda">Parametro de tipo entero</param>
+        /// <param name="id_ojo">Parametro de tipo entero</param>
         public Expediente(int id_cliente, string cedula, string nombre, string apellido1, string apellido2, string direccion, string telefono, int deuda, int id_ojo)
         {
             this.Id_cliente = id_cliente;
@@ -50,7 +60,10 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
             this.Id_ojo = id_ojo;
         }
 
-        //Constructor para el procedimiento almacenado de Inactivar, eliminar y consultar
+        /// <summary>
+        /// Constructos que se utiliza para consultar un dato.
+        /// </summary>
+        /// <param name="cedula">Parametro de tipo cadena o string</param>
         public Expediente(string cedula)
         {
             this.Cedula = cedula;
@@ -58,9 +71,10 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
 
         #endregion CONSTRUCTOR
 
+        /// <summary>
+        /// Region Set y Get.
+        /// </summary>
         #region get y set
-
-
         public int Id_cliente { get => id_cliente; set => id_cliente = value; }
         public string Cedula { get => cedula; set => cedula = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -70,11 +84,6 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
         public string Telefono { get => telefono; set => telefono = value; }
         public int Deuda { get => deuda; set => deuda = value; }
         public int Id_ojo { get => id_ojo; set => id_ojo = value; }
-
-
         #endregion get y set
-
-
     }
-
 }
