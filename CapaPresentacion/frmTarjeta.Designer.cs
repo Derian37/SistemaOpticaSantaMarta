@@ -57,7 +57,6 @@
             this.txt_doctor = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txt_recibida = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txt_Seg = new System.Windows.Forms.TextBox();
             this.txt_DI = new System.Windows.Forms.TextBox();
@@ -86,6 +85,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_fecha = new System.Windows.Forms.TextBox();
+            this.cbx_recibido = new System.Windows.Forms.ComboBox();
             this.grbPanelUsuario.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAdmi)).BeginInit();
@@ -348,6 +348,7 @@
             this.dgvtargeta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvtargeta.BackgroundColor = System.Drawing.Color.White;
             this.dgvtargeta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvtargeta.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvtargeta.Location = new System.Drawing.Point(140, 140);
             this.dgvtargeta.Name = "dgvtargeta";
             this.dgvtargeta.RowHeadersWidth = 40;
@@ -355,6 +356,7 @@
             this.dgvtargeta.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvtargeta.Size = new System.Drawing.Size(600, 248);
             this.dgvtargeta.TabIndex = 74;
+            this.dgvtargeta.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvtargeta_DataError);
             // 
             // label10
             // 
@@ -406,13 +408,6 @@
             this.label13.Size = new System.Drawing.Size(131, 19);
             this.label13.TabIndex = 82;
             this.label13.Text = "Fecha de Entrega:";
-            // 
-            // txt_recibida
-            // 
-            this.txt_recibida.Location = new System.Drawing.Point(97, 612);
-            this.txt_recibida.Name = "txt_recibida";
-            this.txt_recibida.Size = new System.Drawing.Size(656, 20);
-            this.txt_recibida.TabIndex = 84;
             // 
             // groupBox5
             // 
@@ -691,6 +686,18 @@
             this.txt_fecha.Size = new System.Drawing.Size(120, 20);
             this.txt_fecha.TabIndex = 90;
             // 
+            // cbx_recibido
+            // 
+            this.cbx_recibido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_recibido.FormattingEnabled = true;
+            this.cbx_recibido.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbx_recibido.Location = new System.Drawing.Point(155, 612);
+            this.cbx_recibido.Name = "cbx_recibido";
+            this.cbx_recibido.Size = new System.Drawing.Size(103, 21);
+            this.cbx_recibido.TabIndex = 108;
+            // 
             // frmTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -698,6 +705,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(766, 697);
+            this.Controls.Add(this.cbx_recibido);
             this.Controls.Add(this.txt_fecha);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.dateTimePicker1);
@@ -706,7 +714,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.txt_recibida);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txt_doctor);
@@ -776,7 +783,6 @@
         private System.Windows.Forms.TextBox txt_doctor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txt_recibida;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txt_Seg;
         private System.Windows.Forms.TextBox txt_DI;
@@ -808,5 +814,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbx_recibido;
     }
 }

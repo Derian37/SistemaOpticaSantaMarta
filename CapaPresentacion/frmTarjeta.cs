@@ -85,7 +85,7 @@ namespace CapaPresentacion
                     txt_Seg.Text = tarjeta.ConsultarTarjeta(int.Parse(id_cliente)).Tables[0].Rows[0][1].ToString();
                     txt_lente.Text = tarjeta.ConsultarTarjeta(int.Parse(id_cliente)).Tables[0].Rows[0][5].ToString();
                     txt_armason.Text = tarjeta.ConsultarTarjeta(int.Parse(id_cliente)).Tables[0].Rows[0][3].ToString();
-                    txt_recibida.Text = tarjeta.ConsultarTarjeta(int.Parse(id_cliente)).Tables[0].Rows[0][7].ToString();
+                    cbx_recibido.SelectedItem = tarjeta.ConsultarTarjeta(int.Parse(id_cliente)).Tables[0].Rows[0][7].ToString();
                     txt_fecha.Text = tarjeta.ConsultarTarjeta(int.Parse(id_cliente)).Tables[0].Rows[0][6].ToString();
                 }
             
@@ -166,28 +166,34 @@ namespace CapaPresentacion
 
         private void Guardar()
         {
-            if (txt_armason.Text != "" && txt_DI.Text != "" && txt_lente.Text != "" && txt_recibida.Text != "" && txt_Seg.Text != "" && txt_fecha.Text != "" )
+            try
             {
-                using (GestorTarjeta elTargeta = new GestorTarjeta())
+                if (txt_armason.Text != "" && txt_DI.Text != "" && txt_lente.Text != "" && cbx_recibido.SelectedItem.ToString() != "" && txt_Seg.Text != "" && txt_fecha.Text != "")
                 {
-                    elTargeta.ModificarTarjeta(int.Parse(id_cliente),int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, double.Parse(txt_DI.Text), txt_recibida.Text, double.Parse(txt_Seg.Text));
+                    using (GestorTarjeta elTargeta = new GestorTarjeta())
+                    {
+                        elTargeta.ModificarTarjeta(int.Parse(id_cliente), int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, txt_DI.Text, cbx_recibido.SelectedItem.ToString(), double.Parse(txt_Seg.Text));
 
+                    }
+
+                    using (GestorGraduacion elGraduacion = new GestorGraduacion())
+                    {
+                        elGraduacion.ModificarGraduacion(int.Parse(id_cliente), float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
+
+                    }
+                    MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarGridgraduacionDatos();
                 }
-
-                using (GestorGraduacion elGraduacion = new GestorGraduacion())
+                else
                 {
-                    elGraduacion.ModificarGraduacion(int.Parse(id_cliente), float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
-
+                    MessageBox.Show("¡ Debe rellenar todos los espacios ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cargarGridgraduacionDatos();
+                cargarCombos();
             }
-            else
-            {
-                MessageBox.Show("¡ Debe rellenar todos los espacios ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            catch(Exception j) {
+                Console.Write(j);
             }
-            cargarGridgraduacionDatos();
-            cargarCombos();
         }
 
         private void label7_Click_1(object sender, EventArgs e)
@@ -218,6 +224,42 @@ namespace CapaPresentacion
         private void frmTarjeta_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dgvtargeta_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            if (e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            if (e.Context == DataGridViewDataErrorContexts.CurrentCellChange)
+            {
+                MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            if (e.Context == DataGridViewDataErrorContexts.Parsing)
+            {
+                MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            if (e.Context == DataGridViewDataErrorContexts.LeaveControl)
+            {
+                MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            if ((e.Exception) is ConstraintException)
+            {
+                DataGridView view = (DataGridView)sender;
+                view.Rows[e.RowIndex].ErrorText = "an error";
+                view.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "an error";
+
+                e.ThrowException = false;
+            }
         }
     }
 }

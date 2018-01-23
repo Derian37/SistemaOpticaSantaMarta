@@ -36,11 +36,11 @@ namespace ProyectoOptica.CapaIntegracion
         /// <param name="fecha_entrega">Parametro de tipo DateTime</param>
         /// <param name="fecha">Parametro de tipo DateTime</param>
         /// <param name="id_graduacion">Parametro de tipo entero</param>
-        /// <param name="distancia">Parametro de tipo Double</param>
+        /// <param name="distancia">Parametro de tipo string</param>
         /// <param name="recibida">Parametro de tipo string</param>
         /// <param name="segineatos">Parametro de tipo Double</param>
         /// <returns>Un Registro nuevo de una tarjeta de cliente guardada en la Base de datos</returns>
-        public string InsertarTarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha,int id_graduacion, Double distancia, string recibida, Double segineatos)
+        public string InsertarTarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha,int id_graduacion, string distancia, string recibida, Double segineatos)
         {
             CapaLogica.LogicaNegocio.Tarjeta nuevoTargeta = new Tarjeta(id_cliente, id_anteojos, detalle_armazon, id_producto, detalle_lente, fecha_entrega, fecha, id_graduacion, distancia, recibida, segineatos);
             using (ServicioTarjeta elTarjeta = new ServicioTarjeta())
@@ -57,11 +57,11 @@ namespace ProyectoOptica.CapaIntegracion
         /// <param name="detalle_lente">Parametro de tipo string</param>
         /// <param name="fecha_entrega">Parametro de tipo DateTime</param>
         /// <param name="fecha">Parametro de tipo DateTime</param>
-        /// <param name="distancia">Parametro de tipo Double</param>
+        /// <param name="distancia">Parametro de tipo string</param>
         /// <param name="recibida">Parametro de tipo string</param>
         /// <param name="segineatos">Parametro de tipo Double</param>
         /// <returns>Una tarjeta Modificada</returns>
-        public string ModificarTarjeta(int id_cliente,int id_anteojos,string detalle_armazon, int id_producto,string detalle_lente,DateTime fecha_entrega, DateTime fecha,  Double distancia, string recibida, Double segineatos)
+        public string ModificarTarjeta(int id_cliente,int id_anteojos,string detalle_armazon, int id_producto,string detalle_lente,DateTime fecha_entrega, DateTime fecha,  string distancia, string recibida, Double segineatos)
         {
             Tarjeta modificaTargeta = new Tarjeta(id_cliente, id_anteojos, detalle_armazon, id_producto, detalle_lente, fecha_entrega, fecha, distancia, recibida, segineatos);
             using (ServicioTarjeta elTarjeta = new ServicioTarjeta())

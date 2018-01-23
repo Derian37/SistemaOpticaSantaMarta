@@ -22,7 +22,7 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
         private DateTime fecha_entrega;
         private DateTime fecha;
         private int id_graduacion;
-        private Double distancia;
+        private string distancia;
         private string recibida;
         private Double segineatos;
         #endregion ATRIBUTOS
@@ -48,10 +48,10 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
         /// <param name="fecha_entrega">Parametro de tipo DateTime</param>
         /// <param name="fecha">Parametro de tipo DateTime</param>
         /// <param name="id_graduacion">Parametro de tipo entero</param>
-        /// <param name="distancia">Parametro de tipo Double</param>
+        /// <param name="distancia">Parametro de tipo string</param>
         /// <param name="recibida">Parametro de tipo string</param>
         /// <param name="segineatos">Parametro de tipo Double</param>
-        public Tarjeta(int id_cliente, int id_anteojos,string detalle_armazon, int id_producto,string detalle_lente, DateTime fecha_entrega, DateTime fecha,int id_graduacion ,double distancia, string recibida, double segineatos)
+        public Tarjeta(int id_cliente, int id_anteojos,string detalle_armazon, int id_producto,string detalle_lente, DateTime fecha_entrega, DateTime fecha,int id_graduacion , string distancia, string recibida, double segineatos)
         {
             this.Id_cliente = id_cliente;
             this.Id_anteojos = id_anteojos;
@@ -78,7 +78,7 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
         /// <param name="distancia">Parametro de tipo Double</param>
         /// <param name="recibida">Parametro de tipo string</param>
         /// <param name="segineatos">Parametro de tipo Double</param>
-        public Tarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha, double distancia, string recibida, double segineatos)
+        public Tarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha, string distancia, string recibida, double segineatos)
         {
             this.Id_cliente = id_cliente;
             this.Id_anteojos = id_anteojos;
@@ -113,7 +113,7 @@ namespace ProyectoOptica.CapaLogica.LogicaNegocio
         public DateTime Fecha_entrega { get => fecha_entrega; set => fecha_entrega = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public int Id_graduacion { get => id_graduacion; set => id_graduacion = value; }
-        public double Distancia { get => distancia; set => distancia = value; }
+        public string Distancia { get => distancia; set => distancia = value; }
         public string Recibida { get => recibida; set => recibida = value; }
         public double Segineatos { get => segineatos; set => segineatos = value; }
         public string Detalle_lente { get => detalle_lente; set => detalle_lente = value; }

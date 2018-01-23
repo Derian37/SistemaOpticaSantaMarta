@@ -56,7 +56,6 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txt_fecha = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txt_recibida = new System.Windows.Forms.TextBox();
             this.dgvtargeta = new System.Windows.Forms.DataGridView();
             this.ESP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +88,8 @@
             this.txt_doctor = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.cbx_recibido = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -366,13 +367,6 @@
             this.groupBox5.TabIndex = 101;
             this.groupBox5.TabStop = false;
             // 
-            // txt_recibida
-            // 
-            this.txt_recibida.Location = new System.Drawing.Point(93, 610);
-            this.txt_recibida.Name = "txt_recibida";
-            this.txt_recibida.Size = new System.Drawing.Size(656, 20);
-            this.txt_recibida.TabIndex = 100;
-            // 
             // dgvtargeta
             // 
             this.dgvtargeta.AllowUserToAddRows = false;
@@ -392,6 +386,7 @@
             this.dgvtargeta.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvtargeta.Size = new System.Drawing.Size(600, 248);
             this.dgvtargeta.TabIndex = 74;
+            this.dgvtargeta.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvtargeta_DataError);
             // 
             // ESP
             // 
@@ -584,6 +579,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dgvtargeta);
             this.groupBox1.Controls.Add(this.grbPanelUsuario);
+            this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Location = new System.Drawing.Point(8, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(746, 394);
@@ -700,12 +696,35 @@
             this.label10.TabIndex = 95;
             this.label10.Text = "Optometrista";
             // 
+            // cbx_recibido
+            // 
+            this.cbx_recibido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_recibido.FormattingEnabled = true;
+            this.cbx_recibido.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbx_recibido.Location = new System.Drawing.Point(151, 605);
+            this.cbx_recibido.Name = "cbx_recibido";
+            this.cbx_recibido.Size = new System.Drawing.Size(103, 21);
+            this.cbx_recibido.TabIndex = 107;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(564, 342);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 13);
+            this.label20.TabIndex = 108;
+            this.label20.Text = "label20";
+            this.label20.Visible = false;
+            // 
             // frmNuevaTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(766, 697);
+            this.Controls.Add(this.cbx_recibido);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbl_Cargo);
@@ -714,7 +733,6 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txt_fecha);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.txt_recibida);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label13);
@@ -744,6 +762,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -784,7 +803,6 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txt_fecha;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox txt_recibida;
         private System.Windows.Forms.DataGridView dgvtargeta;
         private System.Windows.Forms.GroupBox grbPanelUsuario;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -817,5 +835,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CIL;
         private System.Windows.Forms.DataGridViewTextBoxColumn EJE;
         private System.Windows.Forms.DataGridViewTextBoxColumn Adiciones;
+        private System.Windows.Forms.ComboBox cbx_recibido;
+        private System.Windows.Forms.Label label20;
     }
 }

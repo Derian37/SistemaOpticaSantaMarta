@@ -13,10 +13,14 @@ namespace CapaPresentacion
 {
     public partial class frmNuevaTarjeta : Form
     {
+        bool bandera = true;
+        private int graduacion;
         int id_usuario;
         string id_cliente;
         string usuario;
         string cargo;
+
+        public int Graduacion { get => graduacion; set => graduacion = value; }
 
         public frmNuevaTarjeta(int id_usuario, string id_cliente,  string usuario, string cargo)
         {
@@ -93,6 +97,7 @@ namespace CapaPresentacion
 
         private void frmNuevaTargea_Load_1(object sender, EventArgs e)
         {
+            label20.Text = bandera.ToString();
            
             cargarInformacionCliente();
             cargarCombos();
@@ -117,41 +122,101 @@ namespace CapaPresentacion
 
         private void btn_Crear_Click(object sender, EventArgs e)
         {
-            try
+            guardar();
+        }
+
+        private void guardar()
+        {
+
+            int Id_cliente = int.Parse(id_cliente);
+            if (label20.Text != "False")
             {
-                int graduacion;
-                int Id_cliente = int.Parse(id_cliente);
-                if (dgvtargeta.Rows[0].Cells[0].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[1].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[2].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[3].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[0].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[1].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[2].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[3].Value.ToString()!="") {
+                CrearGraduacion();
+            }
+            try
+                {
+                    using (GestorTarjeta elTarjeta = new GestorTarjeta())
+                    {
+                        elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, Graduacion, txt_DI.Text, cbx_recibido.SelectedItem.ToString(), double.Parse(txt_Seg.Text));
+                    }
+                    MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception h)
+                {
+                  MessageBox.Show("Dejo algun campo vacío", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                    cargarCombos();
+        }
+
+        private void CrearGraduacion()
+        {
+           
+            if (dgvtargeta.Rows[0].Cells[0].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[1].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[2].Value.ToString() != "" || dgvtargeta.Rows[0].Cells[3].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[0].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[1].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[2].Value.ToString() != "" || dgvtargeta.Rows[1].Cells[3].Value.ToString() != "")
+            {
+                try
+                {
+
                     using (GestorGraduacion elGraduacion = new GestorGraduacion())
                     {
                         elGraduacion.InsertarGraduacion(float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
                     }
                     using (GestorGraduacion elGraduacion = new GestorGraduacion())
                     {
-                        graduacion = int.Parse(elGraduacion.UltimaGraduacion().Tables[0].Rows[0][0].ToString());
+                        Graduacion = int.Parse(elGraduacion.UltimaGraduacion().Tables[0].Rows[0][0].ToString());
                     }
-                    using (GestorTarjeta elTarjeta = new GestorTarjeta())
-                    {
-                        elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, graduacion, double.Parse(txt_DI.Text), txt_recibida.Text, double.Parse(txt_Seg.Text));
-                    }
-                    MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                    bandera = false;
+                    label20.Text = bandera.ToString();
+                   // guardar(graduacion);
                 }
-                else {
-                    MessageBox.Show("Dejo algun campo vacío", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                catch (Exception y)
+                {
+                    MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero, en los ejes! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Console.Write(y);
                 }
-                cargarCombos();
             }
-            catch (Exception i) {
-                Console.WriteLine(i);
-            }
-           
+        
         }
 
         private void frmNuevaTargea_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dgvtargeta_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            if (e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            if (e.Context == DataGridViewDataErrorContexts.CurrentCellChange)
+            {
+                MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            if (e.Context == DataGridViewDataErrorContexts.Parsing)
+            {
+                MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            if (e.Context == DataGridViewDataErrorContexts.LeaveControl)
+            {
+                MessageBox.Show("¡ Error al ingresar dato, dato debe ser un numero entero ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            if ((e.Exception) is ConstraintException)
+            {
+                DataGridView view = (DataGridView)sender;
+                view.Rows[e.RowIndex].ErrorText = "an error";
+                view.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "an error";
+
+                e.ThrowException = false;
+            }
         }
     }
 }
