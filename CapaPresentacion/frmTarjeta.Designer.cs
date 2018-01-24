@@ -93,6 +93,25 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.dgvtemp = new System.Windows.Forms.DataGridView();
+            this.esferaIzquierda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cilindroIzquierda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejeIzquierda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adicionesIzquierda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.esferaDerecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejeDerecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adicionesDerecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cilindroDerecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.armazon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleArmazon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleLente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaentrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recibida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seguimientos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbPanelUsuario.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAdmi)).BeginInit();
@@ -109,6 +128,7 @@
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvtemp)).BeginInit();
             this.SuspendLayout();
             // 
             // grbPanelUsuario
@@ -282,8 +302,9 @@
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.dgvtargeta);
             this.groupBox1.Controls.Add(this.grbPanelUsuario);
+            this.groupBox1.Controls.Add(this.dgvtargeta);
+            this.groupBox1.Controls.Add(this.dgvtemp);
             this.groupBox1.Location = new System.Drawing.Point(12, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(746, 394);
@@ -678,6 +699,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Imprimir";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -787,6 +809,144 @@
             this.groupBox11.TabIndex = 110;
             this.groupBox11.TabStop = false;
             // 
+            // dgvtemp
+            // 
+            this.dgvtemp.AllowUserToDeleteRows = false;
+            this.dgvtemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvtemp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.esferaIzquierda,
+            this.cilindroIzquierda,
+            this.ejeIzquierda,
+            this.adicionesIzquierda,
+            this.esferaDerecha,
+            this.ejeDerecha,
+            this.adicionesDerecha,
+            this.cilindroDerecha,
+            this.Cliente,
+            this.armazon,
+            this.detalleArmazon,
+            this.lente,
+            this.detalleLente,
+            this.fechaentrega,
+            this.fecha,
+            this.distancia,
+            this.recibida,
+            this.seguimientos});
+            this.dgvtemp.Location = new System.Drawing.Point(140, 140);
+            this.dgvtemp.Name = "dgvtemp";
+            this.dgvtemp.ReadOnly = true;
+            this.dgvtemp.Size = new System.Drawing.Size(600, 248);
+            this.dgvtemp.TabIndex = 77;
+            this.dgvtemp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtemp_CellContentClick);
+            // 
+            // esferaIzquierda
+            // 
+            this.esferaIzquierda.HeaderText = "esferaIzquierda";
+            this.esferaIzquierda.Name = "esferaIzquierda";
+            this.esferaIzquierda.ReadOnly = true;
+            // 
+            // cilindroIzquierda
+            // 
+            this.cilindroIzquierda.HeaderText = "cilindroIzquierda";
+            this.cilindroIzquierda.Name = "cilindroIzquierda";
+            this.cilindroIzquierda.ReadOnly = true;
+            // 
+            // ejeIzquierda
+            // 
+            this.ejeIzquierda.HeaderText = "ejeIzquierda";
+            this.ejeIzquierda.Name = "ejeIzquierda";
+            this.ejeIzquierda.ReadOnly = true;
+            // 
+            // adicionesIzquierda
+            // 
+            this.adicionesIzquierda.HeaderText = "adicionesIzquierda";
+            this.adicionesIzquierda.Name = "adicionesIzquierda";
+            this.adicionesIzquierda.ReadOnly = true;
+            // 
+            // esferaDerecha
+            // 
+            this.esferaDerecha.HeaderText = "esferaDerecha";
+            this.esferaDerecha.Name = "esferaDerecha";
+            this.esferaDerecha.ReadOnly = true;
+            // 
+            // ejeDerecha
+            // 
+            this.ejeDerecha.HeaderText = "cilindroDerecha";
+            this.ejeDerecha.Name = "ejeDerecha";
+            this.ejeDerecha.ReadOnly = true;
+            // 
+            // adicionesDerecha
+            // 
+            this.adicionesDerecha.HeaderText = "ejeDerecha";
+            this.adicionesDerecha.Name = "adicionesDerecha";
+            this.adicionesDerecha.ReadOnly = true;
+            // 
+            // cilindroDerecha
+            // 
+            this.cilindroDerecha.HeaderText = "adicionesDerecha";
+            this.cilindroDerecha.Name = "cilindroDerecha";
+            this.cilindroDerecha.ReadOnly = true;
+            // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            this.Cliente.ReadOnly = true;
+            // 
+            // armazon
+            // 
+            this.armazon.HeaderText = "armazon";
+            this.armazon.Name = "armazon";
+            this.armazon.ReadOnly = true;
+            // 
+            // detalleArmazon
+            // 
+            this.detalleArmazon.HeaderText = "detalleArmazon";
+            this.detalleArmazon.Name = "detalleArmazon";
+            this.detalleArmazon.ReadOnly = true;
+            // 
+            // lente
+            // 
+            this.lente.HeaderText = "lente";
+            this.lente.Name = "lente";
+            this.lente.ReadOnly = true;
+            // 
+            // detalleLente
+            // 
+            this.detalleLente.HeaderText = "detalleLente";
+            this.detalleLente.Name = "detalleLente";
+            this.detalleLente.ReadOnly = true;
+            // 
+            // fechaentrega
+            // 
+            this.fechaentrega.HeaderText = "fechaentrega";
+            this.fechaentrega.Name = "fechaentrega";
+            this.fechaentrega.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // distancia
+            // 
+            this.distancia.HeaderText = "distancia";
+            this.distancia.Name = "distancia";
+            this.distancia.ReadOnly = true;
+            // 
+            // recibida
+            // 
+            this.recibida.HeaderText = "recibida";
+            this.recibida.Name = "recibida";
+            this.recibida.ReadOnly = true;
+            // 
+            // seguimientos
+            // 
+            this.seguimientos.HeaderText = "seguimientos";
+            this.seguimientos.Name = "seguimientos";
+            this.seguimientos.ReadOnly = true;
+            // 
             // frmTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -840,6 +1000,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvtemp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -911,5 +1072,24 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.DataGridView dgvtemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn esferaIzquierda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cilindroIzquierda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ejeIzquierda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adicionesIzquierda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn esferaDerecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ejeDerecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adicionesDerecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cilindroDerecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn armazon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalleArmazon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalleLente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaentrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distancia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recibida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seguimientos;
     }
 }

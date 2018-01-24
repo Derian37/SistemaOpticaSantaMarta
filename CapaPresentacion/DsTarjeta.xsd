@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsTarjeta" targetNamespace="http://tempuri.org/DsTarjeta.xsd" xmlns:mstns="http://tempuri.org/DsTarjeta.xsd" xmlns="http://tempuri.org/DsTarjeta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsTarjeta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsTarjeta" msprop:Generator_UserDSName="DsTarjeta">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtTarjeta" msprop:Generator_TableClassName="dtTarjetaDataTable" msprop:Generator_TableVarName="tabledtTarjeta" msprop:Generator_TablePropName="dtTarjeta" msprop:Generator_RowDeletingName="dtTarjetaRowDeleting" msprop:Generator_RowChangingName="dtTarjetaRowChanging" msprop:Generator_RowEvHandlerName="dtTarjetaRowChangeEventHandler" msprop:Generator_RowDeletedName="dtTarjetaRowDeleted" msprop:Generator_UserTableName="dtTarjeta" msprop:Generator_RowChangedName="dtTarjetaRowChanged" msprop:Generator_RowEvArgName="dtTarjetaRowChangeEvent" msprop:Generator_RowClassName="dtTarjetaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="esferaIzquierda" msprop:Generator_ColumnVarNameInTable="columnesferaIzquierda" msprop:Generator_ColumnPropNameInRow="esferaIzquierda" msprop:Generator_ColumnPropNameInTable="esferaIzquierdaColumn" msprop:Generator_UserColumnName="esferaIzquierda" type="xs:string" minOccurs="0" />
+              <xs:element name="cilindroIzquierda" msprop:Generator_ColumnVarNameInTable="columncilindroIzquierda" msprop:Generator_ColumnPropNameInRow="cilindroIzquierda" msprop:Generator_ColumnPropNameInTable="cilindroIzquierdaColumn" msprop:Generator_UserColumnName="cilindroIzquierda" type="xs:string" minOccurs="0" />
+              <xs:element name="ejeIzquierda" msprop:Generator_ColumnVarNameInTable="columnejeIzquierda" msprop:Generator_ColumnPropNameInRow="ejeIzquierda" msprop:Generator_ColumnPropNameInTable="ejeIzquierdaColumn" msprop:Generator_UserColumnName="ejeIzquierda" type="xs:string" minOccurs="0" />
+              <xs:element name="adicionesIzquierda" msprop:Generator_ColumnVarNameInTable="columnadicionesIzquierda" msprop:Generator_ColumnPropNameInRow="adicionesIzquierda" msprop:Generator_ColumnPropNameInTable="adicionesIzquierdaColumn" msprop:Generator_UserColumnName="adicionesIzquierda" type="xs:string" minOccurs="0" />
+              <xs:element name="esferaDerecha" msprop:Generator_ColumnVarNameInTable="columnesferaDerecha" msprop:Generator_ColumnPropNameInRow="esferaDerecha" msprop:Generator_ColumnPropNameInTable="esferaDerechaColumn" msprop:Generator_UserColumnName="esferaDerecha" type="xs:string" minOccurs="0" />
+              <xs:element name="cilindroDerecha" msprop:Generator_ColumnVarNameInTable="columncilindroDerecha" msprop:Generator_ColumnPropNameInRow="cilindroDerecha" msprop:Generator_ColumnPropNameInTable="cilindroDerechaColumn" msprop:Generator_UserColumnName="cilindroDerecha" type="xs:string" minOccurs="0" />
+              <xs:element name="ejeDerecha" msprop:Generator_ColumnVarNameInTable="columnejeDerecha" msprop:Generator_ColumnPropNameInRow="ejeDerecha" msprop:Generator_ColumnPropNameInTable="ejeDerechaColumn" msprop:Generator_UserColumnName="ejeDerecha" type="xs:string" minOccurs="0" />
+              <xs:element name="adicionesDerecha" msprop:Generator_ColumnVarNameInTable="columnadicionesDerecha" msprop:Generator_ColumnPropNameInRow="adicionesDerecha" msprop:Generator_ColumnPropNameInTable="adicionesDerechaColumn" msprop:Generator_UserColumnName="adicionesDerecha" type="xs:string" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="armazon" msprop:Generator_ColumnVarNameInTable="columnarmazon" msprop:Generator_ColumnPropNameInRow="armazon" msprop:Generator_ColumnPropNameInTable="armazonColumn" msprop:Generator_UserColumnName="armazon" type="xs:string" minOccurs="0" />
+              <xs:element name="detalle_x0020_armazon" msprop:Generator_ColumnVarNameInTable="columndetalle_armazon" msprop:Generator_ColumnPropNameInRow="detalle_armazon" msprop:Generator_ColumnPropNameInTable="detalle_armazonColumn" msprop:Generator_UserColumnName="detalle armazon" type="xs:string" minOccurs="0" />
+              <xs:element name="lente" msprop:Generator_ColumnVarNameInTable="columnlente" msprop:Generator_ColumnPropNameInRow="lente" msprop:Generator_ColumnPropNameInTable="lenteColumn" msprop:Generator_UserColumnName="lente" type="xs:string" minOccurs="0" />
+              <xs:element name="detalle_x0020_lente" msprop:Generator_ColumnVarNameInTable="columndetalle_lente" msprop:Generator_ColumnPropNameInRow="detalle_lente" msprop:Generator_ColumnPropNameInTable="detalle_lenteColumn" msprop:Generator_UserColumnName="detalle lente" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_x0020_entrega" msprop:Generator_ColumnVarNameInTable="columnfecha_entrega" msprop:Generator_ColumnPropNameInRow="fecha_entrega" msprop:Generator_ColumnPropNameInTable="fecha_entregaColumn" msprop:Generator_UserColumnName="fecha entrega" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="distancia" msprop:Generator_ColumnVarNameInTable="columndistancia" msprop:Generator_ColumnPropNameInRow="distancia" msprop:Generator_ColumnPropNameInTable="distanciaColumn" msprop:Generator_UserColumnName="distancia" type="xs:string" minOccurs="0" />
+              <xs:element name="recibida" msprop:Generator_ColumnVarNameInTable="columnrecibida" msprop:Generator_ColumnPropNameInRow="recibida" msprop:Generator_ColumnPropNameInTable="recibidaColumn" msprop:Generator_UserColumnName="recibida" type="xs:string" minOccurs="0" />
+              <xs:element name="seguimientos" msprop:Generator_ColumnVarNameInTable="columnseguimientos" msprop:Generator_ColumnPropNameInRow="seguimientos" msprop:Generator_ColumnPropNameInTable="seguimientosColumn" msprop:Generator_UserColumnName="seguimientos" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

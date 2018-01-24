@@ -17,7 +17,7 @@ namespace CapaPresentacion
         string id_cliente;
         string usuario;
         string cargo;
-       
+      
         public frmTarjeta(int id_usuario, string id_cliente, string usuario, string cargo)
         {
             this.id_usuario = id_usuario;
@@ -260,6 +260,43 @@ namespace CapaPresentacion
 
                 e.ThrowException = false;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Imprimir();
+        }
+
+        private void Imprimir()
+        {
+            //if (textBox1.Text != "")
+            //{
+            dgvtemp.Rows[0].Cells[0].Value = dgvtargeta.Rows[1].Cells[0].Value.ToString();
+            dgvtemp.Rows[0].Cells[1].Value = dgvtargeta.Rows[1].Cells[1].Value.ToString();
+            dgvtemp.Rows[0].Cells[2].Value = dgvtargeta.Rows[1].Cells[2].Value.ToString();
+            dgvtemp.Rows[0].Cells[3].Value = dgvtargeta.Rows[1].Cells[3].Value.ToString();
+            dgvtemp.Rows[0].Cells[4].Value = dgvtargeta.Rows[0].Cells[0].Value.ToString();
+            dgvtemp.Rows[0].Cells[5].Value = dgvtargeta.Rows[0].Cells[1].Value.ToString();
+            dgvtemp.Rows[0].Cells[6].Value = dgvtargeta.Rows[0].Cells[2].Value.ToString();
+            dgvtemp.Rows[0].Cells[7].Value = dgvtargeta.Rows[0].Cells[3].Value.ToString();
+            dgvtemp.Rows[0].Cells[8].Value = lblUNombre.Text;
+            dgvtemp.Rows[0].Cells[9].Value = cbx_Prod_Armazon.Text;
+            dgvtemp.Rows[0].Cells[10].Value = txt_armason.Text;
+            dgvtemp.Rows[0].Cells[11].Value = cbx_Prod_Lentes.Text;
+            dgvtemp.Rows[0].Cells[12].Value = txt_lente.Text;
+            dgvtemp.Rows[0].Cells[13].Value = dateTimePicker1.Value.ToString();
+            dgvtemp.Rows[0].Cells[14].Value = txt_fecha.Text; 
+            dgvtemp.Rows[0].Cells[15].Value = txt_DI.Text;
+            dgvtemp.Rows[0].Cells[16].Value = cbx_recibido.Text;
+            dgvtemp.Rows[0].Cells[17].Value = txt_Seg.Text;
+            frmImpresionTarjeta reporte = new frmImpresionTarjeta(dgvtemp,id_usuario,usuario,cargo);
+            reporte.Show();
+            this.SetVisibleCore(false);
+       }
+
+        private void dgvtemp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
