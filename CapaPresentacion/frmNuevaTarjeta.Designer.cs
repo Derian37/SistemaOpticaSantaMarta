@@ -83,13 +83,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_doctor = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cbx_recibido = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             // btn_Crear
             // 
+            this.btn_Crear.Enabled = false;
             this.btn_Crear.Location = new System.Drawing.Point(95, 14);
             this.btn_Crear.Name = "btn_Crear";
             this.btn_Crear.Size = new System.Drawing.Size(82, 35);
@@ -166,6 +168,7 @@
             // 
             // cbx_Prod_Armazon
             // 
+            this.cbx_Prod_Armazon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Prod_Armazon.FormattingEnabled = true;
             this.cbx_Prod_Armazon.Location = new System.Drawing.Point(109, 16);
             this.cbx_Prod_Armazon.Name = "cbx_Prod_Armazon";
@@ -245,6 +248,7 @@
             // 
             // cbx_Prod_Lentes
             // 
+            this.cbx_Prod_Lentes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Prod_Lentes.FormattingEnabled = true;
             this.cbx_Prod_Lentes.Location = new System.Drawing.Point(78, 16);
             this.cbx_Prod_Lentes.Name = "cbx_Prod_Lentes";
@@ -291,6 +295,7 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.button1);
             this.groupBox8.Controls.Add(this.btn_Crear);
             this.groupBox8.Location = new System.Drawing.Point(275, 636);
             this.groupBox8.Name = "groupBox8";
@@ -645,6 +650,16 @@
             this.label9.TabIndex = 45;
             this.label9.Text = "R/.";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(564, 342);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 13);
+            this.label20.TabIndex = 108;
+            this.label20.Text = "label20";
+            this.label20.Visible = false;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -708,15 +723,15 @@
             this.cbx_recibido.Size = new System.Drawing.Size(103, 21);
             this.cbx_recibido.TabIndex = 107;
             // 
-            // label20
+            // button1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(564, 342);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
-            this.label20.TabIndex = 108;
-            this.label20.Text = "label20";
-            this.label20.Visible = false;
+            this.button1.Location = new System.Drawing.Point(95, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 36);
+            this.button1.TabIndex = 108;
+            this.button1.Text = "Listo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmNuevaTarjeta
             // 
@@ -746,6 +761,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNuevaTargea_FormClosing);
             this.Load += new System.EventHandler(this.frmNuevaTargea_Load_1);
+            this.Click += new System.EventHandler(this.frmNuevaTarjeta_Click);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -837,5 +853,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Adiciones;
         private System.Windows.Forms.ComboBox cbx_recibido;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button1;
     }
 }

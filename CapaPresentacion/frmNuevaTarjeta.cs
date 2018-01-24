@@ -101,6 +101,8 @@ namespace CapaPresentacion
            
             cargarInformacionCliente();
             cargarCombos();
+
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -140,6 +142,9 @@ namespace CapaPresentacion
                         elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, Graduacion, txt_DI.Text, cbx_recibido.SelectedItem.ToString(), double.Parse(txt_Seg.Text));
                     }
                     MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmExpediente volver = new frmExpediente(id_usuario, usuario, cargo);
+                volver.Show();
+                this.SetVisibleCore(false);
                 }
                 catch (Exception h)
                 {
@@ -167,7 +172,7 @@ namespace CapaPresentacion
                     }
                     bandera = false;
                     label20.Text = bandera.ToString();
-                   // guardar(graduacion);
+                   
                 }
                 catch (Exception y)
                 {
@@ -216,6 +221,32 @@ namespace CapaPresentacion
                 view.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "an error";
 
                 e.ThrowException = false;
+            }
+        }
+
+        private void frmNuevaTarjeta_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgvtargeta.Rows[0].Cells[0].Value.ToString() != "" && dgvtargeta.Rows[0].Cells[1].Value.ToString() != "" && 
+                dgvtargeta.Rows[0].Cells[2].Value.ToString() != "" && dgvtargeta.Rows[0].Cells[3].Value.ToString() != "" && 
+                dgvtargeta.Rows[1].Cells[0].Value.ToString() != "" && dgvtargeta.Rows[1].Cells[1].Value.ToString() != "" && 
+                dgvtargeta.Rows[1].Cells[2].Value.ToString() != "" && dgvtargeta.Rows[1].Cells[3].Value.ToString() != "" &&
+                txt_DI.Text !="" && txt_Seg.Text !="" && cbx_Prod_Lentes.SelectedValue.ToString()!="" && 
+                cbx_Prod_Armazon.SelectedValue.ToString() !="" && cbx_recibido.Text.ToString() !="" && dateTimePicker1.Value != null)
+            {
+                btn_Crear.Enabled = true;
+                button1.Visible = false;
+                btn_Crear.BackColor = Color.Gold;
+            }
+            else
+            {
+                MessageBox.Show("¡ Debe llenar todos los datos necesarios! ", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                button1.Visible = true;
+                btn_Crear.Enabled = false;
             }
         }
     }
