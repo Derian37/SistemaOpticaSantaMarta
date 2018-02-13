@@ -68,6 +68,8 @@
             this.btn_AgregarNombre = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_pago = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventas)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -193,18 +195,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(659, 457);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(663, 480);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 16);
+            this.label3.Size = new System.Drawing.Size(40, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "IVA:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(649, 492);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(655, 517);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.Size = new System.Drawing.Size(48, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Total:";
             // 
@@ -215,9 +219,9 @@
             this.panel1.Controls.Add(this.btn_cerrar);
             this.panel1.Controls.Add(this.btn_buscarProducto);
             this.panel1.Controls.Add(this.btn_realizarVenta);
-            this.panel1.Location = new System.Drawing.Point(44, 526);
+            this.panel1.Location = new System.Drawing.Point(44, 552);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(783, 88);
+            this.panel1.Size = new System.Drawing.Size(581, 67);
             this.panel1.TabIndex = 10;
             // 
             // btn_cerrar
@@ -225,11 +229,12 @@
             this.btn_cerrar.BackColor = System.Drawing.SystemColors.Window;
             this.btn_cerrar.Image = global::CapaPresentacion.Properties.Resources.cerrar_min;
             this.btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_cerrar.Location = new System.Drawing.Point(545, 26);
+            this.btn_cerrar.Location = new System.Drawing.Point(393, 17);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(206, 32);
+            this.btn_cerrar.Size = new System.Drawing.Size(160, 32);
             this.btn_cerrar.TabIndex = 10;
             this.btn_cerrar.Text = "Cerrar (Esc)";
+            this.btn_cerrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cerrar.UseVisualStyleBackColor = false;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
@@ -239,11 +244,12 @@
             this.btn_buscarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_buscarProducto.Image = global::CapaPresentacion.Properties.Resources.buscar_min;
             this.btn_buscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_buscarProducto.Location = new System.Drawing.Point(29, 26);
+            this.btn_buscarProducto.Location = new System.Drawing.Point(23, 17);
             this.btn_buscarProducto.Name = "btn_buscarProducto";
-            this.btn_buscarProducto.Size = new System.Drawing.Size(206, 32);
+            this.btn_buscarProducto.Size = new System.Drawing.Size(160, 32);
             this.btn_buscarProducto.TabIndex = 5;
             this.btn_buscarProducto.Text = "Buscar Producto (F1)";
+            this.btn_buscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_buscarProducto.UseVisualStyleBackColor = false;
             this.btn_buscarProducto.Click += new System.EventHandler(this.btn_buscarProducto_Click);
             // 
@@ -252,20 +258,22 @@
             this.btn_realizarVenta.BackColor = System.Drawing.SystemColors.Window;
             this.btn_realizarVenta.Image = global::CapaPresentacion.Properties.Resources.imprimir_min;
             this.btn_realizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_realizarVenta.Location = new System.Drawing.Point(288, 26);
+            this.btn_realizarVenta.Location = new System.Drawing.Point(208, 17);
             this.btn_realizarVenta.Name = "btn_realizarVenta";
-            this.btn_realizarVenta.Size = new System.Drawing.Size(206, 32);
+            this.btn_realizarVenta.Size = new System.Drawing.Size(160, 32);
             this.btn_realizarVenta.TabIndex = 7;
             this.btn_realizarVenta.Text = "Realizar Venta (F5)";
+            this.btn_realizarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_realizarVenta.UseVisualStyleBackColor = false;
             this.btn_realizarVenta.Click += new System.EventHandler(this.btn_realizarVenta_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(631, 421);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(630, 441);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 16);
+            this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Subtotal:";
             // 
@@ -404,7 +412,7 @@
             this.lbl_subtotal.BackColor = System.Drawing.SystemColors.HighlightText;
             this.lbl_subtotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_subtotal.Location = new System.Drawing.Point(711, 411);
+            this.lbl_subtotal.Location = new System.Drawing.Point(715, 436);
             this.lbl_subtotal.Name = "lbl_subtotal";
             this.lbl_subtotal.Size = new System.Drawing.Size(116, 30);
             this.lbl_subtotal.TabIndex = 45;
@@ -415,7 +423,7 @@
             this.lbl_iva.BackColor = System.Drawing.SystemColors.HighlightText;
             this.lbl_iva.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_iva.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_iva.Location = new System.Drawing.Point(711, 447);
+            this.lbl_iva.Location = new System.Drawing.Point(715, 473);
             this.lbl_iva.Name = "lbl_iva";
             this.lbl_iva.Size = new System.Drawing.Size(116, 30);
             this.lbl_iva.TabIndex = 46;
@@ -426,7 +434,7 @@
             this.lbl_total.BackColor = System.Drawing.SystemColors.HighlightText;
             this.lbl_total.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_total.Location = new System.Drawing.Point(711, 482);
+            this.lbl_total.Location = new System.Drawing.Point(715, 510);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(116, 30);
             this.lbl_total.TabIndex = 47;
@@ -464,7 +472,7 @@
             this.btn_AgregarNombre.BackColor = System.Drawing.SystemColors.Window;
             this.btn_AgregarNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_AgregarNombre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AgregarNombre.Image = global::CapaPresentacion.Properties.Resources.agregar_min;
+            this.btn_AgregarNombre.Image = global::CapaPresentacion.Properties.Resources.check_min;
             this.btn_AgregarNombre.Location = new System.Drawing.Point(448, 430);
             this.btn_AgregarNombre.Margin = new System.Windows.Forms.Padding(0);
             this.btn_AgregarNombre.Name = "btn_AgregarNombre";
@@ -479,10 +487,13 @@
             this.btn_buscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_buscar.Image = global::CapaPresentacion.Properties.Resources.buscar_min;
+            this.btn_buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_buscar.Location = new System.Drawing.Point(441, 88);
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(41, 38);
+            this.btn_buscar.Size = new System.Drawing.Size(154, 38);
             this.btn_buscar.TabIndex = 28;
+            this.btn_buscar.Text = "Buscar Cliente (F6)";
+            this.btn_buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_buscar.UseVisualStyleBackColor = false;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
@@ -496,12 +507,32 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(653, 554);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 20);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Pago:";
+            // 
+            // txt_pago
+            // 
+            this.txt_pago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pago.Location = new System.Drawing.Point(715, 547);
+            this.txt_pago.Name = "txt_pago";
+            this.txt_pago.Size = new System.Drawing.Size(116, 31);
+            this.txt_pago.TabIndex = 50;
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(884, 626);
+            this.Controls.Add(this.txt_pago);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_iva);
@@ -590,5 +621,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTotal;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_pago;
     }
 }

@@ -17,16 +17,16 @@ namespace ProyectoOptica.CapaIntegracion
         public void Dispose() { }
 
 
-        public string InsertarProducto(string codigo, string nombre, string detalle, float monto, int cantidad, string estado)
+        public string InsertarProducto(string codigo, string nombre, string detalle, int monto, int cantidad, string marca, string tipo, string iva, string estado)
         {
-            Producto nuevoProducto = new Producto(codigo, nombre, detalle, monto, cantidad, estado);
+            Producto nuevoProducto = new Producto(codigo, nombre, detalle, monto, cantidad, marca, tipo, iva, estado);
             using (ServicioProducto elProducto = new ServicioProducto())
                 return elProducto.InsertarProducto(nuevoProducto);
         }
 
-        public string ModificarProducto(string codig, string codigo, string nombre, string detalle, float monto, int cantidad, string estado)
+        public string ModificarProducto(string codig, string codigo, string nombre, string detalle, int monto, int cantidad, string marca, string tipo, string iva, string estado)
         {
-            Producto modificarProducto = new Producto(codig, codigo, nombre, detalle, monto, cantidad, "A");
+            Producto modificarProducto = new Producto(codig, codigo, nombre, detalle, monto, cantidad, marca, tipo, iva, estado);
             using (ServicioProducto elProducto = new ServicioProducto())
                 return elProducto.ModificarProducto(modificarProducto);
         }

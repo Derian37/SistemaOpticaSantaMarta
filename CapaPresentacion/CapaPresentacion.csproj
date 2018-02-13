@@ -115,6 +115,12 @@
     <Compile Include="frmNuevaTarjeta.Designer.cs">
       <DependentUpon>frmNuevaTarjeta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRecibos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,12 +138,6 @@
     </Compile>
     <Compile Include="frmPrincipal.designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProductos.Designer.cs">
-      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTarjeta.cs">
       <SubType>Form</SubType>

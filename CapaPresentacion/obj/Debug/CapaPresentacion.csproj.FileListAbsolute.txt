@@ -161,7 +161,6 @@ D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPrese
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmExpediente.resources
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmListaClientes.resources
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmNuevaTargea.resources
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmProductos.resources
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frm_Recibos.resources
@@ -184,14 +183,10 @@ D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaPrese
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaConexion.dll
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaIntegracion.dll
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaLogica.dll
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\itextsharp.dll
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\itextsharp.pdfa.dll
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\itextsharp.xtra.dll
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\MySql.Data.dll
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaConexion.pdb
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaIntegracion.pdb
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaLogica.pdb
-D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\itextsharp.xml
 D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\MySql.Data.xml
 C:\Users\Derian Chavarría\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\itextsharp.xml
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
@@ -288,3 +283,19 @@ C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\De
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\stdole.dll
 C:\Users\Derian\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmImpresionTarjeta.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmImpresionTarjeta.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\obj\Debug\CapaPresentacion.frmNuevaTarjeta.resources
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\ShockwaveFlashObjects.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Documents\GitHub\SistemaOpticaSantaMarta\CapaPresentacion\bin\Debug\stdole.dll

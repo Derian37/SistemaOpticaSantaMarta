@@ -131,15 +131,15 @@ namespace ProyectoOptica.CapaLogica.Servicio
 
 
         //metodo para el SP de Consultar Usuario
-        public DataSet ConsultarUsuario(string cedula)
+        public DataSet ConsultarUsuario(int id)
         {
             miComando = new MySqlCommand();
             Console.WriteLine("Gestor ConsultarUsuario");
 
             miComando.CommandText = "consultar_usuario";
 
-            miComando.Parameters.Add("@cedula", MySqlDbType.VarChar);
-            miComando.Parameters["@cedula"].Value = cedula;
+            miComando.Parameters.Add("@id", MySqlDbType.VarChar);
+            miComando.Parameters["@id"].Value = id;
 
             DataSet miDataSet = new DataSet();
             this.abrirConexion();

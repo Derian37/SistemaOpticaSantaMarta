@@ -14,88 +14,67 @@ namespace CapaPresentacion.Ventas
     {
         int id_usuario;
         string nombre, cargo, dinero, tarj;
-        double subtotal;
-        double total;
-        double efectivo;
-        double tarjeta;
-        double saldo;
-        double abono;
+        int subtotal;
+        int total;
+        int pago;
+        int efectivo;
+        int tarjeta;
+        int saldo;
+        int abono;
         bool imprimir;
 
         #region set y get
-        public double Total { get => total; set => total = value; }
-        public double Efectivo { get => efectivo; set => efectivo = value; }
-        public double Tarjeta { get => tarjeta; set => tarjeta = value; }
-        public double Saldo { get => saldo; set => saldo = value; }
-        public double Abono { get => abono; set => abono = value; }
+        public int Total { get => total; set => total = value; }
+        public int Pago { get => pago; set => pago = value; }
+        public int Efectivo { get => efectivo; set => efectivo = value; }
+        public int Tarjeta { get => tarjeta; set => tarjeta = value; }
+        public int Saldo { get => saldo; set => saldo = value; }
+        public int Abono { get => abono; set => abono = value; }
         public bool Imprimir { get => imprimir; set => imprimir = value; }
         #endregion
 
 
-        public FrmCobrar(int id_usuario, string nombre, string cargo, double total)
+        public FrmCobrar(int id_usuario, string nombre, string cargo, int total, int pago)
         {
             InitializeComponent();
             this.id_usuario = id_usuario;
             this.nombre = nombre;
             this.cargo = cargo;
             this.Total = total;
+            this.Pago = pago;
         }
 
         private void FrmCobrar_Load(object sender, EventArgs e)
         {
             lbl_cantPagar.Text = total.ToString();
-            subtotal = 0;
-            txt_Abono.Focus();
+            Lbl_efectivo.Text = pago.ToString();
+            CalcularVuelto();
+            btn_cobrar.Focus();
         }
 
-        private void txt_efectivo_KeyPress(object sender, KeyPressEventArgs e)
+        private void CalcularVuelto()
         {
-            //Solo permite numeros
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            int subtotal = total - pago;
+
+            if (subtotal >= 0)
             {
-                e.Handled = true;
+                Lbl_vuelto.Text = "El cambio es: ";
             }
-            else
+            else if (subtotal < 0)
             {
-                string digito = e.KeyChar.ToString();
-                dinero = string.Concat(dinero, digito);
-                efectivo = double.Parse(dinero);
-                abono = efectivo;
-                subtotal = total - efectivo;
-                saldo = subtotal;
-                lbl_Saldo.Text = saldo.ToString();
+                Lbl_vuelto.Text = "El saldo es: ";
             }
+            lbl_Saldo.Text = subtotal.ToString();
         }
 
-        private void txt_Tarjeta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Solo permite numeros
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                string digito = e.KeyChar.ToString();
-                tarj = string.Concat(tarj, digito);
-                tarjeta = double.Parse(tarj);
-                if (subtotal > 0)
-                {
-                    subtotal -= tarjeta;
-                }
-                else
-                {
-                    subtotal = total - tarjeta;
-                }
-                saldo = subtotal;
-                lbl_Saldo.Text = saldo.ToString();
-            }
-        }
+        
 
         private void btn_cobrar_Click(object sender, EventArgs e)
         {
-            imprimir = true;
-            this.Close();
+            
+                imprimir = true;
+                this.Close();
+            
         }
     }
 }

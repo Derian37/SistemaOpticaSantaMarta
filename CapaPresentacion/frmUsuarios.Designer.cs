@@ -81,16 +81,17 @@
             this.gbx_datosUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbx_datosUsuario.Location = new System.Drawing.Point(46, 60);
             this.gbx_datosUsuario.Name = "gbx_datosUsuario";
-            this.gbx_datosUsuario.Size = new System.Drawing.Size(712, 265);
+            this.gbx_datosUsuario.Size = new System.Drawing.Size(537, 283);
             this.gbx_datosUsuario.TabIndex = 71;
             this.gbx_datosUsuario.TabStop = false;
             this.gbx_datosUsuario.Text = "Menú Usuario";
+            this.gbx_datosUsuario.Enter += new System.EventHandler(this.gbx_datosUsuario_Enter);
             // 
             // lbl_editarUsuario
             // 
-            this.lbl_editarUsuario.Location = new System.Drawing.Point(474, 184);
+            this.lbl_editarUsuario.Location = new System.Drawing.Point(437, 123);
             this.lbl_editarUsuario.Name = "lbl_editarUsuario";
-            this.lbl_editarUsuario.Size = new System.Drawing.Size(58, 23);
+            this.lbl_editarUsuario.Size = new System.Drawing.Size(54, 23);
             this.lbl_editarUsuario.TabIndex = 71;
             this.lbl_editarUsuario.Text = "Editar";
             this.lbl_editarUsuario.Visible = false;
@@ -98,7 +99,7 @@
             // lbl_guardarUsuario
             // 
             this.lbl_guardarUsuario.AutoSize = true;
-            this.lbl_guardarUsuario.Location = new System.Drawing.Point(576, 184);
+            this.lbl_guardarUsuario.Location = new System.Drawing.Point(432, 258);
             this.lbl_guardarUsuario.Name = "lbl_guardarUsuario";
             this.lbl_guardarUsuario.Size = new System.Drawing.Size(65, 19);
             this.lbl_guardarUsuario.TabIndex = 80;
@@ -111,9 +112,9 @@
             this.btn_guardarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_guardarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_guardarUsuario.FlatAppearance.BorderSize = 0;
-            this.btn_guardarUsuario.Location = new System.Drawing.Point(579, 125);
+            this.btn_guardarUsuario.Location = new System.Drawing.Point(439, 215);
             this.btn_guardarUsuario.Name = "btn_guardarUsuario";
-            this.btn_guardarUsuario.Size = new System.Drawing.Size(62, 56);
+            this.btn_guardarUsuario.Size = new System.Drawing.Size(51, 41);
             this.btn_guardarUsuario.TabIndex = 79;
             this.btn_guardarUsuario.UseVisualStyleBackColor = true;
             this.btn_guardarUsuario.Visible = false;
@@ -121,9 +122,9 @@
             // 
             // lbl_agregarUsuario
             // 
-            this.lbl_agregarUsuario.Location = new System.Drawing.Point(466, 100);
+            this.lbl_agregarUsuario.Location = new System.Drawing.Point(430, 57);
             this.lbl_agregarUsuario.Name = "lbl_agregarUsuario";
-            this.lbl_agregarUsuario.Size = new System.Drawing.Size(72, 23);
+            this.lbl_agregarUsuario.Size = new System.Drawing.Size(69, 23);
             this.lbl_agregarUsuario.TabIndex = 69;
             this.lbl_agregarUsuario.Text = "Agregar";
             // 
@@ -133,10 +134,10 @@
             this.btn_EditarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_EditarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EditarUsuario.FlatAppearance.BorderSize = 0;
-            this.btn_EditarUsuario.Location = new System.Drawing.Point(470, 125);
+            this.btn_EditarUsuario.Location = new System.Drawing.Point(440, 82);
             this.btn_EditarUsuario.Margin = new System.Windows.Forms.Padding(0);
             this.btn_EditarUsuario.Name = "btn_EditarUsuario";
-            this.btn_EditarUsuario.Size = new System.Drawing.Size(62, 56);
+            this.btn_EditarUsuario.Size = new System.Drawing.Size(49, 39);
             this.btn_EditarUsuario.TabIndex = 60;
             this.btn_EditarUsuario.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btn_EditarUsuario.UseVisualStyleBackColor = true;
@@ -157,10 +158,10 @@
             this.btnInsertarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsertarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsertarUsuario.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnInsertarUsuario.Location = new System.Drawing.Point(470, 40);
+            this.btnInsertarUsuario.Location = new System.Drawing.Point(440, 15);
             this.btnInsertarUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertarUsuario.Name = "btnInsertarUsuario";
-            this.btnInsertarUsuario.Size = new System.Drawing.Size(62, 57);
+            this.btnInsertarUsuario.Size = new System.Drawing.Size(49, 40);
             this.btnInsertarUsuario.TabIndex = 68;
             this.btnInsertarUsuario.Text = " ";
             this.btnInsertarUsuario.UseVisualStyleBackColor = true;
@@ -168,9 +169,9 @@
             // 
             // lbl_eliminarUsuario
             // 
-            this.lbl_eliminarUsuario.Location = new System.Drawing.Point(574, 100);
+            this.lbl_eliminarUsuario.Location = new System.Drawing.Point(431, 190);
             this.lbl_eliminarUsuario.Name = "lbl_eliminarUsuario";
-            this.lbl_eliminarUsuario.Size = new System.Drawing.Size(67, 23);
+            this.lbl_eliminarUsuario.Size = new System.Drawing.Size(66, 23);
             this.lbl_eliminarUsuario.TabIndex = 70;
             this.lbl_eliminarUsuario.Text = "Eliminar";
             this.lbl_eliminarUsuario.Visible = false;
@@ -205,9 +206,9 @@
             this.btn_EliminarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_EliminarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EliminarUsuario.FlatAppearance.BorderSize = 0;
-            this.btn_EliminarUsuario.Location = new System.Drawing.Point(578, 40);
+            this.btn_EliminarUsuario.Location = new System.Drawing.Point(440, 148);
             this.btn_EliminarUsuario.Name = "btn_EliminarUsuario";
-            this.btn_EliminarUsuario.Size = new System.Drawing.Size(62, 57);
+            this.btn_EliminarUsuario.Size = new System.Drawing.Size(49, 40);
             this.btn_EliminarUsuario.TabIndex = 61;
             this.btn_EliminarUsuario.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btn_EliminarUsuario.UseVisualStyleBackColor = true;
@@ -275,7 +276,7 @@
             this.dgv_Usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgv_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Usuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgv_Usuarios.Location = new System.Drawing.Point(46, 332);
+            this.dgv_Usuarios.Location = new System.Drawing.Point(46, 350);
             this.dgv_Usuarios.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Usuarios.MultiSelect = false;
             this.dgv_Usuarios.Name = "dgv_Usuarios";
@@ -285,7 +286,7 @@
             this.dgv_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Usuarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Usuarios.Size = new System.Drawing.Size(853, 191);
+            this.dgv_Usuarios.Size = new System.Drawing.Size(853, 173);
             this.dgv_Usuarios.TabIndex = 70;
             this.dgv_Usuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Usuarios_CellDoubleClick);
             // 

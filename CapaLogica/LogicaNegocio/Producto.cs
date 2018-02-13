@@ -14,12 +14,15 @@ namespace CapaLogica.LogicaNegocio
     public class Producto
     {
         #region ATRIBUTOS
-        private float Monto;
+        private int Monto;
         private string Codig;
         private string Codigo;
         private string Detalle;
         private string Nombre;
         private int Cantidad;
+        private string Marca;
+        private string Tipo;
+        private string Iva;
         private string Estado;
 
 
@@ -31,19 +34,22 @@ namespace CapaLogica.LogicaNegocio
         }
         //constructor para el procedimiento almacenado de insertar
 
-        public Producto(string Pcodigo, string Pnombre, string Pdetalle, float Pmonto, int Pcantidad, string Pestado)
+        public Producto(string Pcodigo, string Pnombre, string Pdetalle, int Pmonto, int Pcantidad, string Pmarca, string Ptipo, string Piva, string Pestado)
         {
             codigo = Pcodigo;
             nombre = Pnombre;
             detalle = Pdetalle;
             monto = Pmonto;
             cantidad = Pcantidad;
+            marca = Pmarca;
+            tipo = Ptipo;
+            iva = Piva;
             estado = Pestado;
         }
 
         //constructor para el procedimiento almacenado de modificar
 
-        public Producto(string Pcodig, string Pcodigo, string Pnombre, string Pdetalle, float Pmonto, int Pcantidad, string Pestado)
+        public Producto(string Pcodig, string Pcodigo, string Pnombre, string Pdetalle, int Pmonto, int Pcantidad, string Pmarca, string Ptipo, string Piva, string Pestado)
         {
             codig = Pcodig;
             codigo = Pcodigo;
@@ -51,6 +57,9 @@ namespace CapaLogica.LogicaNegocio
             detalle = Pdetalle;
             monto = Pmonto;
             cantidad = Pcantidad;
+            marca = Pmarca;
+            tipo = Ptipo;
+            iva = Piva;
             estado = Pestado;
         }
         //Constructor para el procedimiento almacenado de Inactivar, eliminar y consultar
@@ -88,7 +97,7 @@ namespace CapaLogica.LogicaNegocio
                 Codigo = value;
             }
         }
-        public float monto
+        public int monto
         {
             get
             {
@@ -139,6 +148,45 @@ namespace CapaLogica.LogicaNegocio
             set
             {
                 Cantidad = value;
+            }
+        }
+
+        public string marca
+        {
+            get
+            {
+                return Marca;
+            }
+
+            set
+            {
+                Marca = value;
+            }
+        }
+
+        public string tipo
+        {
+            get
+            {
+                return Tipo;
+            }
+
+            set
+            {
+                Tipo = value;
+            }
+        }
+
+        public string iva
+        {
+            get
+            {
+                return Iva;
+            }
+
+            set
+            {
+                Iva = value;
             }
         }
 

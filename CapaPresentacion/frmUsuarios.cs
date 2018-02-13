@@ -61,12 +61,16 @@ namespace CapaPresentacion
             lbl_eliminarUsuario.Visible = true;
             lbl_contrasenaUsuario2.Visible = false;
             txt_contrasenaUsuario2.Visible = false;
+            btn_guardarUsuario.Visible = false;
+            lbl_guardarUsuario.Visible = false;
         }
 
         private void btnInsertarUsuario_Click(object sender, EventArgs e)
         {
             desbloquearCamposUsuario();
             limpiarCamposUsuario();
+            btnInsertarUsuario.Visible = false;
+            lbl_agregarUsuario.Visible = false;
             btn_guardarUsuario.Visible = true;
             lbl_guardarUsuario.Visible = true;
             accion = "insertar";
@@ -89,7 +93,7 @@ namespace CapaPresentacion
         {
             using (GestorUsuario usuario = new GestorUsuario())
             {
-                DialogResult result = MessageBox.Show("Seguro que desea eliminar el producto", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                DialogResult result = MessageBox.Show("Seguro que desea eliminar el Usuario", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (result == DialogResult.Yes)
                 {
                     usuario.InactivarUsuario(txt_cedulaUsuario.Text);
@@ -102,6 +106,7 @@ namespace CapaPresentacion
             lbl_editarUsuario.Visible = false;
             btn_EliminarUsuario.Visible = false;
             lbl_eliminarUsuario.Visible = false;
+            estadoInicial();
             cargarGridUsuarios();            
         }
 
@@ -153,6 +158,7 @@ namespace CapaPresentacion
                         limpiarCamposUsuario();
                         btn_guardarUsuario.Visible = false;
                         lbl_guardarUsuario.Visible = false;
+                        estadoInicial();
                         cargarGridUsuarios();
                     }
                     break;
@@ -208,6 +214,11 @@ namespace CapaPresentacion
         private void frmUsuarios_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void gbx_datosUsuario_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

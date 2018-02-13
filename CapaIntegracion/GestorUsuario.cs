@@ -59,10 +59,10 @@ namespace ProyectoOptica.CapaIntegracion
         /// </summary>
         /// <param name="Usuario_cedula"></param>
         /// <returns></returns>
-        public DataSet ConsultarUsuario(string cedula)
+        public DataSet ConsultarUsuario(int id)
         {
             using (ServicioUsuario elUsuario = new ServicioUsuario())
-                return elUsuario.ConsultarUsuario(cedula);
+                return elUsuario.ConsultarUsuario(id);
         }
 
         /// <summary>

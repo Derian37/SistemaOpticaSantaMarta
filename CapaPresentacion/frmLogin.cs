@@ -25,7 +25,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-       
+
         private void frmLogin_Load(object sender, EventArgs e)
         {
             CargarComboUsuario();
@@ -38,7 +38,7 @@ namespace CapaPresentacion
                 using (GestorUsuario elGestorUsuario = new GestorUsuario())
                 {
                     cbx_usuario_nombre.DataSource = elGestorUsuario.ListarUsuarios();
-                    cbx_usuario_nombre.ValueMember = "cedula";
+                    cbx_usuario_nombre.ValueMember = "id_usuario";
                     cbx_usuario_nombre.DisplayMember = "nombre";
                 }
             }
@@ -55,19 +55,19 @@ namespace CapaPresentacion
             {
                 using (GestorUsuario elUsuario = new GestorUsuario())
                 {
-                    string ced = cbx_usuario_nombre.SelectedValue.ToString();
-                    this.dsUsuario = elUsuario.ConsultarUsuario(ced);
+                    int id = int.Parse(cbx_usuario_nombre.SelectedValue.ToString());
+                    this.dsUsuario = elUsuario.ConsultarUsuario(id);
                     this.dtUsuario = this.dsUsuario.Tables[0];
 
-                    id_usuario = int.Parse(this.dtUsuario.Rows[0]["id_usuario"].ToString());
+                    id_usuario = int.Parse(this.dtUsuario.Rows[0]["id_usuario"].ToString().Trim());
                     string cedula = this.dtUsuario.Rows[0]["cedula"].ToString();
                     string nombre = this.dtUsuario.Rows[0]["nombre"].ToString();
-                    string contrasena = this.dtUsuario.Rows[0]["contrasenna"].ToString();
+                    string contrasena = this.dtUsuario.Rows[0]["contrasenna"].ToString().Trim();
                     string cargo = this.dtUsuario.Rows[0]["cargo"].ToString();
-                    
-                    if ( cedula.Equals(cbx_usuario_nombre.SelectedValue.ToString()) && txt_usuario_Contrasena.Text.Equals(contrasena))
+
+                    if (id_usuario.Equals(int.Parse(cbx_usuario_nombre.SelectedValue.ToString().Trim())) && txt_usuario_Contrasena.Text.Trim().Equals(contrasena))
                     {
-                        
+
                         frmPrincipal principal = new frmPrincipal(id_usuario, nombre, cargo);
                         this.Hide();
                         principal.Show();
@@ -77,7 +77,7 @@ namespace CapaPresentacion
                         MessageBox.Show("Usuario o contraseña incorrectos", "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-            	}
+                }
             }
             catch (Exception x)
             {
@@ -97,6 +97,6 @@ namespace CapaPresentacion
             Application.Exit();
         }
     }
-    }
-    
+}
+
 

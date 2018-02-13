@@ -71,6 +71,9 @@ namespace CapaPresentacion.Reportes
                     Dgv_reporte_ventas.Columns["Nombre"].HeaderText = "NOMBRE PRODUCTO";
                     Dgv_reporte_ventas.Columns["Total"].HeaderText = "TOTAL";
                 }
+                
+
+                
             }
             catch (Exception ex)
             {
