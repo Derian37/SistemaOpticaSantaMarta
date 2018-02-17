@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 //Bibliotecas MySQL
+using MySql.Data;
 using MySql.Data.MySqlClient;
 
 /// <summary>
@@ -29,7 +30,10 @@ namespace ProyectoOptica.CapaConexion
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
             builder.UserID = "root";
-            builder.Password = "1234";
+            builder.Password = "";
+            //Conex Larry//
+            builder.Port = 3307;
+            /*******************/
             builder.Database = "bd_optica";
             conexion = new MySqlConnection(builder.ToString());
         }

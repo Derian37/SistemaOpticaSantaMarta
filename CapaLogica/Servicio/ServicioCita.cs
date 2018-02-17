@@ -25,13 +25,19 @@ namespace ProyectoOptica.CapaLogica.Servicio
             miComando = new MySqlCommand();
         }
 
-        //Este metodo es solicitado por la interface IDisposable
+        /// <summary>
+        /// Este metodo es solicitado por la interface IDisposable
+        /// </summary>
         public void Dispose()
         {
 
         }
 
-        //Metodo para la SP de insertar cita
+        /// <summary>
+        /// Metodo para la SP de insertar cita
+        /// </summary>
+        /// <param name="laCita"></param>
+        /// <returns></returns>
         public string InsertarCita(Cita laCita)
         {
             miComando = new MySqlCommand();
@@ -69,7 +75,11 @@ namespace ProyectoOptica.CapaLogica.Servicio
 
         }
 
-        //metodo para la SP de Modificar Cita
+        /// <summary>
+        /// metodo para la SP de Modificar Cita
+        /// </summary>
+        /// <param name="laCita"></param>
+        /// <returns></returns>
         public string ModificarCita(Cita laCita)
         {
             miComando = new MySqlCommand();
@@ -110,7 +120,11 @@ namespace ProyectoOptica.CapaLogica.Servicio
             return respuesta;
         }
 
-        //metodo para la SP de Inactivar Cita 
+        /// <summary>
+        /// metodo para la SP de Inactivar Cita 
+        /// </summary>
+        /// <param name="laCita"></param>
+        /// <returns></returns>
         public string InactivarCita(Cita laCita)
         {
 
@@ -133,7 +147,11 @@ namespace ProyectoOptica.CapaLogica.Servicio
             return respuesta;
         }
 
-        //metodo para el SP de Consultar Cita por Cedula
+        /// <summary>
+        /// metodo para el SP de Consultar Cita por Cedula
+        /// </summary>
+        /// <param name="cedula"></param>
+        /// <returns></returns>
         public DataSet ConsultarCitaCedula(string cedula)
         {
             Console.WriteLine("Gestor ConsultarCedula");
@@ -153,7 +171,11 @@ namespace ProyectoOptica.CapaLogica.Servicio
         }
 
 
-        //metodo para el SP de Consultar Cita por Nombre
+        /// <summary>
+        /// metodo para el SP de Consultar Cita por Nombre
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <returns></returns>
         public DataSet ConsultarCitaNombre(string nom)
         {
             miComando = new MySqlCommand();
@@ -173,7 +195,28 @@ namespace ProyectoOptica.CapaLogica.Servicio
             return miDataSet;
         }
 
-        //Metodo Listar Cita
+        /// <summary>
+        /// Metodo Listar Citas cercanas a vencer(periodo de una año)
+        /// </summary>
+        /// <returns></returns>
+        public DataTable ListarCitasAnio()
+        {
+            miComando = new MySqlCommand();
+            Console.WriteLine("Gestor ListarCitas");
+
+            miComando.CommandText = "listar_citasAnio";
+
+            DataSet laCita = new DataSet();
+            this.abrirConexion();
+            laCita = this.seleccionarInformacion(miComando);
+            DataTable miTablaDatos = laCita.Tables[0];
+
+            return miTablaDatos;
+        }
+        /// <summary>
+        /// Metodo Listar Citas recientes
+        /// </summary>
+        /// <returns></returns>
         public DataTable ListarCitas()
         {
             miComando = new MySqlCommand();

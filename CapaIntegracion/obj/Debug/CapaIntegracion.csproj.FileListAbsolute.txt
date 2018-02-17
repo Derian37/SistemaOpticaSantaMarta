@@ -54,3 +54,9 @@ C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\De
 C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache
 C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.dll
 C:\Users\jiandro\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
+C:\Users\Fox777\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaIntegracion.dll
+C:\Users\Fox777\Documents\GitHub\SistemaOpticaSantaMarta\Bibliotecas\CapaIntegracion.pdb
+C:\Users\Fox777\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.csprojResolveAssemblyReference.cache
+C:\Users\Fox777\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.csproj.CoreCompileInputs.cache
+C:\Users\Fox777\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.dll
+C:\Users\Fox777\Documents\GitHub\SistemaOpticaSantaMarta\CapaIntegracion\obj\Debug\CapaIntegracion.pdb
