@@ -255,22 +255,26 @@ DELIMITER ;
 -- Volcando estructura para tabla bd_optica.consultas
 CREATE TABLE IF NOT EXISTS `consultas` (
   `id_consulta` int(11) NOT NULL AUTO_INCREMENT,
-  `cedula` varchar(50) DEFAULT NULL,
+  `cedula` varchar(128) DEFAULT NULL,
   `nombre_paciente` varchar(128) NOT NULL,
   `telefono` varchar(50) DEFAULT NULL,
   `detalle` varchar(50) DEFAULT NULL,
   `fecha` date NOT NULL,
   `estado` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_consulta`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla bd_optica.consultas: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla bd_optica.consultas: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
 INSERT IGNORE INTO `consultas` (`id_consulta`, `cedula`, `nombre_paciente`, `telefono`, `detalle`, `fecha`, `estado`) VALUES
 	(1, '602340125', 'Ralf', '88254515', 'Estado Grave', '2017-01-01', 'A'),
-	(2, '444', 'asdasd', '545454', 'asdad', '2016-12-01', 'A'),
-	(3, '601230125', 'Elmo', '22021542', 'asdasd', '2017-12-01', 'A'),
-	(4, '212121', 'jefe', '4444', 'asdsd', '2018-01-18', 'A');
+	(2, '444', 'asdasd', '545454', 'asdad', '2016-12-01', 'I'),
+	(3, '601230125', 'Elmo', '22021542', 'asdasd', '2017-12-01', 'I'),
+	(4, '212121', 'jefe', '4444', 'asdsd', '2018-01-18', 'A'),
+	(5, '5555', 'bananero', '444', 'sdf', '2018-02-21', 'A'),
+	(6, '54545', 'sssssss', '44565565', 'sddsdsdsd', '2018-02-21', 'I'),
+	(7, '55555555', 'acm1ptardo', '212121', 'asdsadasd', '2018-02-22', 'A'),
+	(8, '601250142', 'sds sdsd', '5555', 'sdsdsd sdsds', '2018-02-21', 'A');
 /*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla bd_optica.control_trabajo
@@ -351,12 +355,14 @@ CREATE TABLE IF NOT EXISTS `graduacion` (
 
 -- Volcando estructura para procedimiento bd_optica.inactivar_cita
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `inactivar_cita`(IN `ced` VARCHAR(1))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inactivar_cita`(
+	IN `ced` VARCHAR(50)
+)
     NO SQL
 BEGIN
  UPDATE consultas
- SET estado = "I"
- WHERE cedula = ced;
+ SET consultas.estado = "I"
+ WHERE consultas.cedula = ced;
 END//
 DELIMITER ;
 
@@ -560,7 +566,7 @@ DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `listar_citas`()
     NO SQL
 BEGIN
-SELECT cedula,nombre_paciente,telefono,fecha FROM consultas
+SELECT cedula,nombre_paciente,telefono,detalle,fecha FROM consultas
  WHERE estado = "A" and fecha >= curdate() - interval 11 month;
 END//
 DELIMITER ;
@@ -569,7 +575,7 @@ DELIMITER ;
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `listar_citasAnio`()
 BEGIN
- SELECT cedula,nombre_paciente,telefono,fecha FROM consultas
+ SELECT cedula,nombre_paciente,telefono,detalle,fecha FROM consultas
  WHERE estado = "A" and fecha <= curdate() - interval 1 year;
 END//
 DELIMITER ;
@@ -628,12 +634,23 @@ DELIMITER ;
 
 -- Volcando estructura para procedimiento bd_optica.modificar_cita
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `modificar_cita`(IN `val` VARCHAR(15), IN `ced` VARCHAR(15), IN `nom` VARCHAR(30), IN `tel` VARCHAR(20), IN `det` VARCHAR(200), IN `fech` DATE, IN `est` VARCHAR(1))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `modificar_cita`(
+	IN `val` VARCHAR(15),
+	IN `ced` VARCHAR(15),
+	IN `nomb` VARCHAR(30),
+	IN `tel` VARCHAR(20),
+	IN `det` VARCHAR(200),
+	IN `fech` DATE,
+	IN `est` VARCHAR(1)
+
+
+
+)
     NO SQL
 BEGIN
  UPDATE consultas
-    SET cedula=ced,nombre_paciente=nom,telefono=det,detalle=det,fecha=fech,estado=est
- WHERE cedula=val;
+    SET consultas.cedula=ced,consultas.nombre_paciente=nomb,consultas.telefono=tel,consultas.detalle=det,consultas.fecha=fech,consultas.estado=est
+ WHERE consultas.cedula=val;
 END//
 DELIMITER ;
 

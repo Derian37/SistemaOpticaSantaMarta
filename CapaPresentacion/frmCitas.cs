@@ -69,11 +69,8 @@ namespace CapaPresentacion
             btn_guardarCita.Visible = false;
             lbl_guardarCita.Visible = false;
 
-
             using (GestorCita Cita = new GestorCita())
             {
-                
-
                 if (string.IsNullOrWhiteSpace(txt_valor_Cita.Text))
                 {
                     MessageBox.Show("Hay Uno o mas Campos Vacios!", "Campos Vacios!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -82,14 +79,13 @@ namespace CapaPresentacion
                 {
                     if (rbtn_CedulaCita.Checked == true)
                     {
-                        DataColumn[] columns = dtCitas.Columns.Cast<DataColumn>().ToArray();
-                        bool existe = dtCitas.AsEnumerable().Any(row => columns.Any(col => row["cedula"].ToString() == txt_valor_Cita.Text.Trim()));
-                        if (existe)
+                        this.dsCitas = Cita.ConsultarCitaCedula(txt_valor_Cita.Text.Trim());
+                        this.dtCitas = this.dsCitas.Tables[0];
+
+                        if (dtCitas.Rows.Count > 0)
                         {
                             if (!Regex.IsMatch(buscar, @"^[\p{L}]+$"))
                             {
-                                this.dsCitas = Cita.ConsultarCitaCedula(buscar);
-                                this.dtCitas = this.dsCitas.Tables[0];
                                 CargarDatosCita();
                                 txt_CedulaUsuario.Enabled = false;
                                 gbx_datosCita.Visible = true;
@@ -98,13 +94,13 @@ namespace CapaPresentacion
                                 lbl_eliminarCita.Visible = true;
                                 btn_EditarCita.Visible = true;
                                 gbx_datosCita.Enabled = true;
+                                txt_valor_Cita.Text = "";
                             }
                             else
                             {
                                 MessageBox.Show("Solo permiten numeros(Cedula), cambie la seleccion de busqueda!", "Error de busqueda!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 txt_valor_Cita.Text = "";
                             }
-
                         }
                         else
                         {
@@ -113,41 +109,40 @@ namespace CapaPresentacion
                         }
                     }
                     else
-                    {
-                       DataColumn[] columns = dtCitas.Columns.Cast<DataColumn>().ToArray();
-                       bool existe1 = dtCitas.AsEnumerable().Any(row => columns.Any(col => row["nombre"].ToString() == txt_valor_Cita.Text.Trim()));
-                        if (existe1)
+                    {   
+                        if(rbtn_nombreCita.Checked == true)
                         {
-                            if (Regex.IsMatch(buscar, @"[A-Z][a-zA-Z\s\'-]*"))
+                            this.dsCitas = Cita.ConsultarCitaNombre(txt_valor_Cita.Text.Trim());
+                            this.dtCitas = this.dsCitas.Tables[0];
+
+                            if (dtCitas.Rows.Count > 0)
                             {
-                                this.dsCitas = Cita.ConsultarCitaNombre(buscar);
-                                this.dtCitas = this.dsCitas.Tables[0];
-                                gbx_datosCita.Visible = true;
-                                btn_EliminarCita.Visible = true;
-                                btn_EditarCita.Visible = true;
-                                lbl_editarCita.Visible = true;
-                                lbl_eliminarCita.Visible = true;
-                                gbx_datosCita.Enabled = true;
+                                if (!Regex.IsMatch(buscar, @"[A-Z][a-zA-Z\s\'-]*"))
+                                {
+                                    CargarDatosCita();
+                                    gbx_datosCita.Visible = true;
+                                    btn_EliminarCita.Visible = true;
+                                    btn_EditarCita.Visible = true;
+                                    lbl_editarCita.Visible = true;
+                                    lbl_eliminarCita.Visible = true;
+                                    gbx_datosCita.Enabled = true;
+                                    txt_valor_Cita.Text = "";
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Solo se permiten letras(Nombre), cambie la seleccion de busqueda!", "Error de busqueda!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    txt_valor_Cita.Text = "";
+                                }
                             }
                             else
                             {
-                                //buscar.SetError(buscar, "Only use alphabates");
-                                MessageBox.Show("Solo puede se permiten letras(Nombre), cambie la seleccion de busqueda!", "Error de busqueda!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBox.Show("El valor de busqueda no existe!", "Error de busqueda!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                txt_valor_Cita.Text = "";
                             }
                         }
-                        else
-                        {
-                            MessageBox.Show("El valor de busqueda no existe!", "Error de busqueda!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            txt_valor_Cita.Text = "";
-                        }
-                       
-
-                    }
-                       
+                    }      
                 }
-
-            }
-            
+            } 
         }
         /// <summary>
         /// Metodo que carga un grid con citas con sus campos respectivos
@@ -162,7 +157,6 @@ namespace CapaPresentacion
             DateTime dt = Convert.ToDateTime(fecha1);
             dtpFechaCita.Value = dt;
         }
-
         /// <summary>
         /// Metodo que inserta una cita y ademas inactiva algunos campos para evitar mayor uso de codigo en excepciones
         /// </summary>
@@ -180,8 +174,6 @@ namespace CapaPresentacion
             lbl_editarCita.Visible = false;
             btn_EliminarCita.Visible = false;
             lbl_eliminarCita.Visible = false;
-            
-
         }
         /// <summary>
         /// Metodo que modifica una cita ya registrada
@@ -190,33 +182,22 @@ namespace CapaPresentacion
         /// <param name="e"></param>
         private void btn_EditarCita_Click(object sender, EventArgs e)
         {   
-            //Ejecuta la accion mas no modifica
-            //gbx_datosCita.Visible = true;
-            //gbx_datosCita.Enabled = true;
-            string ced = txt_CedulaUsuario.Text;
-
-
-
             if (string.IsNullOrWhiteSpace(txt_CedulaUsuario.Text) || string.IsNullOrWhiteSpace(txt_nombreUsuario.Text) ||
                 string.IsNullOrWhiteSpace(txt_telefonoUsuario.Text) || string.IsNullOrWhiteSpace(txt_detalleCita.Text))
                 MessageBox.Show("Hay Uno o mas Campos Vacios!", "Campos Vacios!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
             else
             {
                 using (GestorCita Cita = new GestorCita())
                 {
-                    Cita.ModificarCita(ced, txt_CedulaUsuario.Text, txt_nombreUsuario.Text, txt_telefonoUsuario.Text, txt_detalleCita.Text, Convert.ToDateTime(dtpFechaCita.Value), "A");
-                    
+                    Cita.ModificarCita(txt_CedulaUsuario.Text, txt_CedulaUsuario.Text, txt_nombreUsuario.Text, txt_telefonoUsuario.Text, txt_detalleCita.Text, Convert.ToDateTime(dtpFechaCita.Value), "A");
+                    bloquearCamposCita();
+                    MessageBox.Show("Datos Modificados Satisfactoriamente", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    gbx_datosCita.Visible = false;
+                    limpiarCamposCita();
+                    grb_menuCita.Visible = true;
+                    cargarGridCitas();
+                    cargarGridCitasRecientes();   
                 }
-
-                bloquearCamposCita();
-                MessageBox.Show("Datos Modificados Satisfactoriamente", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                gbx_datosCita.Visible = false;
-                limpiarCamposCita();
-                cargarGridCitas();
-                cargarGridCitasRecientes();
-                grb_menuCita.Visible = true;
-
             }
         }
         /// <summary>
@@ -233,28 +214,25 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Campo Cedula vacio, llene el campo correspondiente!", "Campos Vacios!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
             else
             {
                 using (GestorCita elGestorCita = new GestorCita())
                 {
-                
                     DialogResult result = MessageBox.Show("¿Desea eliminar la cita?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
                     if (result == DialogResult.Yes)
                     {
-                        elGestorCita.InactivarCita(txt_CedulaUsuario.Text.ToString());
+                        elGestorCita.InactivarCita(txt_CedulaUsuario.Text);
                         bloquearCamposCita();
                         MessageBox.Show("Datos Registrados Eliminados satifactoriamente", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         gbx_datosCita.Visible = false;
                         limpiarCamposCita();
-                        cargarGridCitas();
-                        cargarGridCitasRecientes();
                         grb_menuCita.Visible = true;
+                        cargarGridCitas();
+                        cargarGridCitasRecientes();  
                     }
                 }
-            }
-                
+            }      
         }
         /// <summary>
         /// Metodo que carga un datagridview con citas con un periodo de registro de hace un año o mayor
@@ -267,6 +245,7 @@ namespace CapaPresentacion
                 dgvCitas.Columns["cedula"].HeaderText = "CEDULA";
                 dgvCitas.Columns["nombre_paciente"].HeaderText = "NOMBRE";
                 dgvCitas.Columns["telefono"].HeaderText = "TELEFONO";
+                dgvCitas.Columns["detalle"].HeaderText = "DETALLE";
                 dgvCitas.Columns["fecha"].HeaderText = "FECHA";
             }
         }
@@ -278,10 +257,10 @@ namespace CapaPresentacion
             using (GestorCita cita = new GestorCita())
             {
                 dgvCitasRecientes.DataSource = cita.ListarCitas();
-
                 dgvCitasRecientes.Columns["cedula"].HeaderText = "CEDULA";
                 dgvCitasRecientes.Columns["nombre_paciente"].HeaderText = "NOMBRE";
                 dgvCitasRecientes.Columns["telefono"].HeaderText = "TELEFONO";
+                dgvCitasRecientes.Columns["detalle"].HeaderText = "DETALLE";
                 dgvCitasRecientes.Columns["fecha"].HeaderText = "FECHA";
             }
         }
@@ -295,43 +274,43 @@ namespace CapaPresentacion
             if (string.IsNullOrWhiteSpace(txt_CedulaUsuario.Text) || string.IsNullOrWhiteSpace(txt_nombreUsuario.Text) ||
                 string.IsNullOrWhiteSpace(txt_telefonoUsuario.Text) || string.IsNullOrWhiteSpace(txt_detalleCita.Text))
                 MessageBox.Show("Hay Uno o mas Campos Vacios!", "Campos Vacios!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
             else
             {
                 try {
                     using (GestorCita Cita = new GestorCita())
                     {
-                        
                         string cedula = txt_CedulaUsuario.Text;
                         this.dsCitas = Cita.ConsultarCitaCedula(cedula);
                         this.dtCitas = this.dsCitas.Tables[0];
                         if (dtCitas.Rows.Count > 0)
                         {
                             MessageBox.Show("Ya existe un usuario con esa cedula, intente de nuevo", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            limpiarCedula();   
                         }
                         else
                         {
-                            
-                            Cita.InsertarCita(txt_CedulaUsuario.Text, txt_nombreUsuario.Text, txt_telefonoUsuario.Text, txt_detalleCita.Text, dtpFechaCita.Value, "A");
-
-                            bloquearCamposCita();
-                            MessageBox.Show("Datos Registrados satisfactoriamente", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            gbx_datosCita.Visible = false;
-                            limpiarCamposCita();
-                            cargarGridCitas();
-                            cargarGridCitasRecientes();
-                            grb_menuCita.Visible = true;
+                            if (dtpFechaCita.Value < DateTime.Now)
+                            {
+                                MessageBox.Show("La fecha debe ser una posterior a la fecha actual", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                Cita.InsertarCita(txt_CedulaUsuario.Text, txt_nombreUsuario.Text, txt_telefonoUsuario.Text, txt_detalleCita.Text, dtpFechaCita.Value, "A");
+                                bloquearCamposCita();
+                                MessageBox.Show("Datos Registrados satisfactoriamente", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                gbx_datosCita.Visible = false;
+                                limpiarCamposCita();
+                                cargarGridCitas();
+                                cargarGridCitasRecientes();
+                                grb_menuCita.Visible = true;
+                            }
                         }
-
                     }
-
                 }
                 catch (Exception x)
                 {
                     MessageBox.Show("Error de SQL: " + x.Message);
                 }
-               
-                
             }
         }
         /// <summary>
@@ -363,6 +342,14 @@ namespace CapaPresentacion
             dtpFechaCita.Value = DateTime.Today;
         }
         /// <summary>
+        /// Metodo que limpia el campo de Cedúla en caso de error
+        /// </summary>
+        private void limpiarCedula()
+        {
+            txt_CedulaUsuario.Text = "";
+        }
+        #region VALIDACIONES CITA
+        /// <summary>
         /// Metodo de validacion que permite solo numeros o letras y espacios en blanco dependiendo de la opcion de busqueda
         /// </summary>
         /// <param name="sender"></param>
@@ -378,9 +365,11 @@ namespace CapaPresentacion
             }
             else
             {
-                if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-                    e.Handled = true;
-
+                if(rbtn_nombreCita.Checked == true)
+                {
+                    if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                        e.Handled = true;
+                }
             }
         }
         /// <summary>
@@ -425,5 +414,16 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+        /// <summary>
+        /// Metodo que no permite numeros en la parte de agregar usuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txt_nombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+        #endregion VALIDACIONES CITA
     }
 }

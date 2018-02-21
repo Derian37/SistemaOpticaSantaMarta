@@ -114,7 +114,6 @@
             this.rbtn_nombreCita.TabIndex = 73;
             this.rbtn_nombreCita.Text = "Nombre";
             this.rbtn_nombreCita.UseVisualStyleBackColor = true;
-            
             // 
             // rbtn_CedulaCita
             // 
@@ -128,6 +127,7 @@
             this.rbtn_CedulaCita.TabStop = true;
             this.rbtn_CedulaCita.Text = "Cédula";
             this.rbtn_CedulaCita.UseVisualStyleBackColor = true;
+            this.rbtn_CedulaCita.UseWaitCursor = true;
             // 
             // lbl_agregarCita
             // 
@@ -371,6 +371,7 @@
             this.txt_nombreUsuario.Name = "txt_nombreUsuario";
             this.txt_nombreUsuario.Size = new System.Drawing.Size(312, 30);
             this.txt_nombreUsuario.TabIndex = 74;
+            this.txt_nombreUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreUsuario_KeyPress);
             // 
             // lbl_telefonoUsuario
             // 
@@ -447,7 +448,6 @@
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1615, 33);
             this.menuStrip1.TabIndex = 71;
-            this.menuStrip1.Text = "mStCitas";
             // 
             // btn_volver
             // 
