@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaIntegracion", "CapaIntegracion\CapaIntegracion.csproj", "{192B7051-AE0D-40C3-B20C-E7691D61C856}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaPresentacion", "CapaPre
 	ProjectSection(ProjectDependencies) = postProject
 		{192B7051-AE0D-40C3-B20C-E7691D61C856} = {192B7051-AE0D-40C3-B20C-E7691D61C856}
 	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador", "Instalador\Instalador.vdproj", "{FEA7419B-03A4-4C65-BFF6-4421DB738C73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,8 +44,14 @@ Global
 		{7F641A79-E39E-4EEC-83D9-12F607E87C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F641A79-E39E-4EEC-83D9-12F607E87C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F641A79-E39E-4EEC-83D9-12F607E87C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEA7419B-03A4-4C65-BFF6-4421DB738C73}.Debug|Any CPU.ActiveCfg = Debug
+		{FEA7419B-03A4-4C65-BFF6-4421DB738C73}.Debug|Any CPU.Build.0 = Debug
+		{FEA7419B-03A4-4C65-BFF6-4421DB738C73}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {704C1A0D-8ACF-48C5-BB7B-E3DBFA529595}
 	EndGlobalSection
 EndGlobal
