@@ -1,0 +1,15 @@
+DELETE FROM bd_optica.anteojos; ALTER TABLE bd_optica.anteojos AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.cierre_caja; ALTER TABLE bd_optica.cierre_caja AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.cliente; ALTER TABLE bd_optica.cliente AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.consultas; ALTER TABLE bd_optica.consultas AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.control_trabajo; ALTER TABLE bd_optica.control_trabajo AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.detalle_venta; ALTER TABLE bd_optica.detalle_venta AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.factura; ALTER TABLE bd_optica.factura AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.graduacion; ALTER TABLE bd_optica.graduacion AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.movimientos; ALTER TABLE bd_optica.movimientos AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.productos; ALTER TABLE bd_optica.productos AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.proforma; ALTER TABLE bd_optica.proforma AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.tarjetas; ALTER TABLE bd_optica.tarjetas AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.usuario; ALTER TABLE bd_optica.usuario AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.vales; ALTER TABLE bd_optica.vales AUTO_INCREMENT = 0; 
+ DELETE FROM bd_optica.venta; ALTER TABLE bd_optica.venta AUTO_INCREMENT = 0; 

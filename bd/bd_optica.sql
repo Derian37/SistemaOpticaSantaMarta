@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- Host:                         localhost
--- Versión del servidor:         10.1.21-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win32
+-- Host:                         127.0.0.1
+-- Versión del servidor:         10.1.22-MariaDB - mariadb.org binary distribution
+-- SO del servidor:              Win64
 -- HeidiSQL Versión:             9.4.0.5125
 -- --------------------------------------------------------
 
@@ -24,10 +24,7 @@ CREATE TABLE IF NOT EXISTS `anteojos` (
   PRIMARY KEY (`id_anteojos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla bd_optica.anteojos: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `anteojos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `anteojos` ENABLE KEYS */;
-
+-- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla bd_optica.cierre_caja
 CREATE TABLE IF NOT EXISTS `cierre_caja` (
   `id_cierre_caja` int(11) NOT NULL AUTO_INCREMENT,
@@ -46,10 +43,7 @@ CREATE TABLE IF NOT EXISTS `cierre_caja` (
   CONSTRAINT `cierre_caja_ibfk_2` FOREIGN KEY (`id_vale`) REFERENCES `vales` (`id_vale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla bd_optica.cierre_caja: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `cierre_caja` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cierre_caja` ENABLE KEYS */;
-
+-- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla bd_optica.cliente
 CREATE TABLE IF NOT EXISTS `cliente` (
   `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
@@ -63,10 +57,199 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   PRIMARY KEY (`id_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla bd_optica.cliente: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.consultas
+CREATE TABLE IF NOT EXISTS `consultas` (
+  `id_consulta` int(11) NOT NULL AUTO_INCREMENT,
+  `cedula` varchar(128) DEFAULT NULL,
+  `nombre_paciente` varchar(128) NOT NULL,
+  `telefono` varchar(50) DEFAULT NULL,
+  `detalle` varchar(50) DEFAULT NULL,
+  `fecha` date NOT NULL,
+  `estado` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_consulta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.control_trabajo
+CREATE TABLE IF NOT EXISTS `control_trabajo` (
+  `id_control_trabajo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) NOT NULL,
+  `id_tarjeta` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  PRIMARY KEY (`id_control_trabajo`),
+  KEY `id_cliente` (`id_cliente`),
+  KEY `id_tarjeta` (`id_tarjeta`),
+  CONSTRAINT `control_trabajo_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
+  CONSTRAINT `control_trabajo_ibfk_2` FOREIGN KEY (`id_tarjeta`) REFERENCES `tarjetas` (`id_tarjeta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.detalle_venta
+CREATE TABLE IF NOT EXISTS `detalle_venta` (
+  `id_detalle` int(11) NOT NULL AUTO_INCREMENT,
+  `id_venta` int(11) NOT NULL,
+  `codigoProd` varchar(50) NOT NULL,
+  `cantidad` int(4) NOT NULL,
+  `precio` float(10,2) NOT NULL,
+  `total` float(10,2) NOT NULL,
+  `estado` varchar(1) NOT NULL,
+  PRIMARY KEY (`id_detalle`),
+  KEY `id_venta` (`id_venta`),
+  CONSTRAINT `detalle_venta_ibfk_1` FOREIGN KEY (`id_venta`) REFERENCES `venta` (`id_venta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.factura
+CREATE TABLE IF NOT EXISTS `factura` (
+  `id_factura` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` date DEFAULT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `id_armazon` int(11) NOT NULL,
+  `id_lente` int(11) NOT NULL,
+  PRIMARY KEY (`id_factura`),
+  KEY `id_cliente` (`id_cliente`),
+  KEY `id_producto` (`id_producto`),
+  KEY `id_armazon` (`id_armazon`),
+  KEY `id_lente` (`id_lente`),
+  CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
+  CONSTRAINT `factura_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_productos`),
+  CONSTRAINT `factura_ibfk_3` FOREIGN KEY (`id_armazon`) REFERENCES `armazon` (`id_armazon`),
+  CONSTRAINT `factura_ibfk_4` FOREIGN KEY (`id_lente`) REFERENCES `lente` (`id_lente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.graduacion
+CREATE TABLE IF NOT EXISTS `graduacion` (
+  `id_graduacion` int(11) NOT NULL AUTO_INCREMENT,
+  `esferaIzquierda` float NOT NULL,
+  `cilindroIzquierda` float NOT NULL,
+  `ejeIzquierda` int(4) NOT NULL,
+  `adicionesIzquierda` float NOT NULL,
+  `esferaDerecha` float NOT NULL,
+  `cilindroDerecha` float NOT NULL,
+  `ejeDerecha` int(11) NOT NULL,
+  `adicionesDerecha` float NOT NULL,
+  PRIMARY KEY (`id_graduacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.movimientos
+CREATE TABLE IF NOT EXISTS `movimientos` (
+  `id_movimientos` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `id_reciboxdinero` int(11) NOT NULL,
+  `id_tarjeta` int(11) NOT NULL,
+  `id_cierre_caja` int(11) NOT NULL,
+  `id_consulta` int(11) NOT NULL,
+  PRIMARY KEY (`id_movimientos`),
+  KEY `id_reciboxdinero` (`id_reciboxdinero`),
+  KEY `id_tarjeta` (`id_tarjeta`),
+  KEY `id_cierre_caja` (`id_cierre_caja`),
+  KEY `id_consulta` (`id_consulta`),
+  CONSTRAINT `movimientos_ibfk_1` FOREIGN KEY (`id_reciboxdinero`) REFERENCES `recibosxdinero` (`id_recibo`),
+  CONSTRAINT `movimientos_ibfk_2` FOREIGN KEY (`id_tarjeta`) REFERENCES `tarjetas` (`id_tarjeta`),
+  CONSTRAINT `movimientos_ibfk_3` FOREIGN KEY (`id_cierre_caja`) REFERENCES `cierre_caja` (`id_cierre_caja`),
+  CONSTRAINT `movimientos_ibfk_4` FOREIGN KEY (`id_consulta`) REFERENCES `consultas` (`id_consulta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.productos
+CREATE TABLE IF NOT EXISTS `productos` (
+  `id_productos` int(11) NOT NULL AUTO_INCREMENT,
+  `codigo` varchar(128) NOT NULL,
+  `nombre` varchar(128) NOT NULL,
+  `detalle` varchar(128) NOT NULL,
+  `monto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `marca` varchar(50) NOT NULL,
+  `tipo` varchar(50) NOT NULL,
+  `iva` varchar(50) NOT NULL,
+  `estado` varchar(128) NOT NULL,
+  PRIMARY KEY (`id_productos`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.proforma
+CREATE TABLE IF NOT EXISTS `proforma` (
+  `id_proforma` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` date DEFAULT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  PRIMARY KEY (`id_proforma`),
+  KEY `id_cliente` (`id_cliente`),
+  KEY `id_producto` (`id_producto`),
+  CONSTRAINT `proforma_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
+  CONSTRAINT `proforma_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_productos`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.tarjetas
+CREATE TABLE IF NOT EXISTS `tarjetas` (
+  `id_tarjeta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) NOT NULL,
+  `id_producto_armazon` int(11) NOT NULL,
+  `detalle_armazon` varchar(50) DEFAULT NULL,
+  `id_producto_lente` int(11) NOT NULL,
+  `detalle_lente` varchar(50) DEFAULT NULL,
+  `fecha_entrega` date DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  `id_graduacion` int(11) NOT NULL,
+  `distancia` varchar(50) DEFAULT NULL,
+  `recibida` varchar(50) DEFAULT NULL,
+  `segineatos` double DEFAULT NULL,
+  PRIMARY KEY (`id_tarjeta`),
+  KEY `id_cliente` (`id_cliente`),
+  KEY `id_anteojos` (`id_producto_armazon`),
+  KEY `id_producto` (`id_producto_lente`),
+  KEY `id_graduacion` (`id_graduacion`),
+  CONSTRAINT `FK_tarjetas_graduacion` FOREIGN KEY (`id_graduacion`) REFERENCES `graduacion` (`id_graduacion`),
+  CONSTRAINT `tarjetas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
+  CONSTRAINT `tarjetas_ibfk_3` FOREIGN KEY (`id_producto_armazon`) REFERENCES `productos` (`id_productos`),
+  CONSTRAINT `tarjetas_ibfk_4` FOREIGN KEY (`id_producto_lente`) REFERENCES `productos` (`id_productos`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.usuario
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `cedula` varchar(9) NOT NULL,
+  `contrasenna` varchar(16) NOT NULL,
+  `nombre` varchar(45) NOT NULL,
+  `estado` char(1) NOT NULL,
+  `cargo` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.vales
+CREATE TABLE IF NOT EXISTS `vales` (
+  `id_vale` int(11) NOT NULL AUTO_INCREMENT,
+  `monto` float NOT NULL,
+  `descripcion` varchar(128) NOT NULL,
+  `fecha` date NOT NULL,
+  PRIMARY KEY (`id_vale`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+-- Volcando estructura para tabla bd_optica.venta
+CREATE TABLE IF NOT EXISTS `venta` (
+  `id_venta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `fecha` varchar(50) NOT NULL,
+  `modo_pago` int(1) NOT NULL COMMENT '1 = efectivo 2 = tarjeta',
+  `saldo` double(10,2) NOT NULL,
+  `estado` varchar(1) NOT NULL COMMENT 'A = activo I = inactivo',
+  PRIMARY KEY (`id_venta`),
+  KEY `FK_venta_cliente` (`id_cliente`),
+  KEY `FK_venta_usuario` (`id_usuario`),
+  CONSTRAINT `FK_venta_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
+  CONSTRAINT `FK_venta_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
 -- Volcando estructura para procedimiento bd_optica.consultar_cantidadImpresoras
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `consultar_cantidadImpresoras`()
@@ -251,107 +434,6 @@ BEGIN
 	WHERE id_usuario = id  AND estado = "A";
 END//
 DELIMITER ;
-
--- Volcando estructura para tabla bd_optica.consultas
-CREATE TABLE IF NOT EXISTS `consultas` (
-  `id_consulta` int(11) NOT NULL AUTO_INCREMENT,
-  `cedula` varchar(128) DEFAULT NULL,
-  `nombre_paciente` varchar(128) NOT NULL,
-  `telefono` varchar(50) DEFAULT NULL,
-  `detalle` varchar(50) DEFAULT NULL,
-  `fecha` date NOT NULL,
-  `estado` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_consulta`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.consultas: ~7 rows (aproximadamente)
-/*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
-INSERT IGNORE INTO `consultas` (`id_consulta`, `cedula`, `nombre_paciente`, `telefono`, `detalle`, `fecha`, `estado`) VALUES
-	(1, '602340125', 'Ralf', '88254515', 'Estado Grave', '2017-01-01', 'A'),
-	(2, '444', 'asdasd', '545454', 'asdad', '2016-12-01', 'I'),
-	(3, '601230125', 'Elmo', '22021542', 'asdasd', '2017-12-01', 'I'),
-	(4, '212121', 'jefe', '4444', 'asdsd', '2018-01-18', 'A'),
-	(5, '5555', 'bananero', '444', 'sdf', '2018-02-21', 'A'),
-	(6, '54545', 'sssssss', '44565565', 'sddsdsdsd', '2018-02-21', 'I'),
-	(7, '55555555', 'acm1ptardo', '212121', 'asdsadasd', '2018-02-22', 'A'),
-	(8, '601250142', 'sds sdsd', '5555', 'sdsdsd sdsds', '2018-02-21', 'A');
-/*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.control_trabajo
-CREATE TABLE IF NOT EXISTS `control_trabajo` (
-  `id_control_trabajo` int(11) NOT NULL AUTO_INCREMENT,
-  `id_cliente` int(11) NOT NULL,
-  `id_tarjeta` int(11) NOT NULL,
-  `fecha` date NOT NULL,
-  PRIMARY KEY (`id_control_trabajo`),
-  KEY `id_cliente` (`id_cliente`),
-  KEY `id_tarjeta` (`id_tarjeta`),
-  CONSTRAINT `control_trabajo_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
-  CONSTRAINT `control_trabajo_ibfk_2` FOREIGN KEY (`id_tarjeta`) REFERENCES `tarjetas` (`id_tarjeta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.control_trabajo: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `control_trabajo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `control_trabajo` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.detalle_venta
-CREATE TABLE IF NOT EXISTS `detalle_venta` (
-  `id_detalle` int(11) NOT NULL AUTO_INCREMENT,
-  `id_venta` int(11) NOT NULL,
-  `codigoProd` varchar(50) NOT NULL,
-  `cantidad` int(4) NOT NULL,
-  `precio` float(10,2) NOT NULL,
-  `total` float(10,2) NOT NULL,
-  `estado` varchar(1) NOT NULL,
-  PRIMARY KEY (`id_detalle`),
-  KEY `id_venta` (`id_venta`),
-  CONSTRAINT `detalle_venta_ibfk_1` FOREIGN KEY (`id_venta`) REFERENCES `venta` (`id_venta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.detalle_venta: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `detalle_venta` DISABLE KEYS */;
-/*!40000 ALTER TABLE `detalle_venta` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.factura
-CREATE TABLE IF NOT EXISTS `factura` (
-  `id_factura` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha` date DEFAULT NULL,
-  `id_cliente` int(11) NOT NULL,
-  `id_producto` int(11) NOT NULL,
-  `id_armazon` int(11) NOT NULL,
-  `id_lente` int(11) NOT NULL,
-  PRIMARY KEY (`id_factura`),
-  KEY `id_cliente` (`id_cliente`),
-  KEY `id_producto` (`id_producto`),
-  KEY `id_armazon` (`id_armazon`),
-  KEY `id_lente` (`id_lente`),
-  CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
-  CONSTRAINT `factura_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_productos`),
-  CONSTRAINT `factura_ibfk_3` FOREIGN KEY (`id_armazon`) REFERENCES `armazon` (`id_armazon`),
-  CONSTRAINT `factura_ibfk_4` FOREIGN KEY (`id_lente`) REFERENCES `lente` (`id_lente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.factura: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `factura` DISABLE KEYS */;
-/*!40000 ALTER TABLE `factura` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.graduacion
-CREATE TABLE IF NOT EXISTS `graduacion` (
-  `id_graduacion` int(11) NOT NULL AUTO_INCREMENT,
-  `esferaIzquierda` float NOT NULL,
-  `cilindroIzquierda` float NOT NULL,
-  `ejeIzquierda` int(4) NOT NULL,
-  `adicionesIzquierda` float NOT NULL,
-  `esferaDerecha` float NOT NULL,
-  `cilindroDerecha` float NOT NULL,
-  `ejeDerecha` int(11) NOT NULL,
-  `adicionesDerecha` float NOT NULL,
-  PRIMARY KEY (`id_graduacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.graduacion: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `graduacion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `graduacion` ENABLE KEYS */;
 
 -- Volcando estructura para procedimiento bd_optica.inactivar_cita
 DELIMITER //
@@ -816,65 +898,6 @@ ORDER BY graduacion.id_graduacion DESC LIMIT 1;
 END//
 DELIMITER ;
 
--- Volcando estructura para tabla bd_optica.movimientos
-CREATE TABLE IF NOT EXISTS `movimientos` (
-  `id_movimientos` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha` date NOT NULL,
-  `id_reciboxdinero` int(11) NOT NULL,
-  `id_tarjeta` int(11) NOT NULL,
-  `id_cierre_caja` int(11) NOT NULL,
-  `id_consulta` int(11) NOT NULL,
-  PRIMARY KEY (`id_movimientos`),
-  KEY `id_reciboxdinero` (`id_reciboxdinero`),
-  KEY `id_tarjeta` (`id_tarjeta`),
-  KEY `id_cierre_caja` (`id_cierre_caja`),
-  KEY `id_consulta` (`id_consulta`),
-  CONSTRAINT `movimientos_ibfk_1` FOREIGN KEY (`id_reciboxdinero`) REFERENCES `recibosxdinero` (`id_recibo`),
-  CONSTRAINT `movimientos_ibfk_2` FOREIGN KEY (`id_tarjeta`) REFERENCES `tarjetas` (`id_tarjeta`),
-  CONSTRAINT `movimientos_ibfk_3` FOREIGN KEY (`id_cierre_caja`) REFERENCES `cierre_caja` (`id_cierre_caja`),
-  CONSTRAINT `movimientos_ibfk_4` FOREIGN KEY (`id_consulta`) REFERENCES `consultas` (`id_consulta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.movimientos: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `movimientos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `movimientos` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.productos
-CREATE TABLE IF NOT EXISTS `productos` (
-  `id_productos` int(11) NOT NULL AUTO_INCREMENT,
-  `codigo` varchar(128) NOT NULL,
-  `nombre` varchar(128) NOT NULL,
-  `detalle` varchar(128) NOT NULL,
-  `monto` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL,
-  `marca` varchar(50) NOT NULL,
-  `tipo` varchar(50) NOT NULL,
-  `iva` varchar(50) NOT NULL,
-  `estado` varchar(128) NOT NULL,
-  PRIMARY KEY (`id_productos`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.productos: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.proforma
-CREATE TABLE IF NOT EXISTS `proforma` (
-  `id_proforma` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha` date DEFAULT NULL,
-  `id_cliente` int(11) NOT NULL,
-  `id_producto` int(11) NOT NULL,
-  PRIMARY KEY (`id_proforma`),
-  KEY `id_cliente` (`id_cliente`),
-  KEY `id_producto` (`id_producto`),
-  CONSTRAINT `proforma_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
-  CONSTRAINT `proforma_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_productos`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.proforma: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `proforma` DISABLE KEYS */;
-/*!40000 ALTER TABLE `proforma` ENABLE KEYS */;
-
 -- Volcando estructura para procedimiento bd_optica.reporte_ventas_dia
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_ventas_dia`(
@@ -921,85 +944,6 @@ BEGIN
 	ORDER BY N_Recibo;
 END//
 DELIMITER ;
-
--- Volcando estructura para tabla bd_optica.tarjetas
-CREATE TABLE IF NOT EXISTS `tarjetas` (
-  `id_tarjeta` int(11) NOT NULL AUTO_INCREMENT,
-  `id_cliente` int(11) NOT NULL,
-  `id_producto_armazon` int(11) NOT NULL,
-  `detalle_armazon` varchar(50) DEFAULT NULL,
-  `id_producto_lente` int(11) NOT NULL,
-  `detalle_lente` varchar(50) DEFAULT NULL,
-  `fecha_entrega` date DEFAULT NULL,
-  `fecha` date DEFAULT NULL,
-  `id_graduacion` int(11) NOT NULL,
-  `distancia` varchar(50) DEFAULT NULL,
-  `recibida` varchar(50) DEFAULT NULL,
-  `segineatos` double DEFAULT NULL,
-  PRIMARY KEY (`id_tarjeta`),
-  KEY `id_cliente` (`id_cliente`),
-  KEY `id_anteojos` (`id_producto_armazon`),
-  KEY `id_producto` (`id_producto_lente`),
-  KEY `id_graduacion` (`id_graduacion`),
-  CONSTRAINT `FK_tarjetas_graduacion` FOREIGN KEY (`id_graduacion`) REFERENCES `graduacion` (`id_graduacion`),
-  CONSTRAINT `tarjetas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
-  CONSTRAINT `tarjetas_ibfk_3` FOREIGN KEY (`id_producto_armazon`) REFERENCES `productos` (`id_productos`),
-  CONSTRAINT `tarjetas_ibfk_4` FOREIGN KEY (`id_producto_lente`) REFERENCES `productos` (`id_productos`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.tarjetas: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `tarjetas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tarjetas` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.usuario
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `cedula` varchar(9) NOT NULL,
-  `contrasenna` varchar(16) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
-  `estado` char(1) NOT NULL,
-  `cargo` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.usuario: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT IGNORE INTO `usuario` (`id_usuario`, `cedula`, `contrasenna`, `nombre`, `estado`, `cargo`) VALUES
-	(8, '604100183', '1234', 'Larry', 'A', 'estudiante');
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.vales
-CREATE TABLE IF NOT EXISTS `vales` (
-  `id_vale` int(11) NOT NULL AUTO_INCREMENT,
-  `monto` float NOT NULL,
-  `descripcion` varchar(128) NOT NULL,
-  `fecha` date NOT NULL,
-  PRIMARY KEY (`id_vale`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.vales: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `vales` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vales` ENABLE KEYS */;
-
--- Volcando estructura para tabla bd_optica.venta
-CREATE TABLE IF NOT EXISTS `venta` (
-  `id_venta` int(11) NOT NULL AUTO_INCREMENT,
-  `id_cliente` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `fecha` varchar(50) NOT NULL,
-  `modo_pago` int(1) NOT NULL COMMENT '1 = efectivo 2 = tarjeta',
-  `saldo` double(10,2) NOT NULL,
-  `estado` varchar(1) NOT NULL COMMENT 'A = activo I = inactivo',
-  PRIMARY KEY (`id_venta`),
-  KEY `FK_venta_cliente` (`id_cliente`),
-  KEY `FK_venta_usuario` (`id_usuario`),
-  CONSTRAINT `FK_venta_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
-  CONSTRAINT `FK_venta_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Volcando datos para la tabla bd_optica.venta: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `venta` DISABLE KEYS */;
-/*!40000 ALTER TABLE `venta` ENABLE KEYS */;
 
 -- Volcando estructura para disparador bd_optica.venta_AFTER_INSERT
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION';
