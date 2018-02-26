@@ -751,7 +751,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `modificar_cliente`(
 BEGIN
  UPDATE cliente 
     SET cedula=ced,nombre=nom,apellido1=ape1,apellido2=ape2,direccion=direc,telefono=tele,deuda=deu
- WHERE id_cliente=id_client;
+ WHERE cedula=ced;
 END//
 DELIMITER ;
 
