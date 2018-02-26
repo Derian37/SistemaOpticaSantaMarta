@@ -30,9 +30,9 @@ namespace ProyectoOptica.CapaConexion
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
             builder.UserID = "root";
-            builder.Password = "";
+            builder.Password = "1234";
             //Conex Larry//
-            builder.Port = 3307;
+            //builder.Port = 3306;
             /*******************/
             builder.Database = "bd_optica";
             conexion = new MySqlConnection(builder.ToString());

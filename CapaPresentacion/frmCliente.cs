@@ -40,14 +40,41 @@ namespace CapaPresentacion
         private void frmCliente_Load(object sender, EventArgs e)
         {
             CargarGridCliente();
-            //CargarComboCliente();
-            //CargarComboOjo();
             defecto();
 
         }
 
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            /*---------------------------------------------------------------------------*/
+            if (txtCedula.Text.Trim().Length != 9)
+            {
+                MessageBox.Show("La Cedula debe tener 9 dígitos");
+                return; //Salimos 
+            }
+            /*---------------------------------------------------------------------------*/
+            if (txtTelefono.Text.Trim().Length != 8)
+            {
+                MessageBox.Show("El Teléfono debe tener 8 dígitos");
+                return; //Salimos 
+            }
+            CargarGridCliente();
+            //CargarComboCliente();
+            //CargarComboOjo();
+            defecto();
+            /*---------------------------------------------------------------------------*/
             if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != ""  && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "")
             {
                 using (GestorCliente elCliente = new GestorCliente())
@@ -59,74 +86,48 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("¡ Debe rellenar todos los espacios ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            CargarGridCliente();
-            //CargarComboCliente();
-            //CargarComboOjo();
-            defecto();
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (txtBuscar.Text != null && txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "")
+
+            /*---------------------------------------------------------------------------*/
+            if (txtCedula.Text.Trim().Length < 11 && txtCedula.Text.Trim().Length > 9)
+            {
+                MessageBox.Show("La Cedula debe tener 11 dígitos");
+                return; //Salimos 
+            }
+            /*---------------------------------------------------------------------------*/
+            if (txtTelefono.Text.Trim().Length != 8)
+            {
+                MessageBox.Show("El Teléfono debe tener 8 dígitos");
+                return; //Salimos 
+            }
+            CargarGridCliente();
+
+            defecto();
+            /*---------------------------------------------------------------------------*/
+            if (txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtDireccion.Text != "" && txtTelefono.Text != "" && txtDeuda.Text != "")
             {
                 using (GestorCliente elCliente = new GestorCliente())
                 {
-                    elCliente.ModificarCliente(int.Parse(txtBuscar.Text.ToString()), txtCedula.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text, txtDireccion.Text, int.Parse(txtDeuda.Text));
+                    elCliente.ModificarCliente( txtCedula.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtDireccion.Text, txtTelefono.Text, int.Parse(txtDeuda.Text));
                 }
             }
             else
             {
                 MessageBox.Show("¡ Debe rellenar todos los espacios ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            CargarGridCliente();
-            //CargarComboCliente();
-            //CargarComboOjo();
-            defecto();
+
 
         }
-
-        /* private void btnInactivar_Click(object sender, EventArgs e)
-         {
-             if (cbxCliente.SelectedItem != null)
-             {
-                 using (GestorCliente elCliente = new GestorCliente())
-                 {
-                     elCliente.InactivarCliente(int.Parse(cbxCliente.SelectedValue.ToString()));
-                 }
-             }
-             else
-             {
-                 MessageBox.Show("¡ Debe Seleccionar un Estudiante ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-             }
-         }*/
 
         private void defecto()
         {
             txtBuscar.Text = null;
 
         }
-
-        /*private void CargarComboOjo()
-
-        {
-            try
-            {
-                using (GestorGeneral elGestorOjo = new GestorGeneral())
-                {
-
-                    cbxOjo.DataSource = elGestorOjo.ListarOjo();
-                    cbxOjo.ValueMember = "id_ojo";
-                    cbxOjo.DisplayMember = "tipo";
-                }
-
-            }
-
-            catch (Exception e)
-            {
-                MessageBox.Show("Error de SQL: " + e.Message);
-            }
-
-        }*/
 
         private void CargarGridCliente()
         {
@@ -145,32 +146,16 @@ namespace CapaPresentacion
             }
         }
 
-        /*private void CargarComboCliente()
-        {
-            try
-            {
-                using (GestorCliente elCliente = new GestorCliente())
-                {
-                    cbxCliente.DataSource = elCliente.ListarCliente();
-                    cbxCliente.ValueMember = "id_cliente";
-                    cbxCliente.DisplayMember = "cedula";
-                }
-
-            }
-
-            catch (Exception e)
-            {
-                MessageBox.Show("Error de SQL: " + e.Message);
-            }
-
-        }*/
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (txtBuscar.Text != "")
             {
 
-
+                if (txtBuscar.Text == "")
+                {
+                    MessageBox.Show("Inserte un dato valido", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    
+                }
 
                 if (txtBuscar.Text != null)
                 {
@@ -182,9 +167,7 @@ namespace CapaPresentacion
 
                     }
                     CargarGridCliente();
-                    // CargarComboCliente();
-                    //CargarComboOjo();
-                    // defecto();
+
                 }
                 else
                 {

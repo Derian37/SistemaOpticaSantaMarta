@@ -24,20 +24,13 @@ namespace ProyectoOptica.CapaIntegracion
                 return elCliente.InsertarCliente(nuevoCliente);
         }
 
-        public string ModificarCliente(int id_cliente, string cedula, string nombre, string apellido1, string apellido2, string direccion, string telefono, int deuda)
+        public string ModificarCliente(/*int id_cliente,*/ string cedula, string nombre, string apellido1, string apellido2, string direccion, string telefono, int deuda)
         {
-            Cliente nuevoCliente = new Cliente(id_cliente, cedula, nombre, apellido1, apellido2, direccion, telefono, deuda);
+            Cliente nuevoCliente = new Cliente(/*id_cliente,*/ cedula, nombre, apellido1, apellido2, direccion, telefono, deuda);
             using (ServicioCliente elCliente = new ServicioCliente())
                 return elCliente.ModificarCliente(nuevoCliente);
         }
 
-        /* public string InactivarCliente(int id_cliente)
-         {
-             Cliente nuevoCliente = new Cliente(id_cliente);
-
-             using (ServicioCliente elCliente = new ServicioCliente())
-                 return elCliente.InactivarCliente(nuevoCliente);
-         }*/
 
         public string ListarCliente(int id_cliente)
 
