@@ -120,21 +120,6 @@ CREATE TABLE IF NOT EXISTS `factura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- La exportación de datos fue deseleccionada.
--- Volcando estructura para tabla bd_optica.graduacion
-CREATE TABLE IF NOT EXISTS `graduacion` (
-  `id_graduacion` int(11) NOT NULL AUTO_INCREMENT,
-  `esferaIzquierda` float NOT NULL,
-  `cilindroIzquierda` float NOT NULL,
-  `ejeIzquierda` int(4) NOT NULL,
-  `adicionesIzquierda` float NOT NULL,
-  `esferaDerecha` float NOT NULL,
-  `cilindroDerecha` float NOT NULL,
-  `ejeDerecha` int(11) NOT NULL,
-  `adicionesDerecha` float NOT NULL,
-  PRIMARY KEY (`id_graduacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla bd_optica.movimientos
 CREATE TABLE IF NOT EXISTS `movimientos` (
   `id_movimientos` int(11) NOT NULL AUTO_INCREMENT,
@@ -195,16 +180,21 @@ CREATE TABLE IF NOT EXISTS `tarjetas` (
   `detalle_lente` varchar(50) DEFAULT NULL,
   `fecha_entrega` date DEFAULT NULL,
   `fecha` date DEFAULT NULL,
-  `id_graduacion` int(11) NOT NULL,
   `distancia` varchar(50) DEFAULT NULL,
   `recibida` varchar(50) DEFAULT NULL,
   `segineatos` double DEFAULT NULL,
+  `esferaIzquierda` float DEFAULT NULL,
+  `cilindroIzquierdo` float DEFAULT NULL,
+  `ejeIzquierdo` int(11) DEFAULT NULL,
+  `adicionesIzquierda` float DEFAULT NULL,
+  `esferaDerecha` float DEFAULT NULL,
+  `cilindroDerecha` float DEFAULT NULL,
+  `ejeDerecha` int(11) DEFAULT NULL,
+  `adicionesDerecha` float DEFAULT NULL,
   PRIMARY KEY (`id_tarjeta`),
   KEY `id_cliente` (`id_cliente`),
   KEY `id_anteojos` (`id_producto_armazon`),
   KEY `id_producto` (`id_producto_lente`),
-  KEY `id_graduacion` (`id_graduacion`),
-  CONSTRAINT `FK_tarjetas_graduacion` FOREIGN KEY (`id_graduacion`) REFERENCES `graduacion` (`id_graduacion`),
   CONSTRAINT `tarjetas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
   CONSTRAINT `tarjetas_ibfk_3` FOREIGN KEY (`id_producto_armazon`) REFERENCES `productos` (`id_productos`),
   CONSTRAINT `tarjetas_ibfk_4` FOREIGN KEY (`id_producto_lente`) REFERENCES `productos` (`id_productos`)
@@ -336,19 +326,20 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `consultar_Graduacion`(
 
 
 
+
+
+
 )
 BEGIN
-SELECT  graduacion.esferaDerecha as ESP, graduacion.cilindroDerecha as CIL, graduacion.ejeDerecha as EJE, 
-graduacion.adicionesDerecha as Adiciones FROM graduacion,cliente,tarjetas
+SELECT  tarjetas.esferaDerecha as ESP, tarjetas.cilindroDerecha as CIL, tarjetas.ejeDerecha as EJE, 
+tarjetas.adicionesDerecha as Adiciones FROM cliente,tarjetas
 WHERE cliente.id_cliente=cliente_id
 AND cliente.id_cliente = tarjetas.id_cliente
-AND graduacion.id_graduacion=tarjetas.id_graduacion
 UNION
-SELECT  graduacion.esferaIzquierda ,graduacion.cilindroIzquierda, graduacion.ejeIzquierda, graduacion.adicionesIzquierda
-FROM graduacion,cliente,tarjetas
+SELECT  tarjetas.esferaIzquierda ,tarjetas.cilindroIzquierdo, tarjetas.ejeIzquierdo, tarjetas.adicionesIzquierda
+FROM cliente,tarjetas
 WHERE cliente.id_cliente=cliente_id
 AND cliente.id_cliente = tarjetas.id_cliente
-AND graduacion.id_graduacion=tarjetas.id_graduacion
 ;
 END//
 DELIMITER ;
@@ -578,14 +569,24 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insertar_tarjeta_nueva`(
 	IN `detalle_armazon` VARCHAR(50),
 	IN `fecha_entrega` DATETIME,
 	IN `fecha` DATETIME,
-	IN `id_graduacion` INT,
 	IN `distancia` VARCHAR(50),
 	IN `recibida` VARCHAR(50),
 	IN `segineatos` DOUBLE
+
+,
+	IN `esiz` FLOAT,
+	IN `ciliz` FLOAT,
+	IN `ejeiz` INT,
+	IN `adiz` FLOAT,
+	IN `esder` FLOAT,
+	IN `cilder` FLOAT,
+	IN `ejeder` INT,
+	IN `ader` FLOAT
 )
 BEGIN
-	INSERT INTO tarjetas(tarjetas.id_cliente,tarjetas.id_producto_lente,tarjetas.detalle_lente,tarjetas.id_producto_armazon,tarjetas.detalle_armazon,tarjetas.fecha_entrega,tarjetas.fecha,tarjetas.id_graduacion,tarjetas.distancia,tarjetas.recibida,tarjetas.segineatos)
-    VALUES(id_cliente, id_producto_lente, detalle_lenten, id_producto_armazon, detalle_armazon, fecha_entrega, fecha, id_graduacion,distancia,recibida,segineatos);
+	INSERT INTO tarjetas(tarjetas.id_cliente,tarjetas.id_producto_lente,tarjetas.detalle_lente,tarjetas.id_producto_armazon,tarjetas.detalle_armazon,tarjetas.fecha_entrega,tarjetas.fecha,tarjetas.distancia,tarjetas.recibida,tarjetas.segineatos,
+	tarjetas.esferaIzquierda, tarjetas.cilindroIzquierdo,tarjetas.ejeIzquierdo,tarjetas.adicionesIzquierda,tarjetas.esferaDerecha,tarjetas.cilindroDerecha,tarjetas.ejeDerecha,tarjetas.adicionesDerecha)
+    VALUES(id_cliente, id_producto_lente, detalle_lenten, id_producto_armazon, detalle_armazon, fecha_entrega, fecha,distancia,recibida,segineatos,esiz, ciliz, ejeiz, adiz, esder, cilder, ejeder, ader);
 END//
 DELIMITER ;
 
@@ -840,10 +841,21 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `modificar_tarjeta`(
 
 
 
+,
+	IN `esiz` FLOAT,
+	IN `esder` FLOAT,
+	IN `ciliz` FLOAT,
+	IN `cilder` FLOAT,
+	IN `ejeiz` INT,
+	IN `ejeder` INT,
+	IN `adiz` FLOAT,
+	IN `adder` FLOAT
 )
 BEGIN
 UPDATE tarjetas 
-SET tarjetas.id_producto_lente=id_anteojos,tarjetas.detalle_lente=dlen,tarjetas.id_producto_armazon=id_producto,tarjetas.detalle_armazon=darm,tarjetas.fecha_entrega=fechE,tarjetas.fecha=fech,tarjetas.distancia=di,tarjetas.recibida=res,tarjetas.segineatos=seg
+SET tarjetas.id_producto_lente=id_anteojos,tarjetas.detalle_lente=dlen,tarjetas.id_producto_armazon=id_producto,tarjetas.detalle_armazon=darm,tarjetas.fecha_entrega=fechE,tarjetas.fecha=fech,tarjetas.distancia=di,tarjetas.recibida=res,tarjetas.segineatos=seg,
+tarjetas.esferaIzquierda=esiz,tarjetas.esferaDerecha=esder,tarjetas.cilindroIzquierdo=ciliz,tarjetas.cilindroDerecha=cilder,tarjetas.ejeIzquierdo=ejeiz,
+tarjetas.ejeDerecha=ejeder,tarjetas.adicionesIzquierda=adiz,tarjetas.adicionesDerecha=adder
 WHERE tarjetas.id_cliente=id_cliente;
 END//
 DELIMITER ;

@@ -131,15 +131,12 @@ namespace CapaPresentacion
         {
 
             int Id_cliente = int.Parse(id_cliente);
-            if (label20.Text != "False")
-            {
-                CrearGraduacion();
-            }
             try
                 {
                     using (GestorTarjeta elTarjeta = new GestorTarjeta())
                     {
-                        elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, Graduacion, txt_DI.Text, cbx_recibido.SelectedItem.ToString(), double.Parse(txt_Seg.Text));
+                        elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, txt_DI.Text, cbx_recibido.SelectedItem.ToString(), double.Parse(txt_Seg.Text)
+                            , float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
                     }
                     MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmExpediente volver = new frmExpediente(id_usuario, usuario, cargo);
@@ -148,7 +145,7 @@ namespace CapaPresentacion
                 }
                 catch (Exception h)
                 {
-                  MessageBox.Show("Dejo algun campo vacío", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                  MessageBox.Show(h.ToString(), "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
                     cargarCombos();
@@ -164,7 +161,7 @@ namespace CapaPresentacion
 
                     using (GestorGraduacion elGraduacion = new GestorGraduacion())
                     {
-                        elGraduacion.InsertarGraduacion(float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
+                        
                     }
                     using (GestorGraduacion elGraduacion = new GestorGraduacion())
                     {
@@ -239,13 +236,11 @@ namespace CapaPresentacion
                 cbx_Prod_Armazon.SelectedValue.ToString() !="" && cbx_recibido.Text.ToString() !="" && dateTimePicker1.Value != null)
             {
                 btn_Crear.Enabled = true;
-                button1.Visible = false;
                 btn_Crear.BackColor = Color.Gold;
             }
             else
             {
                 MessageBox.Show("¡ Debe llenar todos los datos necesarios! ", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                button1.Visible = true;
                 btn_Crear.Enabled = false;
             }
         }

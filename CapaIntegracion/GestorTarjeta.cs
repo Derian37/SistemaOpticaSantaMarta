@@ -40,9 +40,9 @@ namespace ProyectoOptica.CapaIntegracion
         /// <param name="recibida">Parametro de tipo string</param>
         /// <param name="segineatos">Parametro de tipo Double</param>
         /// <returns>Un Registro nuevo de una tarjeta de cliente guardada en la Base de datos</returns>
-        public string InsertarTarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha,int id_graduacion, string distancia, string recibida, Double segineatos)
-        {
-            CapaLogica.LogicaNegocio.Tarjeta nuevoTargeta = new Tarjeta(id_cliente, id_anteojos, detalle_armazon, id_producto, detalle_lente, fecha_entrega, fecha, id_graduacion, distancia, recibida, segineatos);
+        public string InsertarTarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha, string distancia, string recibida, Double segineatos, float esferaiz, float cilindroiz, int ejeiz, float adicionesiz, float esferader, float cilindroder, int ejeder, float adicionesder)
+        { 
+            CapaLogica.LogicaNegocio.Tarjeta nuevoTargeta = new Tarjeta(id_cliente, id_anteojos, detalle_armazon, id_producto, detalle_lente, fecha_entrega, fecha, distancia, recibida, segineatos, esferaiz, cilindroiz, ejeiz, adicionesiz, esferader, cilindroder, ejeder, adicionesder);
             using (ServicioTarjeta elTarjeta = new ServicioTarjeta())
                 return elTarjeta.InsertarTarjeta(nuevoTargeta);
         }
@@ -61,9 +61,9 @@ namespace ProyectoOptica.CapaIntegracion
         /// <param name="recibida">Parametro de tipo string</param>
         /// <param name="segineatos">Parametro de tipo Double</param>
         /// <returns>Una tarjeta Modificada</returns>
-        public string ModificarTarjeta(int id_cliente,int id_anteojos,string detalle_armazon, int id_producto,string detalle_lente,DateTime fecha_entrega, DateTime fecha,  string distancia, string recibida, Double segineatos)
+        public string ModificarTarjeta(int id_cliente, int id_anteojos, string detalle_armazon, int id_producto, string detalle_lente, DateTime fecha_entrega, DateTime fecha, string distancia, string recibida, Double segineatos, float esferaiz, float cilindroiz, int ejeiz, float adicionesiz, float esferader, float cilindroder, int ejeder, float adicionesder)
         {
-            Tarjeta modificaTargeta = new Tarjeta(id_cliente, id_anteojos, detalle_armazon, id_producto, detalle_lente, fecha_entrega, fecha, distancia, recibida, segineatos);
+            Tarjeta modificaTargeta = new Tarjeta(id_cliente, id_anteojos, detalle_armazon, id_producto, detalle_lente, fecha_entrega, fecha, distancia, recibida, segineatos, esferaiz, cilindroiz, ejeiz, adicionesiz, esferader, cilindroder, ejeder, adicionesder);
             using (ServicioTarjeta elTarjeta = new ServicioTarjeta())
                 return elTarjeta.ModificarTarjeta(modificaTargeta);
         }

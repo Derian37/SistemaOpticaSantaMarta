@@ -75,9 +75,6 @@ namespace ProyectoOptica.CapaLogica.Servicio
             miComando.Parameters.Add("@fecha", MySqlDbType.DateTime);
             miComando.Parameters["@fecha"].Value = elTarjeta.Fecha;
 
-            miComando.Parameters.Add("@id_graduacion", MySqlDbType.Int16);
-            miComando.Parameters["@id_graduacion"].Value = elTarjeta.Id_graduacion;
-
             miComando.Parameters.Add("@distancia", MySqlDbType.Double);
             miComando.Parameters["@distancia"].Value = elTarjeta.Distancia;
 
@@ -86,6 +83,30 @@ namespace ProyectoOptica.CapaLogica.Servicio
 
             miComando.Parameters.Add("@segineatos", MySqlDbType.Double);
             miComando.Parameters["@segineatos"].Value = elTarjeta.Segineatos;
+
+            miComando.Parameters.Add("@esiz", MySqlDbType.Float);
+            miComando.Parameters["@esiz"].Value = elTarjeta.Esfera;
+
+            miComando.Parameters.Add("@ciliz", MySqlDbType.Float);
+            miComando.Parameters["@ciliz"].Value = elTarjeta.Cilindro;
+
+            miComando.Parameters.Add("@ejeiz", MySqlDbType.Int64);
+            miComando.Parameters["@ejeiz"].Value = elTarjeta.Eje;
+
+            miComando.Parameters.Add("@adiz", MySqlDbType.Float);
+            miComando.Parameters["@adiz"].Value = elTarjeta.Adiciones;
+
+            miComando.Parameters.Add("@esder", MySqlDbType.Float);
+            miComando.Parameters["@esder"].Value = elTarjeta.Esferader;
+
+            miComando.Parameters.Add("@cilder", MySqlDbType.Float);
+            miComando.Parameters["@cilder"].Value = elTarjeta.Cilindroder;
+
+            miComando.Parameters.Add("@ejeder", MySqlDbType.Int64);
+            miComando.Parameters["@ejeder"].Value = elTarjeta.Ejeder;
+
+            miComando.Parameters.Add("@ader", MySqlDbType.Float);
+            miComando.Parameters["@ader"].Value = elTarjeta.Adicionesder;
 
             respuesta = this.ejecutaSentencia(miComando);
 
@@ -140,6 +161,34 @@ namespace ProyectoOptica.CapaLogica.Servicio
 
             miComando.Parameters.Add("@seg", MySqlDbType.Double);
             miComando.Parameters["@seg"].Value = elTarjeta.Segineatos;
+
+            miComando.Parameters.Add("@id_client", MySqlDbType.Int64);
+            miComando.Parameters["@id_client"].Value = elTarjeta.Id_cliente;
+
+            miComando.Parameters.Add("@esiz", MySqlDbType.Float);
+            miComando.Parameters["@esiz"].Value = elTarjeta.Esfera;
+
+            miComando.Parameters.Add("@ciliz", MySqlDbType.Float);
+            miComando.Parameters["@ciliz"].Value = elTarjeta.Cilindro;
+
+            miComando.Parameters.Add("@ejeiz", MySqlDbType.Int64);
+            miComando.Parameters["@ejeiz"].Value = elTarjeta.Eje;
+
+            miComando.Parameters.Add("@adiz", MySqlDbType.Float);
+            miComando.Parameters["@adiz"].Value = elTarjeta.Adiciones;
+
+            miComando.Parameters.Add("@esder", MySqlDbType.Float);
+            miComando.Parameters["@esder"].Value = elTarjeta.Esferader;
+
+            miComando.Parameters.Add("@cilder", MySqlDbType.Float);
+            miComando.Parameters["@cilder"].Value = elTarjeta.Cilindroder;
+
+            miComando.Parameters.Add("@ejeder", MySqlDbType.Int64);
+            miComando.Parameters["@ejeder"].Value = elTarjeta.Ejeder;
+
+            miComando.Parameters.Add("@adder", MySqlDbType.Float);
+            miComando.Parameters["@adder"].Value = elTarjeta.Adicionesder;
+
 
             respuesta = this.ejecutaSentencia(miComando);
 

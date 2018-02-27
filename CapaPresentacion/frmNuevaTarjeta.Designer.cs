@@ -90,14 +90,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cbx_recibido = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -118,7 +117,6 @@
             // 
             // btn_Crear
             // 
-            this.btn_Crear.Enabled = false;
             this.btn_Crear.Location = new System.Drawing.Point(95, 14);
             this.btn_Crear.Name = "btn_Crear";
             this.btn_Crear.Size = new System.Drawing.Size(82, 35);
@@ -305,7 +303,6 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.button1);
             this.groupBox8.Controls.Add(this.btn_Crear);
             this.groupBox8.Location = new System.Drawing.Point(275, 636);
             this.groupBox8.Name = "groupBox8";
@@ -574,7 +571,7 @@
             this.volverToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1375, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 28);
             this.menuStrip1.TabIndex = 93;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -733,16 +730,6 @@
             this.cbx_recibido.Size = new System.Drawing.Size(103, 21);
             this.cbx_recibido.TabIndex = 107;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(95, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 36);
-            this.button1.TabIndex = 108;
-            this.button1.Text = "Listo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.label27);
@@ -760,6 +747,26 @@
             this.groupBox10.Size = new System.Drawing.Size(517, 669);
             this.groupBox10.TabIndex = 108;
             this.groupBox10.TabStop = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(222, 270);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(157, 24);
+            this.label27.TabIndex = 105;
+            this.label27.Text = "!En construccion¡";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(152, 263);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(64, 31);
+            this.label26.TabIndex = 104;
+            this.label26.Text = "Tel:";
             // 
             // pictureBox1
             // 
@@ -807,32 +814,12 @@
             this.groupBox11.TabIndex = 109;
             this.groupBox11.TabStop = false;
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(152, 263);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(64, 31);
-            this.label26.TabIndex = 104;
-            this.label26.Text = "Tel:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(222, 270);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(157, 24);
-            this.label27.TabIndex = 105;
-            this.label27.Text = "!En construccion¡";
-            // 
             // frmNuevaTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1375, 712);
+            this.ClientSize = new System.Drawing.Size(1370, 712);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox5);
@@ -942,7 +929,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Adiciones;
         private System.Windows.Forms.ComboBox cbx_recibido;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label24;
