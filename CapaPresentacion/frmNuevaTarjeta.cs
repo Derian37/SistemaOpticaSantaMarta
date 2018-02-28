@@ -133,16 +133,23 @@ namespace CapaPresentacion
             int Id_cliente = int.Parse(id_cliente);
             try
                 {
+                if (txt_armason.Text !="" && txt_DI.Text!=""&& txt_lente.Text !="" && txt_Seg.Text!="") {
                     using (GestorTarjeta elTarjeta = new GestorTarjeta())
                     {
                         elTarjeta.InsertarTarjeta(Id_cliente, int.Parse(cbx_Prod_Lentes.SelectedValue.ToString()), txt_armason.Text, int.Parse(cbx_Prod_Armazon.SelectedValue.ToString()), txt_lente.Text, dateTimePicker1.Value, dateTimePicker1.Value, txt_DI.Text, cbx_recibido.SelectedItem.ToString(), double.Parse(txt_Seg.Text)
                             , float.Parse(dgvtargeta.Rows[1].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[1].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[1].Cells[3].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[0].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[1].Value.ToString()), int.Parse(dgvtargeta.Rows[0].Cells[2].Value.ToString()), float.Parse(dgvtargeta.Rows[0].Cells[3].Value.ToString()));
                     }
                     MessageBox.Show("¡ Se han guardado los Datos ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmExpediente volver = new frmExpediente(id_usuario, usuario, cargo);
-                volver.Show();
-                this.SetVisibleCore(false);
+                    frmExpediente volver = new frmExpediente(id_usuario, usuario, cargo);
+                    volver.Show();
+                    this.SetVisibleCore(false);
                 }
+                else
+                {
+                    MessageBox.Show("¡ Faltan datos que llenar ! ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
                 catch (Exception h)
                 {
                   MessageBox.Show(h.ToString(), "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
