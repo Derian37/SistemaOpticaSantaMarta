@@ -60,27 +60,36 @@ namespace CapaPresentacion
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            string cedulaCliente = txt_Cliente_Cedula.Text;
-            using (GestorExpediente expediente = new GestorExpediente())
+            try
             {
-                if (txt_Cliente_Cedula.Text == "")
+                string cedulaCliente = txt_Cliente_Cedula.Text;
+                using (GestorExpediente expediente = new GestorExpediente())
                 {
-                    MessageBox.Show("Inserte un dato valido", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    grbInformacion.Visible = false;
+                    if (txt_Cliente_Cedula.Text == "")
+                    {
+                        MessageBox.Show("Inserte un dato valido", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        grbInformacion.Visible = false;
+                    }
+                    else
+                    {
+                        grbInformacion.Visible = true;
+                        dgvExpediente.DataSource = expediente.ConsultarExpediente(cedulaCliente);
+                        label_id.Text = expediente.ConsultarExpediente(cedulaCliente).Tables[0].Rows[0][0].ToString();
+                        textBox1.Text = (string)expediente.ConsultarExpediente(cedulaCliente).Tables[0].Rows[0][1];
+                        textBox2.Text = (string)expediente.ConsultarExpediente(cedulaCliente).Tables[0].Rows[0][2];
+                        this.id_cliente = label_id.Text;
+
+                    }
                 }
-                else
-                {
-                    grbInformacion.Visible = true;
-                    dgvExpediente.DataSource = expediente.ConsultarExpediente(cedulaCliente);
-                    label_id.Text = expediente.ConsultarExpediente(cedulaCliente).Tables[0].Rows[0][0].ToString();
-                    textBox1.Text = (string)expediente.ConsultarExpediente(cedulaCliente).Tables[0].Rows[0][1];
-                    textBox2.Text = (string)expediente.ConsultarExpediente(cedulaCliente).Tables[0].Rows[0][2];
-                    this.id_cliente = label_id.Text;
-                  
-                }
+                cargarGridExpediente();
+                cargarNombreUsuario();
             }
-            cargarGridExpediente();
-            cargarNombreUsuario();
+            catch (Exception q) {
+                MessageBox.Show("Cedula no existe");
+                grbInformacion.Visible = false;
+                cargarGridExpediente();
+                cargarNombreUsuario();
+            }
         }
 
         private void btnInsertarDuenno_Click(object sender, EventArgs e)
